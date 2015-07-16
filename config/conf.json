@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "devel",
+        "password": "devel",
+        "database": "bookapi_dev",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "devel",
+        "password": "devel",
+        "database": "bookapi_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "devel",
+        "password": "devel",
+        "database": "bookapi_prod",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}

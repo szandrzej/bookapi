@@ -1,0 +1,2204 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'transform',
+1 verbose cli   '--save' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose install initial load of /var/www/BookApi/package.json
+5 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/body-parser/package.json
+6 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/cookie-parser/package.json
+7 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/debug/package.json
+8 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/express/package.json
+9 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/jade/package.json
+10 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/morgan/package.json
+11 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/serve-favicon/package.json
+12 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/transform/package.json
+13 verbose readDependencies loading dependencies from /var/www/BookApi/package.json
+14 verbose install transform is installed as 1.1.2
+15 silly cache add args [ 'transform', null ]
+16 verbose cache add spec transform
+17 silly cache add parsed spec { raw: 'transform',
+17 silly cache add   scope: null,
+17 silly cache add   name: 'transform',
+17 silly cache add   rawSpec: '',
+17 silly cache add   spec: '*',
+17 silly cache add   type: 'range' }
+18 silly addNamed transform@*
+19 verbose addNamed "*" is a valid semver range for transform
+20 silly addNameRange { name: 'transform', range: '*', hasData: false }
+21 silly mapToRegistry name transform
+22 silly mapToRegistry using default registry
+23 silly mapToRegistry registry https://registry.npmjs.org/
+24 silly mapToRegistry uri https://registry.npmjs.org/transform
+25 verbose addNameRange registry:https://registry.npmjs.org/transform not in flight; fetching
+26 verbose get https://registry.npmjs.org/transform not expired, no request
+27 silly addNameRange number 2 { name: 'transform', range: '*', hasData: true }
+28 silly addNameRange versions [ 'transform',
+28 silly addNameRange   [ '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.0.5',
+28 silly addNameRange     '0.0.6',
+28 silly addNameRange     '0.0.7',
+28 silly addNameRange     '0.0.8',
+28 silly addNameRange     '0.0.9',
+28 silly addNameRange     '1.0.0',
+28 silly addNameRange     '1.0.1',
+28 silly addNameRange     '1.0.2',
+28 silly addNameRange     '1.0.3',
+28 silly addNameRange     '1.1.0',
+28 silly addNameRange     '1.1.1',
+28 silly addNameRange     '1.1.2' ] ]
+29 silly addNamed transform@1.1.2
+30 verbose addNamed "1.1.2" is a plain semver version for transform
+31 silly cache afterAdd transform@1.1.2
+32 verbose afterAdd /home/vagrant/.npm/transform/1.1.2/package/package.json not in flight; writing
+33 verbose afterAdd /home/vagrant/.npm/transform/1.1.2/package/package.json written
+34 silly install resolved [ { name: 'transform',
+34 silly install resolved     version: '1.1.2',
+34 silly install resolved     description: 'The ultimate transformation/build/compilation middleware/command line/etc. system for node.js',
+34 silly install resolved     main: 'index.js',
+34 silly install resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+34 silly install resolved     repository:
+34 silly install resolved      { type: 'git',
+34 silly install resolved        url: 'git+https://github.com/ForbesLindesay/transform.git' },
+34 silly install resolved     author: { name: 'ForbesLindesay' },
+34 silly install resolved     license: 'MIT',
+34 silly install resolved     readmeFilename: 'README.md',
+34 silly install resolved     gitHead: '4a11abbfb88bfb4d85107cc1fa4e876564815ef6',
+34 silly install resolved     dependencies:
+34 silly install resolved      { transformers: '~2.1.0',
+34 silly install resolved        callsite: '~1.0.0',
+34 silly install resolved        resolve: '~0.5.1',
+34 silly install resolved        promise: '~3.2.0',
+34 silly install resolved        ms: '~0.6.0' },
+34 silly install resolved     devDependencies: { express: '~3.1.1' },
+34 silly install resolved     readme: '# transform\r\n\r\nThe ultimate transformation/build/compilation middleware/command line/etc. system for node.js\r\n\r\n[![Dependency Status](https://gemnasium.com/ForbesLindesay/transform.png)](https://gemnasium.com/ForbesLindesay/transform)\r\n[![NPM version](https://badge.fury.io/js/transform.png)](http://badge.fury.io/js/transform)\r\n\r\nFor a list of supported languages, check out [transformers](https://github.com/ForbesLindesay/transformers).  Here are a few highlights:\r\n\r\n - coffee-script\r\n - less\r\n - stylus\r\n - sass\r\n - js (pass through except for minify option)\r\n - css (pass through except for minify option)\r\n\r\nYou also get the following functionality for free:\r\n\r\n - minification automatically enabled for production (for JavaScript, CSS and JSON outputs)\r\n - gzip automatically enabled for production\r\n - etags for caching automatically enabled for produciton\r\n\r\nIf you think I\'ve missed something, be sure to open an issue or submit a pull request.\r\n\r\n## Installation\r\n\r\nFirst install the `transform` library:\r\n\r\n    $ npm install transform\r\n\r\nThen make sure you also install whichever transform(s) you depend on, e.g.\r\n\r\n    $ npm install jade coffee-script\r\n\r\n## Usage\r\n\r\nTo get a transform, just pass the name of the transform, e.g.:\r\n\r\n```js\r\nvar coffee = require(\'transform\')(\'coffee-script\');\r\nvar jade = require(\'transform\')(\'jade\');\r\n```\r\n\r\nTo serve a file with default options, just give it a file name:\r\n\r\n```js\r\napp.get(\'/client.js\', coffee(\'./client.coffee\'));\r\napp.get(\'/\', jade(\'./index.jade\'));\r\n```\r\n\r\nFile paths are always resolved relative to the calling file using node\'s "require" algorithm.\r\n\r\nBy default, files are minified (if they result in JavaScript, JSON or CSS), cached and gzipped in production, but not in development.\r\n\r\nYou can change these settings on a case by case basis, e.g.\r\n\r\n```js\r\napp.get(\'/client.js\', coffee(\'./client.coffee\', {minify: false}));\r\napp.get(\'/client.min.js\', coffee(\'./client.coffee\', {minify: true}));\r\n```\r\n\r\nYou can change options for all environments, or just specific ones:\r\n\r\n```js\r\njade.settings(\'self\', true);\r\njade.settings.development(\'pretty\', true);\r\njade.settings.production(\'debug\', false);\r\n```\r\n\r\n## License\r\n\r\n  MIT',
+34 silly install resolved     bugs: { url: 'https://github.com/ForbesLindesay/transform/issues' },
+34 silly install resolved     _id: 'transform@1.1.2',
+34 silly install resolved     dist:
+34 silly install resolved      { shasum: '8d9ed3fdc94e66e943ade0bafd83a2f14e33f433',
+34 silly install resolved        tarball: 'http://registry.npmjs.org/transform/-/transform-1.1.2.tgz' },
+34 silly install resolved     _from: 'transform@*',
+34 silly install resolved     _npmVersion: '1.3.8',
+34 silly install resolved     _npmUser: { name: 'forbeslindesay', email: 'forbes@lindeay.co.uk' },
+34 silly install resolved     maintainers: [ [Object] ],
+34 silly install resolved     directories: {},
+34 silly install resolved     _shasum: '8d9ed3fdc94e66e943ade0bafd83a2f14e33f433',
+34 silly install resolved     _resolved: 'https://registry.npmjs.org/transform/-/transform-1.1.2.tgz',
+34 silly install resolved     homepage: 'https://github.com/ForbesLindesay/transform#readme' } ]
+35 info install transform@1.1.2 into /var/www/BookApi
+36 info installOne transform@1.1.2
+37 verbose installOne of transform to /var/www/BookApi not in flight; installing
+38 verbose lock using /home/vagrant/.npm/_locks/transform-bb34038ad5e7b09d.lock for /var/www/BookApi/node_modules/transform
+39 silly install write writing transform 1.1.2 to /var/www/BookApi/node_modules/transform
+40 verbose unbuild node_modules/transform
+41 info preuninstall transform@1.1.2
+42 info uninstall transform@1.1.2
+43 verbose unbuild rmStuff transform@1.1.2 from /var/www/BookApi/node_modules
+44 info postuninstall transform@1.1.2
+45 silly gentlyRm /var/www/BookApi/node_modules/transform is being purged from base /var/www/BookApi
+46 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform
+47 silly vacuum-fs purging /var/www/BookApi/node_modules/transform
+48 silly vacuum-fs quitting because other entries in /var/www/BookApi/node_modules
+49 verbose tar unpack /home/vagrant/.npm/transform/1.1.2/package.tgz
+50 verbose tar unpacking to /var/www/BookApi/node_modules/transform
+51 silly gentlyRm /var/www/BookApi/node_modules/transform is being purged
+52 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform
+53 silly gunzTarPerm modes [ '755', '644' ]
+54 silly gunzTarPerm extractEntry package.json
+55 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+56 silly gunzTarPerm extractEntry .npmignore
+57 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+58 silly gunzTarPerm extractEntry README.md
+59 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+60 silly gunzTarPerm extractEntry LICENSE
+61 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+62 silly gunzTarPerm extractEntry index.js
+63 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+64 silly gunzTarPerm extractEntry lib/file.js
+65 silly gunzTarPerm modified mode [ 'lib/file.js', 438, 420 ]
+66 silly gunzTarPerm extractEntry lib/settings.js
+67 silly gunzTarPerm modified mode [ 'lib/settings.js', 438, 420 ]
+68 verbose write writing to /var/www/BookApi/node_modules/transform/package.json
+69 info preinstall transform@1.1.2
+70 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/package.json
+71 silly prepareForInstallMany adding transformers@~2.1.0 from transform dependencies
+72 silly prepareForInstallMany adding callsite@~1.0.0 from transform dependencies
+73 silly prepareForInstallMany adding resolve@~0.5.1 from transform dependencies
+74 silly prepareForInstallMany adding promise@~3.2.0 from transform dependencies
+75 silly prepareForInstallMany adding ms@~0.6.0 from transform dependencies
+76 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/package.json
+77 silly cache add args [ 'transformers@~2.1.0', null ]
+78 verbose cache add spec transformers@~2.1.0
+79 silly cache add args [ 'callsite@~1.0.0', null ]
+80 verbose cache add spec callsite@~1.0.0
+81 silly cache add parsed spec { raw: 'transformers@~2.1.0',
+81 silly cache add   scope: null,
+81 silly cache add   name: 'transformers',
+81 silly cache add   rawSpec: '~2.1.0',
+81 silly cache add   spec: '>=2.1.0 <2.2.0',
+81 silly cache add   type: 'range' }
+82 silly addNamed transformers@>=2.1.0 <2.2.0
+83 verbose addNamed ">=2.1.0 <2.2.0" is a valid semver range for transformers
+84 silly addNameRange { name: 'transformers', range: '>=2.1.0 <2.2.0', hasData: false }
+85 silly mapToRegistry name transformers
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry uri https://registry.npmjs.org/transformers
+89 verbose addNameRange registry:https://registry.npmjs.org/transformers not in flight; fetching
+90 silly cache add parsed spec { raw: 'callsite@~1.0.0',
+90 silly cache add   scope: null,
+90 silly cache add   name: 'callsite',
+90 silly cache add   rawSpec: '~1.0.0',
+90 silly cache add   spec: '>=1.0.0 <1.1.0',
+90 silly cache add   type: 'range' }
+91 silly addNamed callsite@>=1.0.0 <1.1.0
+92 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for callsite
+93 silly addNameRange { name: 'callsite', range: '>=1.0.0 <1.1.0', hasData: false }
+94 silly mapToRegistry name callsite
+95 silly mapToRegistry using default registry
+96 silly mapToRegistry registry https://registry.npmjs.org/
+97 silly mapToRegistry uri https://registry.npmjs.org/callsite
+98 verbose addNameRange registry:https://registry.npmjs.org/callsite not in flight; fetching
+99 silly cache add args [ 'resolve@~0.5.1', null ]
+100 verbose cache add spec resolve@~0.5.1
+101 silly cache add parsed spec { raw: 'resolve@~0.5.1',
+101 silly cache add   scope: null,
+101 silly cache add   name: 'resolve',
+101 silly cache add   rawSpec: '~0.5.1',
+101 silly cache add   spec: '>=0.5.1 <0.6.0',
+101 silly cache add   type: 'range' }
+102 silly addNamed resolve@>=0.5.1 <0.6.0
+103 verbose addNamed ">=0.5.1 <0.6.0" is a valid semver range for resolve
+104 silly addNameRange { name: 'resolve', range: '>=0.5.1 <0.6.0', hasData: false }
+105 silly mapToRegistry name resolve
+106 silly mapToRegistry using default registry
+107 silly mapToRegistry registry https://registry.npmjs.org/
+108 silly mapToRegistry uri https://registry.npmjs.org/resolve
+109 verbose addNameRange registry:https://registry.npmjs.org/resolve not in flight; fetching
+110 silly cache add args [ 'promise@~3.2.0', null ]
+111 verbose cache add spec promise@~3.2.0
+112 silly cache add parsed spec { raw: 'promise@~3.2.0',
+112 silly cache add   scope: null,
+112 silly cache add   name: 'promise',
+112 silly cache add   rawSpec: '~3.2.0',
+112 silly cache add   spec: '>=3.2.0 <3.3.0',
+112 silly cache add   type: 'range' }
+113 silly addNamed promise@>=3.2.0 <3.3.0
+114 verbose addNamed ">=3.2.0 <3.3.0" is a valid semver range for promise
+115 silly addNameRange { name: 'promise', range: '>=3.2.0 <3.3.0', hasData: false }
+116 silly mapToRegistry name promise
+117 silly mapToRegistry using default registry
+118 silly mapToRegistry registry https://registry.npmjs.org/
+119 silly mapToRegistry uri https://registry.npmjs.org/promise
+120 verbose addNameRange registry:https://registry.npmjs.org/promise not in flight; fetching
+121 silly cache add args [ 'ms@~0.6.0', null ]
+122 verbose cache add spec ms@~0.6.0
+123 silly cache add parsed spec { raw: 'ms@~0.6.0',
+123 silly cache add   scope: null,
+123 silly cache add   name: 'ms',
+123 silly cache add   rawSpec: '~0.6.0',
+123 silly cache add   spec: '>=0.6.0 <0.7.0',
+123 silly cache add   type: 'range' }
+124 silly addNamed ms@>=0.6.0 <0.7.0
+125 verbose addNamed ">=0.6.0 <0.7.0" is a valid semver range for ms
+126 silly addNameRange { name: 'ms', range: '>=0.6.0 <0.7.0', hasData: false }
+127 silly mapToRegistry name ms
+128 silly mapToRegistry using default registry
+129 silly mapToRegistry registry https://registry.npmjs.org/
+130 silly mapToRegistry uri https://registry.npmjs.org/ms
+131 verbose addNameRange registry:https://registry.npmjs.org/ms not in flight; fetching
+132 verbose request uri https://registry.npmjs.org/transformers
+133 verbose request no auth needed
+134 info attempt registry request try #1 at 1:38:58 PM
+135 verbose request id 44e040888dd8d7f5
+136 verbose etag "DQ3NWGMY47NOGFK6OZ4I65LUN"
+137 http request GET https://registry.npmjs.org/transformers
+138 verbose request uri https://registry.npmjs.org/callsite
+139 verbose request no auth needed
+140 info attempt registry request try #1 at 1:38:58 PM
+141 verbose etag "5GUBFRSAWFL3MYFFE98NHG006"
+142 http request GET https://registry.npmjs.org/callsite
+143 verbose request uri https://registry.npmjs.org/resolve
+144 verbose request no auth needed
+145 info attempt registry request try #1 at 1:38:58 PM
+146 verbose etag "BGPGHHY69TMGRK3Y5TSKIMIFD"
+147 http request GET https://registry.npmjs.org/resolve
+148 verbose request uri https://registry.npmjs.org/promise
+149 verbose request no auth needed
+150 info attempt registry request try #1 at 1:38:58 PM
+151 verbose etag "35666CE0KMRM5DXWJBN79I3JL"
+152 http request GET https://registry.npmjs.org/promise
+153 verbose request uri https://registry.npmjs.org/ms
+154 verbose request no auth needed
+155 info attempt registry request try #1 at 1:38:58 PM
+156 verbose etag "C7IT6G0C870XWLGH92QTO2KNM"
+157 http request GET https://registry.npmjs.org/ms
+158 http 304 https://registry.npmjs.org/resolve
+159 silly get cb [ 304,
+159 silly get   { date: 'Sat, 27 Jun 2015 13:38:58 GMT',
+159 silly get     via: '1.1 varnish',
+159 silly get     'cache-control': 'max-age=60',
+159 silly get     etag: '"BGPGHHY69TMGRK3Y5TSKIMIFD"',
+159 silly get     age: '43',
+159 silly get     connection: 'keep-alive',
+159 silly get     'x-served-by': 'cache-fra1226-FRA',
+159 silly get     'x-cache': 'HIT',
+159 silly get     'x-cache-hits': '2',
+159 silly get     'x-timer': 'S1435412338.597447,VS0,VE0',
+159 silly get     vary: 'Accept' } ]
+160 verbose etag https://registry.npmjs.org/resolve from cache
+161 verbose get saving resolve to /home/vagrant/.npm/registry.npmjs.org/resolve/.cache.json
+162 silly addNameRange number 2 { name: 'resolve', range: '>=0.5.1 <0.6.0', hasData: true }
+163 silly addNameRange versions [ 'resolve',
+163 silly addNameRange   [ '0.0.0',
+163 silly addNameRange     '0.0.1',
+163 silly addNameRange     '0.0.2',
+163 silly addNameRange     '0.0.3',
+163 silly addNameRange     '0.0.4',
+163 silly addNameRange     '0.1.0',
+163 silly addNameRange     '0.1.2',
+163 silly addNameRange     '0.1.3',
+163 silly addNameRange     '0.2.0',
+163 silly addNameRange     '0.2.1',
+163 silly addNameRange     '0.2.2',
+163 silly addNameRange     '0.2.3',
+163 silly addNameRange     '0.2.4',
+163 silly addNameRange     '0.2.5',
+163 silly addNameRange     '0.2.6',
+163 silly addNameRange     '0.2.7',
+163 silly addNameRange     '0.2.8',
+163 silly addNameRange     '0.3.0',
+163 silly addNameRange     '0.3.1',
+163 silly addNameRange     '0.4.0',
+163 silly addNameRange     '0.4.1',
+163 silly addNameRange     '0.4.2',
+163 silly addNameRange     '0.4.3',
+163 silly addNameRange     '0.5.0',
+163 silly addNameRange     '0.5.1',
+163 silly addNameRange     '0.6.0',
+163 silly addNameRange     '0.6.1',
+163 silly addNameRange     '0.6.2',
+163 silly addNameRange     '0.6.3',
+163 silly addNameRange     '0.7.0',
+163 silly addNameRange     '0.7.1',
+163 silly addNameRange     '0.7.2',
+163 silly addNameRange     '0.7.3',
+163 silly addNameRange     '0.7.4',
+163 silly addNameRange     '1.0.0',
+163 silly addNameRange     '1.1.0',
+163 silly addNameRange     '1.1.2',
+163 silly addNameRange     '1.1.3',
+163 silly addNameRange     '1.1.4',
+163 silly addNameRange     '1.1.5',
+163 silly addNameRange     '1.1.6' ] ]
+164 silly addNamed resolve@0.5.1
+165 verbose addNamed "0.5.1" is a plain semver version for resolve
+166 silly cache afterAdd resolve@0.5.1
+167 verbose afterAdd /home/vagrant/.npm/resolve/0.5.1/package/package.json not in flight; writing
+168 http 304 https://registry.npmjs.org/ms
+169 silly get cb [ 304,
+169 silly get   { date: 'Sat, 27 Jun 2015 13:38:58 GMT',
+169 silly get     via: '1.1 varnish',
+169 silly get     'cache-control': 'max-age=60',
+169 silly get     etag: '"C7IT6G0C870XWLGH92QTO2KNM"',
+169 silly get     age: '49',
+169 silly get     connection: 'keep-alive',
+169 silly get     'x-served-by': 'cache-fra1236-FRA',
+169 silly get     'x-cache': 'HIT',
+169 silly get     'x-cache-hits': '1',
+169 silly get     'x-timer': 'S1435412338.604843,VS0,VE0',
+169 silly get     vary: 'Accept' } ]
+170 verbose etag https://registry.npmjs.org/ms from cache
+171 verbose get saving ms to /home/vagrant/.npm/registry.npmjs.org/ms/.cache.json
+172 http 304 https://registry.npmjs.org/promise
+173 silly get cb [ 304,
+173 silly get   { date: 'Sat, 27 Jun 2015 13:38:58 GMT',
+173 silly get     via: '1.1 varnish',
+173 silly get     'cache-control': 'max-age=60',
+173 silly get     etag: '"35666CE0KMRM5DXWJBN79I3JL"',
+173 silly get     age: '60',
+173 silly get     connection: 'keep-alive',
+173 silly get     'x-served-by': 'cache-fra1228-FRA',
+173 silly get     'x-cache': 'HIT',
+173 silly get     'x-cache-hits': '1',
+173 silly get     'x-timer': 'S1435412338.608038,VS0,VE0',
+173 silly get     vary: 'Accept' } ]
+174 verbose etag https://registry.npmjs.org/promise from cache
+175 verbose get saving promise to /home/vagrant/.npm/registry.npmjs.org/promise/.cache.json
+176 verbose afterAdd /home/vagrant/.npm/resolve/0.5.1/package/package.json written
+177 silly addNameRange number 2 { name: 'ms', range: '>=0.6.0 <0.7.0', hasData: true }
+178 silly addNameRange versions [ 'ms',
+178 silly addNameRange   [ '0.1.0',
+178 silly addNameRange     '0.2.0',
+178 silly addNameRange     '0.3.0',
+178 silly addNameRange     '0.4.0',
+178 silly addNameRange     '0.5.0',
+178 silly addNameRange     '0.5.1',
+178 silly addNameRange     '0.6.0',
+178 silly addNameRange     '0.6.1',
+178 silly addNameRange     '0.6.2',
+178 silly addNameRange     '0.7.0',
+178 silly addNameRange     '0.7.1' ] ]
+179 silly addNamed ms@0.6.2
+180 verbose addNamed "0.6.2" is a plain semver version for ms
+181 silly addNameRange number 2 { name: 'promise', range: '>=3.2.0 <3.3.0', hasData: true }
+182 silly addNameRange versions [ 'promise',
+182 silly addNameRange   [ '1.2.1',
+182 silly addNameRange     '1.2.2',
+182 silly addNameRange     '1.3.0',
+182 silly addNameRange     '2.0.0',
+182 silly addNameRange     '3.0.0',
+182 silly addNameRange     '3.0.1',
+182 silly addNameRange     '3.1.0',
+182 silly addNameRange     '3.2.0',
+182 silly addNameRange     '4.0.0',
+182 silly addNameRange     '5.0.0',
+182 silly addNameRange     '6.0.0',
+182 silly addNameRange     '6.0.1',
+182 silly addNameRange     '6.1.0',
+182 silly addNameRange     '7.0.0',
+182 silly addNameRange     '7.0.1',
+182 silly addNameRange     '7.0.2',
+182 silly addNameRange     '7.0.3' ] ]
+183 silly addNamed promise@3.2.0
+184 verbose addNamed "3.2.0" is a plain semver version for promise
+185 silly cache afterAdd ms@0.6.2
+186 verbose afterAdd /home/vagrant/.npm/ms/0.6.2/package/package.json not in flight; writing
+187 silly cache afterAdd promise@3.2.0
+188 verbose afterAdd /home/vagrant/.npm/promise/3.2.0/package/package.json not in flight; writing
+189 verbose afterAdd /home/vagrant/.npm/ms/0.6.2/package/package.json written
+190 verbose afterAdd /home/vagrant/.npm/promise/3.2.0/package/package.json written
+191 http 304 https://registry.npmjs.org/transformers
+192 silly get cb [ 304,
+192 silly get   { date: 'Sat, 27 Jun 2015 13:38:58 GMT',
+192 silly get     via: '1.1 varnish',
+192 silly get     'cache-control': 'max-age=60',
+192 silly get     etag: '"DQ3NWGMY47NOGFK6OZ4I65LUN"',
+192 silly get     age: '0',
+192 silly get     connection: 'keep-alive',
+192 silly get     'x-served-by': 'cache-fra1245-FRA',
+192 silly get     'x-cache': 'HIT',
+192 silly get     'x-cache-hits': '1',
+192 silly get     'x-timer': 'S1435412338.612153,VS0,VE105',
+192 silly get     vary: 'Accept' } ]
+193 verbose etag https://registry.npmjs.org/transformers from cache
+194 verbose get saving transformers to /home/vagrant/.npm/registry.npmjs.org/transformers/.cache.json
+195 silly addNameRange number 2 { name: 'transformers', range: '>=2.1.0 <2.2.0', hasData: true }
+196 silly addNameRange versions [ 'transformers',
+196 silly addNameRange   [ '1.0.0',
+196 silly addNameRange     '1.1.0',
+196 silly addNameRange     '1.2.0',
+196 silly addNameRange     '1.2.1',
+196 silly addNameRange     '1.3.0',
+196 silly addNameRange     '1.4.0',
+196 silly addNameRange     '1.5.0',
+196 silly addNameRange     '1.6.0',
+196 silly addNameRange     '1.7.0',
+196 silly addNameRange     '1.8.0',
+196 silly addNameRange     '1.8.1',
+196 silly addNameRange     '1.8.2',
+196 silly addNameRange     '1.8.3',
+196 silly addNameRange     '2.0.0',
+196 silly addNameRange     '2.0.1',
+196 silly addNameRange     '2.1.0',
+196 silly addNameRange     '3.0.0',
+196 silly addNameRange     '3.0.1',
+196 silly addNameRange     '3.1.0' ] ]
+197 silly addNamed transformers@2.1.0
+198 verbose addNamed "2.1.0" is a plain semver version for transformers
+199 silly cache afterAdd transformers@2.1.0
+200 verbose afterAdd /home/vagrant/.npm/transformers/2.1.0/package/package.json not in flight; writing
+201 verbose afterAdd /home/vagrant/.npm/transformers/2.1.0/package/package.json written
+202 http 304 https://registry.npmjs.org/callsite
+203 silly get cb [ 304,
+203 silly get   { date: 'Sat, 27 Jun 2015 13:38:58 GMT',
+203 silly get     via: '1.1 varnish',
+203 silly get     'cache-control': 'max-age=60',
+203 silly get     etag: '"5GUBFRSAWFL3MYFFE98NHG006"',
+203 silly get     age: '0',
+203 silly get     connection: 'keep-alive',
+203 silly get     'x-served-by': 'cache-fra1222-FRA',
+203 silly get     'x-cache': 'HIT',
+203 silly get     'x-cache-hits': '1',
+203 silly get     'x-timer': 'S1435412338.611079,VS0,VE173',
+203 silly get     vary: 'Accept' } ]
+204 verbose etag https://registry.npmjs.org/callsite from cache
+205 verbose get saving callsite to /home/vagrant/.npm/registry.npmjs.org/callsite/.cache.json
+206 silly addNameRange number 2 { name: 'callsite', range: '>=1.0.0 <1.1.0', hasData: true }
+207 silly addNameRange versions [ 'callsite', [ '0.0.1', '0.0.2', '1.0.0' ] ]
+208 silly addNamed callsite@1.0.0
+209 verbose addNamed "1.0.0" is a plain semver version for callsite
+210 silly cache afterAdd callsite@1.0.0
+211 verbose afterAdd /home/vagrant/.npm/callsite/1.0.0/package/package.json not in flight; writing
+212 verbose afterAdd /home/vagrant/.npm/callsite/1.0.0/package/package.json written
+213 silly install resolved [ { name: 'resolve',
+213 silly install resolved     description: 'resolve like require.resolve() on behalf of files asynchronously and synchronously',
+213 silly install resolved     version: '0.5.1',
+213 silly install resolved     repository:
+213 silly install resolved      { type: 'git',
+213 silly install resolved        url: 'git://github.com/substack/node-resolve.git' },
+213 silly install resolved     main: 'index.js',
+213 silly install resolved     keywords: [ 'resolve', 'require', 'node', 'module' ],
+213 silly install resolved     scripts: { test: 'tap test/*.js' },
+213 silly install resolved     devDependencies: { tap: '~0.4.0' },
+213 silly install resolved     license: 'MIT',
+213 silly install resolved     author:
+213 silly install resolved      { name: 'James Halliday',
+213 silly install resolved        email: 'mail@substack.net',
+213 silly install resolved        url: 'http://substack.net' },
+213 silly install resolved     bugs: { url: 'https://github.com/substack/node-resolve/issues' },
+213 silly install resolved     _id: 'resolve@0.5.1',
+213 silly install resolved     dist:
+213 silly install resolved      { shasum: '15e4a222c4236bcd4cf85454412c2d0fb6524576',
+213 silly install resolved        tarball: 'http://registry.npmjs.org/resolve/-/resolve-0.5.1.tgz' },
+213 silly install resolved     _from: 'resolve@>=0.5.1 <0.6.0',
+213 silly install resolved     _npmVersion: '1.3.7',
+213 silly install resolved     _npmUser: { name: 'substack', email: 'mail@substack.net' },
+213 silly install resolved     maintainers: [ [Object] ],
+213 silly install resolved     directories: {},
+213 silly install resolved     _shasum: '15e4a222c4236bcd4cf85454412c2d0fb6524576',
+213 silly install resolved     _resolved: 'https://registry.npmjs.org/resolve/-/resolve-0.5.1.tgz',
+213 silly install resolved     readme: 'ERROR: No README data found!',
+213 silly install resolved     homepage: 'https://github.com/substack/node-resolve#readme' },
+213 silly install resolved   { name: 'ms',
+213 silly install resolved     version: '0.6.2',
+213 silly install resolved     description: 'Tiny ms conversion utility',
+213 silly install resolved     repository: { type: 'git', url: 'git://github.com/guille/ms.js.git' },
+213 silly install resolved     main: './index',
+213 silly install resolved     devDependencies: { mocha: '*', 'expect.js': '*', serve: '*' },
+213 silly install resolved     component: { scripts: [Object] },
+213 silly install resolved     bugs: { url: 'https://github.com/guille/ms.js/issues' },
+213 silly install resolved     _id: 'ms@0.6.2',
+213 silly install resolved     dist:
+213 silly install resolved      { shasum: 'd89c2124c6fdc1353d65a8b77bf1aac4b193708c',
+213 silly install resolved        tarball: 'http://registry.npmjs.org/ms/-/ms-0.6.2.tgz' },
+213 silly install resolved     _from: 'ms@>=0.6.0 <0.7.0',
+213 silly install resolved     _npmVersion: '1.2.30',
+213 silly install resolved     _npmUser: { name: 'rauchg', email: 'rauchg@gmail.com' },
+213 silly install resolved     maintainers: [ [Object] ],
+213 silly install resolved     directories: {},
+213 silly install resolved     _shasum: 'd89c2124c6fdc1353d65a8b77bf1aac4b193708c',
+213 silly install resolved     _resolved: 'https://registry.npmjs.org/ms/-/ms-0.6.2.tgz',
+213 silly install resolved     readme: 'ERROR: No README data found!',
+213 silly install resolved     homepage: 'https://github.com/guille/ms.js#readme' },
+213 silly install resolved   { name: 'promise',
+213 silly install resolved     version: '3.2.0',
+213 silly install resolved     description: 'Bare bones Promises/A+ implementation',
+213 silly install resolved     main: 'index.js',
+213 silly install resolved     scripts:
+213 silly install resolved      { test: 'mocha -R spec --timeout 200 --slow 99999',
+213 silly install resolved        'test-resolve': 'mocha test/resolver-tests.js -R spec --timeout 200 --slow 999999',
+213 silly install resolved        'test-extensions': 'mocha test/extensions-tests.js -R spec --timeout 200 --slow 999999' },
+213 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/then/promise.git' },
+213 silly install resolved     author: { name: 'ForbesLindesay' },
+213 silly install resolved     license: 'MIT',
+213 silly install resolved     devDependencies: { 'promises-aplus-tests': '*', 'better-assert': '*', mocha: '*' },
+213 silly install resolved     _id: 'promise@3.2.0',
+213 silly install resolved     dist:
+213 silly install resolved      { shasum: 'b4d0fa281bcd5ca9d6ade556b69dd5947b9abb94',
+213 silly install resolved        tarball: 'http://registry.npmjs.org/promise/-/promise-3.2.0.tgz' },
+213 silly install resolved     _from: 'promise@>=3.2.0 <3.3.0',
+213 silly install resolved     _npmVersion: '1.2.10',
+213 silly install resolved     _npmUser: { name: 'forbeslindesay', email: 'forbes@lindesay.co.uk' },
+213 silly install resolved     maintainers: [ [Object] ],
+213 silly install resolved     directories: {},
+213 silly install resolved     _shasum: 'b4d0fa281bcd5ca9d6ade556b69dd5947b9abb94',
+213 silly install resolved     _resolved: 'https://registry.npmjs.org/promise/-/promise-3.2.0.tgz',
+213 silly install resolved     bugs: { url: 'https://github.com/then/promise/issues' },
+213 silly install resolved     readme: 'ERROR: No README data found!',
+213 silly install resolved     homepage: 'https://github.com/then/promise#readme' },
+213 silly install resolved   { name: 'transformers',
+213 silly install resolved     version: '2.1.0',
+213 silly install resolved     description: 'String/Data transformations for use in templating libraries, static site generators and web frameworks',
+213 silly install resolved     main: 'lib/transformers.js',
+213 silly install resolved     scripts:
+213 silly install resolved      { pretest: 'node test/update-package && npm install',
+213 silly install resolved        test: 'mocha test/test.js -R spec' },
+213 silly install resolved     repository:
+213 silly install resolved      { type: 'git',
+213 silly install resolved        url: 'git+https://github.com/ForbesLindesay/transformers.git' },
+213 silly install resolved     author: { name: 'ForbesLindesay' },
+213 silly install resolved     license: 'MIT',
+213 silly install resolved     gitHead: '4b46e72cba3ad3403fd5ed3802d5472dcfa77311',
+213 silly install resolved     devDependencies:
+213 silly install resolved      { mocha: '~1.8',
+213 silly install resolved        'expect.js': '~0.2',
+213 silly install resolved        swig: '*',
+213 silly install resolved        atpl: '*',
+213 silly install resolved        liquor: '*',
+213 silly install resolved        ejs: '*',
+213 silly install resolved        eco: '*',
+213 silly install resolved        jqtpl: '*',
+213 silly install resolved        hamljs: '*',
+213 silly install resolved        'haml-coffee': '*',
+213 silly install resolved        whiskers: '*',
+213 silly install resolved        'hogan.js': '*',
+213 silly install resolved        handlebars: '*',
+213 silly install resolved        underscore: '*',
+213 silly install resolved        walrus: '*',
+213 silly install resolved        mustache: '*',
+213 silly install resolved        mote: '*',
+213 silly install resolved        toffee: '*',
+213 silly install resolved        just: '*',
+213 silly install resolved        ect: '*',
+213 silly install resolved        jade: '*',
+213 silly install resolved        'then-jade': '*',
+213 silly install resolved        dust: '*',
+213 silly install resolved        'dustjs-linkedin': '*',
+213 silly install resolved        jazz: '*',
+213 silly install resolved        qejs: '*',
+213 silly install resolved        less: '*',
+213 silly install resolved        stylus: '*',
+213 silly install resolved        sass: '*',
+213 silly install resolved        marked: '*',
+213 silly install resolved        supermarked: '*',
+213 silly install resolved        'markdown-js': '*',
+213 silly install resolved        markdown: '*',
+213 silly install resolved        'coffee-script': '*',
+213 silly install resolved        cson: '*',
+213 silly install resolved        coffeekup: '*',
+213 silly install resolved        coffeecup: '*',
+213 silly install resolved        templayed: '*',
+213 silly install resolved        plates: '*',
+213 silly install resolved        dot: '*',
+213 silly install resolved        'component-builder': '*',
+213 silly install resolved        html2jade: '*',
+213 silly install resolved        'highlight.js': '*' },
+213 silly install resolved     dependencies: { promise: '~2.0', css: '~1.0.8', 'uglify-js': '~2.2.5' },
+213 silly install resolved     _id: 'transformers@2.1.0',
+213 silly install resolved     dist:
+213 silly install resolved      { shasum: '5d23cb35561dd85dc67fb8482309b47d53cce9a7',
+213 silly install resolved        tarball: 'http://registry.npmjs.org/transformers/-/transformers-2.1.0.tgz' },
+213 silly install resolved     _from: 'transformers@>=2.1.0 <2.2.0',
+213 silly install resolved     _npmVersion: '1.2.10',
+213 silly install resolved     _npmUser: { name: 'forbeslindesay', email: 'forbes@lindesay.co.uk' },
+213 silly install resolved     maintainers: [ [Object] ],
+213 silly install resolved     directories: {},
+213 silly install resolved     _shasum: '5d23cb35561dd85dc67fb8482309b47d53cce9a7',
+213 silly install resolved     _resolved: 'https://registry.npmjs.org/transformers/-/transformers-2.1.0.tgz',
+213 silly install resolved     bugs: { url: 'https://github.com/ForbesLindesay/transformers/issues' },
+213 silly install resolved     readme: 'ERROR: No README data found!',
+213 silly install resolved     homepage: 'https://github.com/ForbesLindesay/transformers#readme' },
+213 silly install resolved   { name: 'callsite',
+213 silly install resolved     version: '1.0.0',
+213 silly install resolved     description: 'access to v8\'s CallSites',
+213 silly install resolved     keywords: [ 'stack', 'trace', 'line' ],
+213 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+213 silly install resolved     dependencies: {},
+213 silly install resolved     devDependencies: { mocha: '*', should: '*' },
+213 silly install resolved     main: 'index',
+213 silly install resolved     engines: { node: '*' },
+213 silly install resolved     _id: 'callsite@1.0.0',
+213 silly install resolved     dist:
+213 silly install resolved      { shasum: '280398e5d664bd74038b6f0905153e6e8af1bc20',
+213 silly install resolved        tarball: 'http://registry.npmjs.org/callsite/-/callsite-1.0.0.tgz' },
+213 silly install resolved     _from: 'callsite@>=1.0.0 <1.1.0',
+213 silly install resolved     _npmVersion: '1.2.2',
+213 silly install resolved     _npmUser: { name: 'tjholowaychuk', email: 'tj@vision-media.ca' },
+213 silly install resolved     maintainers: [ [Object] ],
+213 silly install resolved     directories: {},
+213 silly install resolved     _shasum: '280398e5d664bd74038b6f0905153e6e8af1bc20',
+213 silly install resolved     _resolved: 'https://registry.npmjs.org/callsite/-/callsite-1.0.0.tgz',
+213 silly install resolved     readme: 'ERROR: No README data found!' } ]
+214 info install resolve@0.5.1 into /var/www/BookApi/node_modules/transform
+215 info install ms@0.6.2 into /var/www/BookApi/node_modules/transform
+216 info install promise@3.2.0 into /var/www/BookApi/node_modules/transform
+217 info install transformers@2.1.0 into /var/www/BookApi/node_modules/transform
+218 info install callsite@1.0.0 into /var/www/BookApi/node_modules/transform
+219 info installOne resolve@0.5.1
+220 verbose installOne of resolve to /var/www/BookApi/node_modules/transform not in flight; installing
+221 info installOne ms@0.6.2
+222 verbose installOne of ms to /var/www/BookApi/node_modules/transform not in flight; installing
+223 info installOne promise@3.2.0
+224 verbose installOne of promise to /var/www/BookApi/node_modules/transform not in flight; installing
+225 info installOne transformers@2.1.0
+226 verbose installOne of transformers to /var/www/BookApi/node_modules/transform not in flight; installing
+227 info installOne callsite@1.0.0
+228 verbose installOne of callsite to /var/www/BookApi/node_modules/transform not in flight; installing
+229 verbose lock using /home/vagrant/.npm/_locks/resolve-b99aa88169b8af00.lock for /var/www/BookApi/node_modules/transform/node_modules/resolve
+230 verbose lock using /home/vagrant/.npm/_locks/ms-0194ab32c2d9acee.lock for /var/www/BookApi/node_modules/transform/node_modules/ms
+231 verbose lock using /home/vagrant/.npm/_locks/promise-6a9b825d97bbc194.lock for /var/www/BookApi/node_modules/transform/node_modules/promise
+232 verbose lock using /home/vagrant/.npm/_locks/callsite-3e20fc0e42985e87.lock for /var/www/BookApi/node_modules/transform/node_modules/callsite
+233 silly install write writing ms 0.6.2 to /var/www/BookApi/node_modules/transform/node_modules/ms
+234 silly install write writing resolve 0.5.1 to /var/www/BookApi/node_modules/transform/node_modules/resolve
+235 silly install write writing callsite 1.0.0 to /var/www/BookApi/node_modules/transform/node_modules/callsite
+236 verbose unbuild node_modules/transform/node_modules/ms
+237 silly install write writing promise 3.2.0 to /var/www/BookApi/node_modules/transform/node_modules/promise
+238 verbose unbuild node_modules/transform/node_modules/resolve
+239 verbose unbuild node_modules/transform/node_modules/callsite
+240 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/ms is being purged from base /var/www/BookApi
+241 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/ms
+242 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/resolve is being purged from base /var/www/BookApi
+243 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/resolve
+244 verbose tar unpack /home/vagrant/.npm/ms/0.6.2/package.tgz
+245 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/ms
+246 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/ms is being purged
+247 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/ms
+248 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/callsite is being purged from base /var/www/BookApi
+249 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/callsite
+250 verbose tar unpack /home/vagrant/.npm/resolve/0.5.1/package.tgz
+251 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/resolve
+252 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/resolve is being purged
+253 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/resolve
+254 silly gunzTarPerm modes [ '755', '644' ]
+255 verbose unbuild node_modules/transform/node_modules/promise
+256 silly gunzTarPerm modes [ '755', '644' ]
+257 verbose tar unpack /home/vagrant/.npm/callsite/1.0.0/package.tgz
+258 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/callsite
+259 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/callsite is being purged
+260 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/callsite
+261 silly gunzTarPerm modes [ '755', '644' ]
+262 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/promise is being purged from base /var/www/BookApi
+263 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/promise
+264 verbose tar unpack /home/vagrant/.npm/promise/3.2.0/package.tgz
+265 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/promise
+266 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/promise is being purged
+267 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/promise
+268 silly gunzTarPerm modes [ '755', '644' ]
+269 silly gunzTarPerm extractEntry package.json
+270 silly gunzTarPerm extractEntry package.json
+271 silly gunzTarPerm extractEntry package.json
+272 silly gunzTarPerm extractEntry .npmignore
+273 silly gunzTarPerm extractEntry README.md
+274 silly gunzTarPerm extractEntry package.json
+275 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+276 silly gunzTarPerm extractEntry LICENSE
+277 silly gunzTarPerm extractEntry index.js
+278 silly gunzTarPerm extractEntry .npmignore
+279 silly gunzTarPerm extractEntry index.js
+280 silly gunzTarPerm extractEntry .npmignore
+281 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+282 silly gunzTarPerm extractEntry LICENSE
+283 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+284 silly gunzTarPerm extractEntry index.js
+285 silly gunzTarPerm extractEntry .travis.yml
+286 silly gunzTarPerm extractEntry example/async.js
+287 silly gunzTarPerm extractEntry History.md
+288 silly gunzTarPerm extractEntry Makefile
+289 silly gunzTarPerm extractEntry core.js
+290 silly gunzTarPerm modified mode [ 'core.js', 438, 420 ]
+291 silly gunzTarPerm extractEntry index.js
+292 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+293 silly gunzTarPerm extractEntry example/sync.js
+294 silly gunzTarPerm extractEntry lib/async.js
+295 silly gunzTarPerm extractEntry Readme.md
+296 silly gunzTarPerm extractEntry lib/next-tick.js
+297 silly gunzTarPerm modified mode [ 'lib/next-tick.js', 438, 420 ]
+298 silly gunzTarPerm extractEntry Readme.md
+299 silly gunzTarPerm modified mode [ 'Readme.md', 438, 420 ]
+300 silly gunzTarPerm extractEntry lib/caller.js
+301 silly gunzTarPerm extractEntry lib/core.js
+302 silly gunzTarPerm extractEntry lib/node-modules-paths.js
+303 silly gunzTarPerm extractEntry lib/sync.js
+304 silly gunzTarPerm extractEntry lib/core.json
+305 silly gunzTarPerm extractEntry readme.markdown
+306 silly gunzTarPerm extractEntry test/core.js
+307 silly gunzTarPerm extractEntry test/filter.js
+308 silly gunzTarPerm extractEntry test/filter_sync.js
+309 silly gunzTarPerm extractEntry test/mock.js
+310 silly gunzTarPerm extractEntry test/mock_sync.js
+311 silly gunzTarPerm extractEntry test/resolver.js
+312 silly gunzTarPerm extractEntry test/resolver_sync.js
+313 silly gunzTarPerm extractEntry test/resolver/foo.js
+314 silly gunzTarPerm extractEntry test/resolver/mug.js
+315 silly gunzTarPerm extractEntry test/resolver/incorrect_main/package.json
+316 silly gunzTarPerm extractEntry test/resolver/incorrect_main/index.js
+317 silly gunzTarPerm extractEntry test/resolver/cup.coffee
+318 silly gunzTarPerm extractEntry test/resolver/bar/node_modules/foo/index.js
+319 silly gunzTarPerm extractEntry test/resolver/baz/package.json
+320 silly gunzTarPerm extractEntry test/resolver/baz/doom.js
+321 silly gunzTarPerm extractEntry test/resolver/baz/quux.js
+322 silly gunzTarPerm extractEntry test/resolver/mug.coffee
+323 silly gunzTarPerm extractEntry test/resolver/biz/node_modules/garply/package.json
+324 silly gunzTarPerm extractEntry test/resolver/biz/node_modules/garply/lib/index.js
+325 silly gunzTarPerm extractEntry test/resolver/biz/node_modules/grux/index.js
+326 silly gunzTarPerm extractEntry test/resolver/biz/node_modules/tiv/index.js
+327 silly gunzTarPerm extractEntry test/resolver/other_path/root.js
+328 silly gunzTarPerm extractEntry test/resolver/other_path/lib/other-lib.js
+329 silly gunzTarPerm extractEntry test/resolver/quux/foo/index.js
+330 silly gunzTarPerm extractEntry test/resolver/without_basedir/main.js
+331 silly gunzTarPerm extractEntry test/resolver/without_basedir/node_modules/mymodule.js
+332 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/ms/package.json
+333 info preinstall ms@0.6.2
+334 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/ms/package.json
+335 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/ms/package.json
+336 silly install resolved []
+337 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/ms
+338 info build /var/www/BookApi/node_modules/transform/node_modules/ms
+339 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/callsite/package.json
+340 info linkStuff ms@0.6.2
+341 silly linkStuff ms@0.6.2 has /var/www/BookApi/node_modules/transform/node_modules as its parent node_modules
+342 info preinstall callsite@1.0.0
+343 verbose linkBins ms@0.6.2
+344 verbose linkMans ms@0.6.2
+345 verbose rebuildBundles ms@0.6.2
+346 info install ms@0.6.2
+347 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/callsite/package.json
+348 info postinstall ms@0.6.2
+349 verbose unlock done using /home/vagrant/.npm/_locks/ms-0194ab32c2d9acee.lock for /var/www/BookApi/node_modules/transform/node_modules/ms
+350 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/callsite/package.json
+351 silly install resolved []
+352 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/callsite
+353 info build /var/www/BookApi/node_modules/transform/node_modules/callsite
+354 info linkStuff callsite@1.0.0
+355 silly linkStuff callsite@1.0.0 has /var/www/BookApi/node_modules/transform/node_modules as its parent node_modules
+356 verbose linkBins callsite@1.0.0
+357 verbose linkMans callsite@1.0.0
+358 verbose rebuildBundles callsite@1.0.0
+359 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/promise/package.json
+360 info install callsite@1.0.0
+361 info postinstall callsite@1.0.0
+362 info preinstall promise@3.2.0
+363 verbose unlock done using /home/vagrant/.npm/_locks/callsite-3e20fc0e42985e87.lock for /var/www/BookApi/node_modules/transform/node_modules/callsite
+364 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/promise/package.json
+365 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/promise/package.json
+366 silly install resolved []
+367 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/promise
+368 info build /var/www/BookApi/node_modules/transform/node_modules/promise
+369 info linkStuff promise@3.2.0
+370 silly linkStuff promise@3.2.0 has /var/www/BookApi/node_modules/transform/node_modules as its parent node_modules
+371 verbose linkBins promise@3.2.0
+372 verbose linkMans promise@3.2.0
+373 verbose rebuildBundles promise@3.2.0
+374 info install promise@3.2.0
+375 info postinstall promise@3.2.0
+376 verbose unlock done using /home/vagrant/.npm/_locks/promise-6a9b825d97bbc194.lock for /var/www/BookApi/node_modules/transform/node_modules/promise
+377 verbose lock using /home/vagrant/.npm/_locks/transformers-fcb9c66c3365dd9f.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers
+378 silly install write writing transformers 2.1.0 to /var/www/BookApi/node_modules/transform/node_modules/transformers
+379 verbose unbuild node_modules/transform/node_modules/transformers
+380 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers is being purged from base /var/www/BookApi
+381 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers
+382 verbose tar unpack /home/vagrant/.npm/transformers/2.1.0/package.tgz
+383 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers
+384 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers is being purged
+385 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers
+386 silly gunzTarPerm modes [ '755', '644' ]
+387 silly gunzTarPerm extractEntry package.json
+388 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+389 silly gunzTarPerm extractEntry .npmignore
+390 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+391 silly gunzTarPerm extractEntry README.md
+392 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+393 silly gunzTarPerm extractEntry history.md
+394 silly gunzTarPerm modified mode [ 'history.md', 438, 420 ]
+395 silly gunzTarPerm extractEntry lib/shared.js
+396 silly gunzTarPerm modified mode [ 'lib/shared.js', 438, 420 ]
+397 silly gunzTarPerm extractEntry lib/transformers.js
+398 silly gunzTarPerm modified mode [ 'lib/transformers.js', 438, 420 ]
+399 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/package.json
+400 info preinstall transformers@2.1.0
+401 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/package.json
+402 silly prepareForInstallMany adding promise@~2.0 from transformers dependencies
+403 silly prepareForInstallMany adding css@~1.0.8 from transformers dependencies
+404 silly prepareForInstallMany adding uglify-js@~2.2.5 from transformers dependencies
+405 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/package.json
+406 silly cache add args [ 'promise@~2.0', null ]
+407 verbose cache add spec promise@~2.0
+408 silly cache add args [ 'css@~1.0.8', null ]
+409 verbose cache add spec css@~1.0.8
+410 silly cache add parsed spec { raw: 'promise@~2.0',
+410 silly cache add   scope: null,
+410 silly cache add   name: 'promise',
+410 silly cache add   rawSpec: '~2.0',
+410 silly cache add   spec: '>=2.0.0 <2.1.0',
+410 silly cache add   type: 'range' }
+411 silly addNamed promise@>=2.0.0 <2.1.0
+412 verbose addNamed ">=2.0.0 <2.1.0" is a valid semver range for promise
+413 silly addNameRange { name: 'promise', range: '>=2.0.0 <2.1.0', hasData: false }
+414 silly mapToRegistry name promise
+415 silly mapToRegistry using default registry
+416 silly mapToRegistry registry https://registry.npmjs.org/
+417 silly mapToRegistry uri https://registry.npmjs.org/promise
+418 verbose addNameRange registry:https://registry.npmjs.org/promise not in flight; fetching
+419 silly cache add parsed spec { raw: 'css@~1.0.8',
+419 silly cache add   scope: null,
+419 silly cache add   name: 'css',
+419 silly cache add   rawSpec: '~1.0.8',
+419 silly cache add   spec: '>=1.0.8 <1.1.0',
+419 silly cache add   type: 'range' }
+420 silly addNamed css@>=1.0.8 <1.1.0
+421 verbose addNamed ">=1.0.8 <1.1.0" is a valid semver range for css
+422 silly addNameRange { name: 'css', range: '>=1.0.8 <1.1.0', hasData: false }
+423 silly mapToRegistry name css
+424 silly mapToRegistry using default registry
+425 silly mapToRegistry registry https://registry.npmjs.org/
+426 silly mapToRegistry uri https://registry.npmjs.org/css
+427 verbose addNameRange registry:https://registry.npmjs.org/css not in flight; fetching
+428 silly cache add args [ 'uglify-js@~2.2.5', null ]
+429 verbose cache add spec uglify-js@~2.2.5
+430 silly cache add parsed spec { raw: 'uglify-js@~2.2.5',
+430 silly cache add   scope: null,
+430 silly cache add   name: 'uglify-js',
+430 silly cache add   rawSpec: '~2.2.5',
+430 silly cache add   spec: '>=2.2.5 <2.3.0',
+430 silly cache add   type: 'range' }
+431 silly addNamed uglify-js@>=2.2.5 <2.3.0
+432 verbose addNamed ">=2.2.5 <2.3.0" is a valid semver range for uglify-js
+433 silly addNameRange { name: 'uglify-js', range: '>=2.2.5 <2.3.0', hasData: false }
+434 silly mapToRegistry name uglify-js
+435 silly mapToRegistry using default registry
+436 silly mapToRegistry registry https://registry.npmjs.org/
+437 silly mapToRegistry uri https://registry.npmjs.org/uglify-js
+438 verbose addNameRange registry:https://registry.npmjs.org/uglify-js not in flight; fetching
+439 verbose get https://registry.npmjs.org/promise not expired, no request
+440 silly addNameRange number 2 { name: 'promise', range: '>=2.0.0 <2.1.0', hasData: true }
+441 silly addNameRange versions [ 'promise',
+441 silly addNameRange   [ '1.2.1',
+441 silly addNameRange     '1.2.2',
+441 silly addNameRange     '1.3.0',
+441 silly addNameRange     '2.0.0',
+441 silly addNameRange     '3.0.0',
+441 silly addNameRange     '3.0.1',
+441 silly addNameRange     '3.1.0',
+441 silly addNameRange     '3.2.0',
+441 silly addNameRange     '4.0.0',
+441 silly addNameRange     '5.0.0',
+441 silly addNameRange     '6.0.0',
+441 silly addNameRange     '6.0.1',
+441 silly addNameRange     '6.1.0',
+441 silly addNameRange     '7.0.0',
+441 silly addNameRange     '7.0.1',
+441 silly addNameRange     '7.0.2',
+441 silly addNameRange     '7.0.3' ] ]
+442 silly addNamed promise@2.0.0
+443 verbose addNamed "2.0.0" is a plain semver version for promise
+444 verbose request uri https://registry.npmjs.org/css
+445 verbose request no auth needed
+446 info attempt registry request try #1 at 1:38:59 PM
+447 verbose etag "4O33X5W8MEDSVU33629E5GWA9"
+448 http request GET https://registry.npmjs.org/css
+449 verbose request uri https://registry.npmjs.org/uglify-js
+450 verbose request no auth needed
+451 info attempt registry request try #1 at 1:38:59 PM
+452 verbose etag "C9BXHCW8QOGFMX9P8CER067V4"
+453 http request GET https://registry.npmjs.org/uglify-js
+454 silly cache afterAdd promise@2.0.0
+455 verbose afterAdd /home/vagrant/.npm/promise/2.0.0/package/package.json not in flight; writing
+456 verbose afterAdd /home/vagrant/.npm/promise/2.0.0/package/package.json written
+457 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/resolve/package.json
+458 info preinstall resolve@0.5.1
+459 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/resolve/package.json
+460 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/resolve/package.json
+461 silly install resolved []
+462 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/resolve
+463 info build /var/www/BookApi/node_modules/transform/node_modules/resolve
+464 info linkStuff resolve@0.5.1
+465 silly linkStuff resolve@0.5.1 has /var/www/BookApi/node_modules/transform/node_modules as its parent node_modules
+466 verbose linkBins resolve@0.5.1
+467 verbose linkMans resolve@0.5.1
+468 verbose rebuildBundles resolve@0.5.1
+469 info install resolve@0.5.1
+470 info postinstall resolve@0.5.1
+471 verbose unlock done using /home/vagrant/.npm/_locks/resolve-b99aa88169b8af00.lock for /var/www/BookApi/node_modules/transform/node_modules/resolve
+472 http 304 https://registry.npmjs.org/uglify-js
+473 silly get cb [ 304,
+473 silly get   { date: 'Sat, 27 Jun 2015 13:38:59 GMT',
+473 silly get     via: '1.1 varnish',
+473 silly get     'cache-control': 'max-age=60',
+473 silly get     etag: '"C9BXHCW8QOGFMX9P8CER067V4"',
+473 silly get     age: '2',
+473 silly get     connection: 'keep-alive',
+473 silly get     'x-served-by': 'cache-fra1231-FRA',
+473 silly get     'x-cache': 'HIT',
+473 silly get     'x-cache-hits': '1',
+473 silly get     'x-timer': 'S1435412339.336031,VS0,VE0',
+473 silly get     vary: 'Accept' } ]
+474 verbose etag https://registry.npmjs.org/uglify-js from cache
+475 verbose get saving uglify-js to /home/vagrant/.npm/registry.npmjs.org/uglify-js/.cache.json
+476 http 304 https://registry.npmjs.org/css
+477 silly get cb [ 304,
+477 silly get   { date: 'Sat, 27 Jun 2015 13:38:59 GMT',
+477 silly get     via: '1.1 varnish',
+477 silly get     'cache-control': 'max-age=60',
+477 silly get     etag: '"4O33X5W8MEDSVU33629E5GWA9"',
+477 silly get     age: '42',
+477 silly get     connection: 'keep-alive',
+477 silly get     'x-served-by': 'cache-fra1247-FRA',
+477 silly get     'x-cache': 'HIT',
+477 silly get     'x-cache-hits': '1',
+477 silly get     'x-timer': 'S1435412339.341797,VS0,VE0',
+477 silly get     vary: 'Accept' } ]
+478 verbose etag https://registry.npmjs.org/css from cache
+479 verbose get saving css to /home/vagrant/.npm/registry.npmjs.org/css/.cache.json
+480 silly addNameRange number 2 { name: 'uglify-js', range: '>=2.2.5 <2.3.0', hasData: true }
+481 silly addNameRange versions [ 'uglify-js',
+481 silly addNameRange   [ '0.0.1',
+481 silly addNameRange     '0.0.2',
+481 silly addNameRange     '0.0.3',
+481 silly addNameRange     '0.0.4',
+481 silly addNameRange     '0.0.5',
+481 silly addNameRange     '1.0.1',
+481 silly addNameRange     '1.0.2',
+481 silly addNameRange     '1.0.3',
+481 silly addNameRange     '1.0.4',
+481 silly addNameRange     '1.0.5',
+481 silly addNameRange     '1.0.6',
+481 silly addNameRange     '1.0.7',
+481 silly addNameRange     '1.1.0',
+481 silly addNameRange     '1.1.1',
+481 silly addNameRange     '1.2.0',
+481 silly addNameRange     '1.2.1',
+481 silly addNameRange     '1.2.2',
+481 silly addNameRange     '1.2.3',
+481 silly addNameRange     '1.2.4',
+481 silly addNameRange     '1.2.5',
+481 silly addNameRange     '1.2.6',
+481 silly addNameRange     '1.3.0',
+481 silly addNameRange     '1.3.1',
+481 silly addNameRange     '1.3.2',
+481 silly addNameRange     '1.3.3',
+481 silly addNameRange     '1.3.4',
+481 silly addNameRange     '2.2.0',
+481 silly addNameRange     '2.2.1',
+481 silly addNameRange     '2.2.2',
+481 silly addNameRange     '2.2.3',
+481 silly addNameRange     '2.2.4',
+481 silly addNameRange     '2.2.5',
+481 silly addNameRange     '2.3.0',
+481 silly addNameRange     '2.3.1',
+481 silly addNameRange     '2.3.2',
+481 silly addNameRange     '2.3.3',
+481 silly addNameRange     '2.3.4',
+481 silly addNameRange     '2.3.5',
+481 silly addNameRange     '2.3.6',
+481 silly addNameRange     '1.3.5',
+481 silly addNameRange     '2.4.0',
+481 silly addNameRange     '2.4.1',
+481 silly addNameRange     '2.4.2',
+481 silly addNameRange     '2.4.3',
+481 silly addNameRange     '2.4.4',
+481 silly addNameRange     '2.4.5',
+481 silly addNameRange     '2.4.6',
+481 silly addNameRange     '2.4.7',
+481 silly addNameRange     '2.4.8',
+481 silly addNameRange     '2.4.9',
+481 silly addNameRange     '2.4.10',
+481 silly addNameRange     '2.4.11',
+481 silly addNameRange     '2.4.12',
+481 silly addNameRange     '2.4.13',
+481 silly addNameRange     '2.4.14',
+481 silly addNameRange     '2.4.15',
+481 silly addNameRange     '2.4.16',
+481 silly addNameRange     '2.4.17',
+481 silly addNameRange     '2.4.18',
+481 silly addNameRange     '2.4.19',
+481 silly addNameRange     '2.4.20',
+481 silly addNameRange     '2.4.21',
+481 silly addNameRange     '2.4.22',
+481 silly addNameRange     '2.4.23' ] ]
+482 silly addNamed uglify-js@2.2.5
+483 verbose addNamed "2.2.5" is a plain semver version for uglify-js
+484 silly addNameRange number 2 { name: 'css', range: '>=1.0.8 <1.1.0', hasData: true }
+485 silly addNameRange versions [ 'css',
+485 silly addNameRange   [ '1.0.0',
+485 silly addNameRange     '1.0.1',
+485 silly addNameRange     '1.0.2',
+485 silly addNameRange     '1.0.3',
+485 silly addNameRange     '1.0.4',
+485 silly addNameRange     '1.0.5',
+485 silly addNameRange     '1.0.6',
+485 silly addNameRange     '1.0.7',
+485 silly addNameRange     '1.0.8',
+485 silly addNameRange     '1.1.0',
+485 silly addNameRange     '1.2.0',
+485 silly addNameRange     '1.3.0',
+485 silly addNameRange     '1.3.1',
+485 silly addNameRange     '1.4.0',
+485 silly addNameRange     '1.4.1',
+485 silly addNameRange     '1.4.2',
+485 silly addNameRange     '1.4.3',
+485 silly addNameRange     '1.4.4',
+485 silly addNameRange     '1.6.0',
+485 silly addNameRange     '2.0.0',
+485 silly addNameRange     '2.1.0',
+485 silly addNameRange     '2.2.0',
+485 silly addNameRange     '2.2.1' ] ]
+486 silly addNamed css@1.0.8
+487 verbose addNamed "1.0.8" is a plain semver version for css
+488 silly cache afterAdd uglify-js@2.2.5
+489 verbose afterAdd /home/vagrant/.npm/uglify-js/2.2.5/package/package.json not in flight; writing
+490 verbose afterAdd /home/vagrant/.npm/uglify-js/2.2.5/package/package.json written
+491 silly cache afterAdd css@1.0.8
+492 verbose afterAdd /home/vagrant/.npm/css/1.0.8/package/package.json not in flight; writing
+493 verbose afterAdd /home/vagrant/.npm/css/1.0.8/package/package.json written
+494 silly install resolved [ { name: 'promise',
+494 silly install resolved     version: '2.0.0',
+494 silly install resolved     description: 'Bare bones Promises/A+ implementation',
+494 silly install resolved     main: 'index.js',
+494 silly install resolved     scripts: { test: 'mocha -R spec --timeout 200 --slow 99999' },
+494 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/then/promise.git' },
+494 silly install resolved     author: { name: 'ForbesLindesay' },
+494 silly install resolved     license: 'MIT',
+494 silly install resolved     dependencies: { 'is-promise': '~1' },
+494 silly install resolved     devDependencies:
+494 silly install resolved      { 'promises-aplus-tests': '*',
+494 silly install resolved        'mocha-as-promised': '~1.2.1',
+494 silly install resolved        'better-assert': '~1.0.0' },
+494 silly install resolved     _id: 'promise@2.0.0',
+494 silly install resolved     dist:
+494 silly install resolved      { shasum: '46648aa9d605af5d2e70c3024bf59436da02b80e',
+494 silly install resolved        tarball: 'http://registry.npmjs.org/promise/-/promise-2.0.0.tgz' },
+494 silly install resolved     _from: 'promise@>=2.0.0 <2.1.0',
+494 silly install resolved     _npmVersion: '1.2.10',
+494 silly install resolved     _npmUser: { name: 'forbeslindesay', email: 'forbes@lindesay.co.uk' },
+494 silly install resolved     maintainers: [ [Object] ],
+494 silly install resolved     directories: {},
+494 silly install resolved     _shasum: '46648aa9d605af5d2e70c3024bf59436da02b80e',
+494 silly install resolved     _resolved: 'https://registry.npmjs.org/promise/-/promise-2.0.0.tgz',
+494 silly install resolved     bugs: { url: 'https://github.com/then/promise/issues' },
+494 silly install resolved     readme: 'ERROR: No README data found!',
+494 silly install resolved     homepage: 'https://github.com/then/promise#readme' },
+494 silly install resolved   { name: 'uglify-js',
+494 silly install resolved     description: 'JavaScript parser, mangler/compressor and beautifier toolkit',
+494 silly install resolved     homepage: 'http://lisperator.net/uglifyjs',
+494 silly install resolved     main: 'tools/node.js',
+494 silly install resolved     version: '2.2.5',
+494 silly install resolved     engines: { node: '>=0.4.0' },
+494 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+494 silly install resolved     repositories: [ [Object] ],
+494 silly install resolved     dependencies: { 'source-map': '~0.1.7', optimist: '~0.3.5' },
+494 silly install resolved     bin: { uglifyjs: 'bin/uglifyjs' },
+494 silly install resolved     scripts: { test: 'node test/run-tests.js' },
+494 silly install resolved     _id: 'uglify-js@2.2.5',
+494 silly install resolved     dist:
+494 silly install resolved      { shasum: 'a6e02a70d839792b9780488b7b8b184c095c99c7',
+494 silly install resolved        tarball: 'http://registry.npmjs.org/uglify-js/-/uglify-js-2.2.5.tgz' },
+494 silly install resolved     _npmVersion: '1.1.66',
+494 silly install resolved     _npmUser: { name: 'mishoo', email: 'mihai.bazon@gmail.com' },
+494 silly install resolved     directories: {},
+494 silly install resolved     _shasum: 'a6e02a70d839792b9780488b7b8b184c095c99c7',
+494 silly install resolved     _resolved: 'https://registry.npmjs.org/uglify-js/-/uglify-js-2.2.5.tgz',
+494 silly install resolved     _from: 'uglify-js@>=2.2.5 <2.3.0',
+494 silly install resolved     repository:
+494 silly install resolved      { type: 'git',
+494 silly install resolved        url: 'git+https://github.com/mishoo/UglifyJS2.git' },
+494 silly install resolved     bugs: { url: 'https://github.com/mishoo/UglifyJS2/issues' },
+494 silly install resolved     readme: 'ERROR: No README data found!' },
+494 silly install resolved   { name: 'css',
+494 silly install resolved     version: '1.0.8',
+494 silly install resolved     description: 'CSS parser / stringifier using css-parse and css-stringify',
+494 silly install resolved     keywords: [ 'css', 'parser', 'stylesheet' ],
+494 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+494 silly install resolved     dependencies: { 'css-parse': '1.0.4', 'css-stringify': '1.0.5' },
+494 silly install resolved     main: 'index',
+494 silly install resolved     _id: 'css@1.0.8',
+494 silly install resolved     dist:
+494 silly install resolved      { shasum: '9386811ca82bccc9ee7fb5a732b1e2a317c8a3e7',
+494 silly install resolved        tarball: 'http://registry.npmjs.org/css/-/css-1.0.8.tgz' },
+494 silly install resolved     _from: 'css@>=1.0.8 <1.1.0',
+494 silly install resolved     _npmVersion: '1.2.14',
+494 silly install resolved     _npmUser: { name: 'tjholowaychuk', email: 'tj@vision-media.ca' },
+494 silly install resolved     maintainers: [ [Object] ],
+494 silly install resolved     directories: {},
+494 silly install resolved     _shasum: '9386811ca82bccc9ee7fb5a732b1e2a317c8a3e7',
+494 silly install resolved     _resolved: 'https://registry.npmjs.org/css/-/css-1.0.8.tgz',
+494 silly install resolved     readme: 'ERROR: No README data found!' } ]
+495 info install promise@2.0.0 into /var/www/BookApi/node_modules/transform/node_modules/transformers
+496 info install uglify-js@2.2.5 into /var/www/BookApi/node_modules/transform/node_modules/transformers
+497 info install css@1.0.8 into /var/www/BookApi/node_modules/transform/node_modules/transformers
+498 info installOne promise@2.0.0
+499 verbose installOne of promise to /var/www/BookApi/node_modules/transform/node_modules/transformers not in flight; installing
+500 info installOne uglify-js@2.2.5
+501 verbose installOne of uglify-js to /var/www/BookApi/node_modules/transform/node_modules/transformers not in flight; installing
+502 info installOne css@1.0.8
+503 verbose installOne of css to /var/www/BookApi/node_modules/transform/node_modules/transformers not in flight; installing
+504 verbose lock using /home/vagrant/.npm/_locks/promise-dbb636009400eb53.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+505 verbose lock using /home/vagrant/.npm/_locks/uglify-js-1fec3f5825d1c834.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+506 verbose lock using /home/vagrant/.npm/_locks/css-ed5821b8581f2962.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+507 silly install write writing uglify-js 2.2.5 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+508 silly install write writing promise 2.0.0 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+509 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/promise
+510 silly install write writing css 1.0.8 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+511 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/uglify-js
+512 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise is being purged from base /var/www/BookApi
+513 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+514 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js is being purged from base /var/www/BookApi
+515 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+516 verbose tar unpack /home/vagrant/.npm/promise/2.0.0/package.tgz
+517 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+518 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise is being purged
+519 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+520 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/css
+521 verbose tar unpack /home/vagrant/.npm/uglify-js/2.2.5/package.tgz
+522 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+523 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js is being purged
+524 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+525 silly gunzTarPerm modes [ '755', '644' ]
+526 silly gunzTarPerm modes [ '755', '644' ]
+527 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css is being purged from base /var/www/BookApi
+528 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+529 verbose tar unpack /home/vagrant/.npm/css/1.0.8/package.tgz
+530 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+531 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css is being purged
+532 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+533 silly gunzTarPerm modes [ '755', '644' ]
+534 silly gunzTarPerm extractEntry package.json
+535 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+536 silly gunzTarPerm extractEntry package.json
+537 silly gunzTarPerm extractEntry package.json
+538 silly gunzTarPerm extractEntry .npmignore
+539 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+540 silly gunzTarPerm extractEntry index.js
+541 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+542 silly gunzTarPerm extractEntry .npmignore
+543 silly gunzTarPerm extractEntry README.md
+544 silly gunzTarPerm extractEntry .npmignore
+545 silly gunzTarPerm extractEntry benchmark.js
+546 silly gunzTarPerm extractEntry Readme.md
+547 silly gunzTarPerm modified mode [ 'Readme.md', 438, 420 ]
+548 silly gunzTarPerm extractEntry bin/uglifyjs
+549 silly gunzTarPerm extractEntry index.js
+550 silly gunzTarPerm extractEntry test.js
+551 silly gunzTarPerm extractEntry tools/node.js
+552 silly gunzTarPerm extractEntry test/run-tests.js
+553 silly gunzTarPerm extractEntry test/compress/issue-12.js
+554 silly gunzTarPerm extractEntry component.json
+555 silly gunzTarPerm extractEntry History.md
+556 silly gunzTarPerm extractEntry Makefile
+557 silly gunzTarPerm extractEntry Readme.md
+558 silly gunzTarPerm extractEntry test/compress/labels.js
+559 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/package.json
+560 silly gunzTarPerm extractEntry test/compress/properties.js
+561 silly gunzTarPerm extractEntry test/compress/debugger.js
+562 info preinstall promise@2.0.0
+563 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/package.json
+564 silly prepareForInstallMany adding is-promise@~1 from promise dependencies
+565 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/package.json
+566 silly cache add args [ 'is-promise@~1', null ]
+567 verbose cache add spec is-promise@~1
+568 silly cache add parsed spec { raw: 'is-promise@~1',
+568 silly cache add   scope: null,
+568 silly cache add   name: 'is-promise',
+568 silly cache add   rawSpec: '~1',
+568 silly cache add   spec: '>=1.0.0 <2.0.0',
+568 silly cache add   type: 'range' }
+569 silly addNamed is-promise@>=1.0.0 <2.0.0
+570 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for is-promise
+571 silly addNameRange { name: 'is-promise', range: '>=1.0.0 <2.0.0', hasData: false }
+572 silly mapToRegistry name is-promise
+573 silly mapToRegistry using default registry
+574 silly mapToRegistry registry https://registry.npmjs.org/
+575 silly mapToRegistry uri https://registry.npmjs.org/is-promise
+576 verbose addNameRange registry:https://registry.npmjs.org/is-promise not in flight; fetching
+577 verbose request uri https://registry.npmjs.org/is-promise
+578 verbose request no auth needed
+579 info attempt registry request try #1 at 1:38:59 PM
+580 verbose etag "9OMA8RAADWFTZBDI1U4C2EJ37"
+581 http request GET https://registry.npmjs.org/is-promise
+582 silly gunzTarPerm extractEntry test/compress/drop-unused.js
+583 silly gunzTarPerm extractEntry test/compress/arrays.js
+584 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/package.json
+585 silly gunzTarPerm extractEntry test/compress/blocks.js
+586 silly gunzTarPerm extractEntry test/compress/loops.js
+587 info preinstall css@1.0.8
+588 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/package.json
+589 silly prepareForInstallMany adding css-parse@1.0.4 from css dependencies
+590 silly prepareForInstallMany adding css-stringify@1.0.5 from css dependencies
+591 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/package.json
+592 silly gunzTarPerm extractEntry test/compress/switch.js
+593 silly gunzTarPerm extractEntry test/compress/dead-code.js
+594 silly cache add args [ 'css-parse@1.0.4', null ]
+595 verbose cache add spec css-parse@1.0.4
+596 silly cache add args [ 'css-stringify@1.0.5', null ]
+597 verbose cache add spec css-stringify@1.0.5
+598 silly cache add parsed spec { raw: 'css-parse@1.0.4',
+598 silly cache add   scope: null,
+598 silly cache add   name: 'css-parse',
+598 silly cache add   rawSpec: '1.0.4',
+598 silly cache add   spec: '1.0.4',
+598 silly cache add   type: 'version' }
+599 silly addNamed css-parse@1.0.4
+600 verbose addNamed "1.0.4" is a plain semver version for css-parse
+601 silly mapToRegistry name css-parse
+602 silly mapToRegistry using default registry
+603 silly mapToRegistry registry https://registry.npmjs.org/
+604 silly mapToRegistry uri https://registry.npmjs.org/css-parse
+605 verbose addNameVersion registry:https://registry.npmjs.org/css-parse not in flight; fetching
+606 silly cache add parsed spec { raw: 'css-stringify@1.0.5',
+606 silly cache add   scope: null,
+606 silly cache add   name: 'css-stringify',
+606 silly cache add   rawSpec: '1.0.5',
+606 silly cache add   spec: '1.0.5',
+606 silly cache add   type: 'version' }
+607 silly addNamed css-stringify@1.0.5
+608 verbose addNamed "1.0.5" is a plain semver version for css-stringify
+609 silly mapToRegistry name css-stringify
+610 silly mapToRegistry using default registry
+611 silly mapToRegistry registry https://registry.npmjs.org/
+612 silly mapToRegistry uri https://registry.npmjs.org/css-stringify
+613 verbose addNameVersion registry:https://registry.npmjs.org/css-stringify not in flight; fetching
+614 verbose request uri https://registry.npmjs.org/css-parse
+615 verbose request no auth needed
+616 info attempt registry request try #1 at 1:38:59 PM
+617 verbose etag "9ZPL2OJA42WZA6PBI6K9NXCM6"
+618 http request GET https://registry.npmjs.org/css-parse
+619 verbose request uri https://registry.npmjs.org/css-stringify
+620 verbose request no auth needed
+621 info attempt registry request try #1 at 1:38:59 PM
+622 verbose etag "7F35YA3VL3XK5APYKP7UVEXNU"
+623 http request GET https://registry.npmjs.org/css-stringify
+624 silly gunzTarPerm extractEntry test/compress/sequences.js
+625 silly gunzTarPerm extractEntry test/compress/issue-22.js
+626 silly gunzTarPerm extractEntry test/compress/conditionals.js
+627 silly gunzTarPerm extractEntry test/compress/issue-59.js
+628 silly gunzTarPerm extractEntry test/compress/issue-105.js
+629 silly gunzTarPerm extractEntry test/compress/issue-44.js
+630 silly gunzTarPerm extractEntry lib/output.js
+631 silly gunzTarPerm extractEntry lib/parse.js
+632 silly gunzTarPerm extractEntry lib/scope.js
+633 silly gunzTarPerm extractEntry lib/transform.js
+634 silly gunzTarPerm extractEntry lib/compress.js
+635 silly gunzTarPerm extractEntry lib/mozilla-ast.js
+636 silly gunzTarPerm extractEntry lib/ast.js
+637 silly gunzTarPerm extractEntry lib/sourcemap.js
+638 silly gunzTarPerm extractEntry lib/utils.js
+639 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/package.json
+640 info preinstall uglify-js@2.2.5
+641 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/package.json
+642 silly prepareForInstallMany adding source-map@~0.1.7 from uglify-js dependencies
+643 silly prepareForInstallMany adding optimist@~0.3.5 from uglify-js dependencies
+644 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/package.json
+645 silly cache add args [ 'source-map@~0.1.7', null ]
+646 verbose cache add spec source-map@~0.1.7
+647 silly cache add args [ 'optimist@~0.3.5', null ]
+648 verbose cache add spec optimist@~0.3.5
+649 silly cache add parsed spec { raw: 'source-map@~0.1.7',
+649 silly cache add   scope: null,
+649 silly cache add   name: 'source-map',
+649 silly cache add   rawSpec: '~0.1.7',
+649 silly cache add   spec: '>=0.1.7 <0.2.0',
+649 silly cache add   type: 'range' }
+650 silly addNamed source-map@>=0.1.7 <0.2.0
+651 verbose addNamed ">=0.1.7 <0.2.0" is a valid semver range for source-map
+652 silly addNameRange { name: 'source-map', range: '>=0.1.7 <0.2.0', hasData: false }
+653 silly mapToRegistry name source-map
+654 silly mapToRegistry using default registry
+655 silly mapToRegistry registry https://registry.npmjs.org/
+656 silly mapToRegistry uri https://registry.npmjs.org/source-map
+657 verbose addNameRange registry:https://registry.npmjs.org/source-map not in flight; fetching
+658 silly cache add parsed spec { raw: 'optimist@~0.3.5',
+658 silly cache add   scope: null,
+658 silly cache add   name: 'optimist',
+658 silly cache add   rawSpec: '~0.3.5',
+658 silly cache add   spec: '>=0.3.5 <0.4.0',
+658 silly cache add   type: 'range' }
+659 silly addNamed optimist@>=0.3.5 <0.4.0
+660 verbose addNamed ">=0.3.5 <0.4.0" is a valid semver range for optimist
+661 silly addNameRange { name: 'optimist', range: '>=0.3.5 <0.4.0', hasData: false }
+662 silly mapToRegistry name optimist
+663 silly mapToRegistry using default registry
+664 silly mapToRegistry registry https://registry.npmjs.org/
+665 silly mapToRegistry uri https://registry.npmjs.org/optimist
+666 verbose addNameRange registry:https://registry.npmjs.org/optimist not in flight; fetching
+667 verbose request uri https://registry.npmjs.org/optimist
+668 verbose request no auth needed
+669 info attempt registry request try #1 at 1:38:59 PM
+670 verbose etag "A8T22G2NKW7BNN2VBLXJ3SP7H"
+671 http request GET https://registry.npmjs.org/optimist
+672 verbose request uri https://registry.npmjs.org/source-map
+673 verbose request no auth needed
+674 info attempt registry request try #1 at 1:38:59 PM
+675 verbose etag "BGLUL5IDZT0PJ3FIRURDG4DEE"
+676 http request GET https://registry.npmjs.org/source-map
+677 http 304 https://registry.npmjs.org/is-promise
+678 silly get cb [ 304,
+678 silly get   { date: 'Sat, 27 Jun 2015 13:38:59 GMT',
+678 silly get     via: '1.1 varnish',
+678 silly get     'cache-control': 'max-age=60',
+678 silly get     etag: '"9OMA8RAADWFTZBDI1U4C2EJ37"',
+678 silly get     age: '40',
+678 silly get     connection: 'keep-alive',
+678 silly get     'x-served-by': 'cache-fra1224-FRA',
+678 silly get     'x-cache': 'HIT',
+678 silly get     'x-cache-hits': '1',
+678 silly get     'x-timer': 'S1435412339.840233,VS0,VE0',
+678 silly get     vary: 'Accept' } ]
+679 verbose etag https://registry.npmjs.org/is-promise from cache
+680 verbose get saving is-promise to /home/vagrant/.npm/registry.npmjs.org/is-promise/.cache.json
+681 silly addNameRange number 2 { name: 'is-promise', range: '>=1.0.0 <2.0.0', hasData: true }
+682 silly addNameRange versions [ 'is-promise', [ '1.0.0', '1.0.1', '2.0.0' ] ]
+683 silly addNamed is-promise@1.0.1
+684 verbose addNamed "1.0.1" is a plain semver version for is-promise
+685 silly cache afterAdd is-promise@1.0.1
+686 verbose afterAdd /home/vagrant/.npm/is-promise/1.0.1/package/package.json not in flight; writing
+687 verbose afterAdd /home/vagrant/.npm/is-promise/1.0.1/package/package.json written
+688 silly install resolved [ { name: 'is-promise',
+688 silly install resolved     version: '1.0.1',
+688 silly install resolved     description: 'Test whether an object looks like a promises-a+ promise',
+688 silly install resolved     main: 'index.js',
+688 silly install resolved     scripts: { test: 'mocha -R spec' },
+688 silly install resolved     repository:
+688 silly install resolved      { type: 'git',
+688 silly install resolved        url: 'git+https://github.com/then/is-promise.git' },
+688 silly install resolved     author: { name: 'ForbesLindesay' },
+688 silly install resolved     license: 'MIT',
+688 silly install resolved     devDependencies: { 'better-assert': '~0.1.0', mocha: '~1.7.4' },
+688 silly install resolved     bugs: { url: 'https://github.com/then/is-promise/issues' },
+688 silly install resolved     homepage: 'https://github.com/then/is-promise',
+688 silly install resolved     _id: 'is-promise@1.0.1',
+688 silly install resolved     dist:
+688 silly install resolved      { shasum: '31573761c057e33c2e91aab9e96da08cefbe76e5',
+688 silly install resolved        tarball: 'http://registry.npmjs.org/is-promise/-/is-promise-1.0.1.tgz' },
+688 silly install resolved     _from: 'is-promise@>=1.0.0 <2.0.0',
+688 silly install resolved     _npmVersion: '1.4.3',
+688 silly install resolved     _npmUser: { name: 'forbeslindesay', email: 'forbes@lindeay.co.uk' },
+688 silly install resolved     maintainers: [ [Object] ],
+688 silly install resolved     directories: {},
+688 silly install resolved     _shasum: '31573761c057e33c2e91aab9e96da08cefbe76e5',
+688 silly install resolved     _resolved: 'https://registry.npmjs.org/is-promise/-/is-promise-1.0.1.tgz',
+688 silly install resolved     readme: 'ERROR: No README data found!' } ]
+689 info install is-promise@1.0.1 into /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+690 info installOne is-promise@1.0.1
+691 verbose installOne of is-promise to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise not in flight; installing
+692 verbose lock using /home/vagrant/.npm/_locks/is-promise-7e697c8aa3b1e97c.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+693 silly install write writing is-promise 1.0.1 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+694 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+695 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise is being purged from base /var/www/BookApi
+696 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+697 verbose tar unpack /home/vagrant/.npm/is-promise/1.0.1/package.tgz
+698 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+699 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise is being purged
+700 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+701 silly gunzTarPerm modes [ '755', '644' ]
+702 silly gunzTarPerm extractEntry package.json
+703 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+704 silly gunzTarPerm extractEntry .npmignore
+705 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+706 silly gunzTarPerm extractEntry LICENSE
+707 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+708 silly gunzTarPerm extractEntry index.js
+709 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+710 silly gunzTarPerm extractEntry .travis.yml
+711 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+712 silly gunzTarPerm extractEntry readme.md
+713 silly gunzTarPerm modified mode [ 'readme.md', 438, 420 ]
+714 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise/package.json
+715 info preinstall is-promise@1.0.1
+716 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise/package.json
+717 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise/package.json
+718 silly install resolved []
+719 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+720 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+721 info linkStuff is-promise@1.0.1
+722 silly linkStuff is-promise@1.0.1 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules as its parent node_modules
+723 verbose linkBins is-promise@1.0.1
+724 verbose linkMans is-promise@1.0.1
+725 verbose rebuildBundles is-promise@1.0.1
+726 info install is-promise@1.0.1
+727 info postinstall is-promise@1.0.1
+728 verbose unlock done using /home/vagrant/.npm/_locks/is-promise-7e697c8aa3b1e97c.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise/node_modules/is-promise
+729 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+730 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+731 http 304 https://registry.npmjs.org/optimist
+732 silly get cb [ 304,
+732 silly get   { date: 'Sat, 27 Jun 2015 13:38:59 GMT',
+732 silly get     via: '1.1 varnish',
+732 silly get     'cache-control': 'max-age=60',
+732 silly get     etag: '"A8T22G2NKW7BNN2VBLXJ3SP7H"',
+732 silly get     age: '12',
+732 silly get     connection: 'keep-alive',
+732 silly get     'x-served-by': 'cache-fra1246-FRA',
+732 silly get     'x-cache': 'HIT',
+732 silly get     'x-cache-hits': '1',
+732 silly get     'x-timer': 'S1435412339.910003,VS0,VE0',
+732 silly get     vary: 'Accept' } ]
+733 verbose etag https://registry.npmjs.org/optimist from cache
+734 verbose get saving optimist to /home/vagrant/.npm/registry.npmjs.org/optimist/.cache.json
+735 silly addNameRange number 2 { name: 'optimist', range: '>=0.3.5 <0.4.0', hasData: true }
+736 silly addNameRange versions [ 'optimist',
+736 silly addNameRange   [ '0.0.1',
+736 silly addNameRange     '0.0.2',
+736 silly addNameRange     '0.0.4',
+736 silly addNameRange     '0.0.5',
+736 silly addNameRange     '0.0.6',
+736 silly addNameRange     '0.0.7',
+736 silly addNameRange     '0.1.0',
+736 silly addNameRange     '0.1.1',
+736 silly addNameRange     '0.1.2',
+736 silly addNameRange     '0.1.3',
+736 silly addNameRange     '0.1.4',
+736 silly addNameRange     '0.1.5',
+736 silly addNameRange     '0.1.6',
+736 silly addNameRange     '0.1.7',
+736 silly addNameRange     '0.1.8',
+736 silly addNameRange     '0.1.9',
+736 silly addNameRange     '0.0.3',
+736 silly addNameRange     '0.2.0',
+736 silly addNameRange     '0.2.1',
+736 silly addNameRange     '0.2.2',
+736 silly addNameRange     '0.2.3',
+736 silly addNameRange     '0.2.4',
+736 silly addNameRange     '0.2.5',
+736 silly addNameRange     '0.2.6',
+736 silly addNameRange     '0.2.7',
+736 silly addNameRange     '0.2.8',
+736 silly addNameRange     '0.3.0',
+736 silly addNameRange     '0.3.1',
+736 silly addNameRange     '0.3.3',
+736 silly addNameRange     '0.3.4',
+736 silly addNameRange     '0.3.5',
+736 silly addNameRange     '0.3.6',
+736 silly addNameRange     '0.3.7',
+736 silly addNameRange     '0.4.0',
+736 silly addNameRange     '0.5.0',
+736 silly addNameRange     '0.5.1',
+736 silly addNameRange     '0.5.2',
+736 silly addNameRange     '0.6.0',
+736 silly addNameRange     '0.6.1' ] ]
+737 silly addNamed optimist@0.3.7
+738 verbose addNamed "0.3.7" is a plain semver version for optimist
+739 info linkStuff promise@2.0.0
+740 silly linkStuff promise@2.0.0 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules as its parent node_modules
+741 verbose linkBins promise@2.0.0
+742 verbose linkMans promise@2.0.0
+743 verbose rebuildBundles promise@2.0.0
+744 verbose rebuildBundles [ 'is-promise' ]
+745 info install promise@2.0.0
+746 info postinstall promise@2.0.0
+747 verbose unlock done using /home/vagrant/.npm/_locks/promise-dbb636009400eb53.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/promise
+748 silly cache afterAdd optimist@0.3.7
+749 verbose afterAdd /home/vagrant/.npm/optimist/0.3.7/package/package.json not in flight; writing
+750 verbose afterAdd /home/vagrant/.npm/optimist/0.3.7/package/package.json written
+751 http 304 https://registry.npmjs.org/source-map
+752 silly get cb [ 304,
+752 silly get   { date: 'Sat, 27 Jun 2015 13:38:59 GMT',
+752 silly get     via: '1.1 varnish',
+752 silly get     'cache-control': 'max-age=60',
+752 silly get     etag: '"BGLUL5IDZT0PJ3FIRURDG4DEE"',
+752 silly get     age: '7',
+752 silly get     connection: 'keep-alive',
+752 silly get     'x-served-by': 'cache-fra1225-FRA',
+752 silly get     'x-cache': 'HIT',
+752 silly get     'x-cache-hits': '1',
+752 silly get     'x-timer': 'S1435412339.928320,VS0,VE1',
+752 silly get     vary: 'Accept' } ]
+753 verbose etag https://registry.npmjs.org/source-map from cache
+754 verbose get saving source-map to /home/vagrant/.npm/registry.npmjs.org/source-map/.cache.json
+755 silly addNameRange number 2 { name: 'source-map', range: '>=0.1.7 <0.2.0', hasData: true }
+756 silly addNameRange versions [ 'source-map',
+756 silly addNameRange   [ '0.0.0',
+756 silly addNameRange     '0.1.0',
+756 silly addNameRange     '0.1.1',
+756 silly addNameRange     '0.1.2',
+756 silly addNameRange     '0.1.3',
+756 silly addNameRange     '0.1.4',
+756 silly addNameRange     '0.1.5',
+756 silly addNameRange     '0.1.6',
+756 silly addNameRange     '0.1.7',
+756 silly addNameRange     '0.1.8',
+756 silly addNameRange     '0.1.9',
+756 silly addNameRange     '0.1.10',
+756 silly addNameRange     '0.1.11',
+756 silly addNameRange     '0.1.12',
+756 silly addNameRange     '0.1.13',
+756 silly addNameRange     '0.1.14',
+756 silly addNameRange     '0.1.15',
+756 silly addNameRange     '0.1.16',
+756 silly addNameRange     '0.1.17',
+756 silly addNameRange     '0.1.18',
+756 silly addNameRange     '0.1.19',
+756 silly addNameRange     '0.1.20',
+756 silly addNameRange     '0.1.21',
+756 silly addNameRange     '0.1.22',
+756 silly addNameRange     '0.1.23',
+756 silly addNameRange     '0.1.24',
+756 silly addNameRange     '0.1.25',
+756 silly addNameRange     '0.1.26',
+756 silly addNameRange     '0.1.27',
+756 silly addNameRange     '0.1.28',
+756 silly addNameRange     '0.1.29',
+756 silly addNameRange     '0.1.30',
+756 silly addNameRange     '0.1.31',
+756 silly addNameRange     '0.1.32',
+756 silly addNameRange     '0.1.33',
+756 silly addNameRange     '0.1.34',
+756 silly addNameRange     '0.1.35',
+756 silly addNameRange     '0.1.36',
+756 silly addNameRange     '0.1.37',
+756 silly addNameRange     '0.1.38',
+756 silly addNameRange     '0.1.39',
+756 silly addNameRange     '0.1.40',
+756 silly addNameRange     '0.1.41',
+756 silly addNameRange     '0.1.42',
+756 silly addNameRange     '0.1.43',
+756 silly addNameRange     '0.2.0',
+756 silly addNameRange     '0.3.0',
+756 silly addNameRange     '0.4.0',
+756 silly addNameRange     '0.4.1',
+756 silly addNameRange     '0.4.2' ] ]
+757 silly addNamed source-map@0.1.43
+758 verbose addNamed "0.1.43" is a plain semver version for source-map
+759 silly cache afterAdd source-map@0.1.43
+760 verbose afterAdd /home/vagrant/.npm/source-map/0.1.43/package/package.json not in flight; writing
+761 verbose afterAdd /home/vagrant/.npm/source-map/0.1.43/package/package.json written
+762 silly install resolved [ { name: 'optimist',
+762 silly install resolved     version: '0.3.7',
+762 silly install resolved     description: 'Light-weight option parsing with an argv hash. No optstrings attached.',
+762 silly install resolved     main: './index.js',
+762 silly install resolved     dependencies: { wordwrap: '~0.0.2' },
+762 silly install resolved     devDependencies: { hashish: '~0.0.4', tap: '~0.4.0' },
+762 silly install resolved     scripts: { test: 'tap ./test/*.js' },
+762 silly install resolved     repository:
+762 silly install resolved      { type: 'git',
+762 silly install resolved        url: 'git+ssh://git@github.com/substack/node-optimist.git' },
+762 silly install resolved     keywords:
+762 silly install resolved      [ 'argument',
+762 silly install resolved        'args',
+762 silly install resolved        'option',
+762 silly install resolved        'parser',
+762 silly install resolved        'parsing',
+762 silly install resolved        'cli',
+762 silly install resolved        'command' ],
+762 silly install resolved     author:
+762 silly install resolved      { name: 'James Halliday',
+762 silly install resolved        email: 'mail@substack.net',
+762 silly install resolved        url: 'http://substack.net' },
+762 silly install resolved     license: 'MIT/X11',
+762 silly install resolved     engine: { node: '>=0.4' },
+762 silly install resolved     _id: 'optimist@0.3.7',
+762 silly install resolved     dist:
+762 silly install resolved      { shasum: 'c90941ad59e4273328923074d2cf2e7cbc6ec0d9',
+762 silly install resolved        tarball: 'http://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz' },
+762 silly install resolved     _from: 'optimist@>=0.3.5 <0.4.0',
+762 silly install resolved     _npmVersion: '1.2.2',
+762 silly install resolved     _npmUser: { name: 'substack', email: 'mail@substack.net' },
+762 silly install resolved     maintainers: [ [Object] ],
+762 silly install resolved     directories: {},
+762 silly install resolved     _shasum: 'c90941ad59e4273328923074d2cf2e7cbc6ec0d9',
+762 silly install resolved     _resolved: 'https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz',
+762 silly install resolved     bugs: { url: 'https://github.com/substack/node-optimist/issues' },
+762 silly install resolved     readme: 'ERROR: No README data found!',
+762 silly install resolved     homepage: 'https://github.com/substack/node-optimist#readme' },
+762 silly install resolved   { name: 'source-map',
+762 silly install resolved     description: 'Generates and consumes source maps',
+762 silly install resolved     version: '0.1.43',
+762 silly install resolved     homepage: 'https://github.com/mozilla/source-map',
+762 silly install resolved     author: { name: 'Nick Fitzgerald', email: 'nfitzgerald@mozilla.com' },
+762 silly install resolved     contributors:
+762 silly install resolved      [ [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object],
+762 silly install resolved        [Object] ],
+762 silly install resolved     repository:
+762 silly install resolved      { type: 'git',
+762 silly install resolved        url: 'git+ssh://git@github.com/mozilla/source-map.git' },
+762 silly install resolved     directories: { lib: './lib' },
+762 silly install resolved     main: './lib/source-map.js',
+762 silly install resolved     engines: { node: '>=0.8.0' },
+762 silly install resolved     licenses: [ [Object] ],
+762 silly install resolved     dependencies: { amdefine: '>=0.0.4' },
+762 silly install resolved     devDependencies: { dryice: '>=0.4.8' },
+762 silly install resolved     scripts:
+762 silly install resolved      { test: 'node test/run-tests.js',
+762 silly install resolved        build: 'node Makefile.dryice.js' },
+762 silly install resolved     bugs: { url: 'https://github.com/mozilla/source-map/issues' },
+762 silly install resolved     _id: 'source-map@0.1.43',
+762 silly install resolved     _shasum: 'c24bc146ca517c1471f5dacbe2571b2b7f9e3346',
+762 silly install resolved     _from: 'source-map@>=0.1.7 <0.2.0',
+762 silly install resolved     _npmVersion: '1.4.9',
+762 silly install resolved     _npmUser: { name: 'nickfitzgerald', email: 'fitzgen@gmail.com' },
+762 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+762 silly install resolved     dist:
+762 silly install resolved      { shasum: 'c24bc146ca517c1471f5dacbe2571b2b7f9e3346',
+762 silly install resolved        tarball: 'http://registry.npmjs.org/source-map/-/source-map-0.1.43.tgz' },
+762 silly install resolved     _resolved: 'https://registry.npmjs.org/source-map/-/source-map-0.1.43.tgz',
+762 silly install resolved     readme: 'ERROR: No README data found!' } ]
+763 info install optimist@0.3.7 into /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+764 info install source-map@0.1.43 into /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+765 info installOne optimist@0.3.7
+766 verbose installOne of optimist to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js not in flight; installing
+767 info installOne source-map@0.1.43
+768 verbose installOne of source-map to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js not in flight; installing
+769 verbose lock using /home/vagrant/.npm/_locks/optimist-f42158f44e76e517.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+770 verbose lock using /home/vagrant/.npm/_locks/source-map-d391f4d8e547c290.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+771 silly install write writing source-map 0.1.43 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+772 silly install write writing optimist 0.3.7 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+773 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+774 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+775 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map is being purged from base /var/www/BookApi
+776 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+777 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist is being purged from base /var/www/BookApi
+778 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+779 verbose tar unpack /home/vagrant/.npm/source-map/0.1.43/package.tgz
+780 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+781 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map is being purged
+782 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+783 verbose tar unpack /home/vagrant/.npm/optimist/0.3.7/package.tgz
+784 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+785 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist is being purged
+786 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+787 silly gunzTarPerm modes [ '755', '644' ]
+788 silly gunzTarPerm modes [ '755', '644' ]
+789 silly gunzTarPerm extractEntry package.json
+790 silly gunzTarPerm extractEntry .npmignore
+791 silly gunzTarPerm extractEntry README.md
+792 silly gunzTarPerm extractEntry package.json
+793 silly gunzTarPerm extractEntry LICENSE
+794 silly gunzTarPerm extractEntry index.js
+795 silly gunzTarPerm extractEntry LICENSE
+796 silly gunzTarPerm extractEntry example/line_count_options.js
+797 silly gunzTarPerm extractEntry Makefile.dryice.js
+798 silly gunzTarPerm extractEntry test/run-tests.js
+799 silly gunzTarPerm extractEntry example/boolean_double.js
+800 silly gunzTarPerm extractEntry example/divide.js
+801 silly gunzTarPerm extractEntry test/source-map/test-api.js
+802 silly gunzTarPerm extractEntry test/source-map/test-base64-vlq.js
+803 silly gunzTarPerm extractEntry example/nonopt.js
+804 silly gunzTarPerm extractEntry example/string.js
+805 silly gunzTarPerm extractEntry test/source-map/test-base64.js
+806 silly gunzTarPerm extractEntry test/source-map/test-binary-search.js
+807 silly gunzTarPerm extractEntry example/default_hash.js
+808 silly gunzTarPerm extractEntry example/reflect.js
+809 silly gunzTarPerm extractEntry test/source-map/test-array-set.js
+810 silly gunzTarPerm extractEntry test/source-map/test-source-map-consumer.js
+811 silly gunzTarPerm extractEntry example/default_singles.js
+812 silly gunzTarPerm extractEntry example/usage-options.js
+813 silly gunzTarPerm extractEntry test/source-map/test-source-map-generator.js
+814 silly gunzTarPerm extractEntry test/source-map/test-source-node.js
+815 silly gunzTarPerm extractEntry example/bool.js
+816 silly gunzTarPerm extractEntry example/short.js
+817 silly gunzTarPerm extractEntry test/source-map/test-util.js
+818 silly gunzTarPerm extractEntry test/source-map/util.js
+819 silly gunzTarPerm extractEntry example/xup.js
+820 silly gunzTarPerm extractEntry example/boolean_single.js
+821 silly gunzTarPerm extractEntry test/source-map/test-dog-fooding.js
+822 silly gunzTarPerm extractEntry .travis.yml
+823 silly gunzTarPerm extractEntry example/line_count_wrap.js
+824 silly gunzTarPerm extractEntry example/line_count.js
+825 silly gunzTarPerm extractEntry readme.markdown
+826 silly gunzTarPerm extractEntry test/parse.js
+827 silly gunzTarPerm extractEntry lib/source-map.js
+828 silly gunzTarPerm extractEntry lib/source-map/array-set.js
+829 silly gunzTarPerm extractEntry test/_.js
+830 silly gunzTarPerm extractEntry test/usage.js
+831 silly gunzTarPerm extractEntry lib/source-map/base64-vlq.js
+832 silly gunzTarPerm extractEntry lib/source-map/base64.js
+833 silly gunzTarPerm extractEntry test/_/bin.js
+834 silly gunzTarPerm extractEntry test/_/argv.js
+835 silly gunzTarPerm extractEntry lib/source-map/binary-search.js
+836 silly gunzTarPerm extractEntry lib/source-map/mapping-list.js
+837 silly gunzTarPerm extractEntry lib/source-map/source-map-consumer.js
+838 silly gunzTarPerm extractEntry .travis.yml
+839 silly gunzTarPerm extractEntry lib/source-map/source-map-generator.js
+840 silly gunzTarPerm extractEntry lib/source-map/source-node.js
+841 silly gunzTarPerm extractEntry lib/source-map/util.js
+842 silly gunzTarPerm extractEntry CHANGELOG.md
+843 silly gunzTarPerm extractEntry build/assert-shim.js
+844 silly gunzTarPerm extractEntry build/mini-require.js
+845 silly gunzTarPerm extractEntry build/suffix-browser.js
+846 silly gunzTarPerm extractEntry build/test-prefix.js
+847 silly gunzTarPerm extractEntry build/test-suffix.js
+848 silly gunzTarPerm extractEntry build/prefix-source-map.jsm
+849 silly gunzTarPerm extractEntry build/prefix-utils.jsm
+850 silly gunzTarPerm extractEntry build/suffix-source-map.jsm
+851 silly gunzTarPerm extractEntry build/suffix-utils.jsm
+852 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/package.json
+853 info preinstall optimist@0.3.7
+854 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/package.json
+855 silly prepareForInstallMany adding wordwrap@~0.0.2 from optimist dependencies
+856 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/package.json
+857 http 304 https://registry.npmjs.org/css-parse
+858 silly get cb [ 304,
+858 silly get   { date: 'Sat, 27 Jun 2015 13:38:59 GMT',
+858 silly get     via: '1.1 varnish',
+858 silly get     'cache-control': 'max-age=60',
+858 silly get     etag: '"9ZPL2OJA42WZA6PBI6K9NXCM6"',
+858 silly get     age: '0',
+858 silly get     connection: 'keep-alive',
+858 silly get     'x-served-by': 'cache-fra1242-FRA',
+858 silly get     'x-cache': 'HIT',
+858 silly get     'x-cache-hits': '1',
+858 silly get     'x-timer': 'S1435412339.836162,VS0,VE397',
+858 silly get     vary: 'Accept' } ]
+859 verbose etag https://registry.npmjs.org/css-parse from cache
+860 verbose get saving css-parse to /home/vagrant/.npm/registry.npmjs.org/css-parse/.cache.json
+861 silly cache add args [ 'wordwrap@~0.0.2', null ]
+862 verbose cache add spec wordwrap@~0.0.2
+863 silly cache add parsed spec { raw: 'wordwrap@~0.0.2',
+863 silly cache add   scope: null,
+863 silly cache add   name: 'wordwrap',
+863 silly cache add   rawSpec: '~0.0.2',
+863 silly cache add   spec: '>=0.0.2 <0.1.0',
+863 silly cache add   type: 'range' }
+864 silly addNamed wordwrap@>=0.0.2 <0.1.0
+865 verbose addNamed ">=0.0.2 <0.1.0" is a valid semver range for wordwrap
+866 silly addNameRange { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: false }
+867 silly mapToRegistry name wordwrap
+868 silly mapToRegistry using default registry
+869 silly mapToRegistry registry https://registry.npmjs.org/
+870 silly mapToRegistry uri https://registry.npmjs.org/wordwrap
+871 verbose addNameRange registry:https://registry.npmjs.org/wordwrap not in flight; fetching
+872 silly cache afterAdd css-parse@1.0.4
+873 verbose afterAdd /home/vagrant/.npm/css-parse/1.0.4/package/package.json not in flight; writing
+874 verbose request uri https://registry.npmjs.org/wordwrap
+875 verbose request no auth needed
+876 info attempt registry request try #1 at 1:39:00 PM
+877 verbose etag "5TO81278FOKJW7UV893Z7ZH0U"
+878 http request GET https://registry.npmjs.org/wordwrap
+879 http 304 https://registry.npmjs.org/css-stringify
+880 silly get cb [ 304,
+880 silly get   { date: 'Sat, 27 Jun 2015 13:38:59 GMT',
+880 silly get     via: '1.1 varnish',
+880 silly get     'cache-control': 'max-age=60',
+880 silly get     etag: '"7F35YA3VL3XK5APYKP7UVEXNU"',
+880 silly get     age: '0',
+880 silly get     connection: 'keep-alive',
+880 silly get     'x-served-by': 'cache-fra1230-FRA',
+880 silly get     'x-cache': 'HIT',
+880 silly get     'x-cache-hits': '1',
+880 silly get     'x-timer': 'S1435412339.836390,VS0,VE402',
+880 silly get     vary: 'Accept' } ]
+881 verbose etag https://registry.npmjs.org/css-stringify from cache
+882 verbose get saving css-stringify to /home/vagrant/.npm/registry.npmjs.org/css-stringify/.cache.json
+883 verbose afterAdd /home/vagrant/.npm/css-parse/1.0.4/package/package.json written
+884 silly cache afterAdd css-stringify@1.0.5
+885 verbose afterAdd /home/vagrant/.npm/css-stringify/1.0.5/package/package.json not in flight; writing
+886 verbose afterAdd /home/vagrant/.npm/css-stringify/1.0.5/package/package.json written
+887 silly install resolved [ { name: 'css-parse',
+887 silly install resolved     version: '1.0.4',
+887 silly install resolved     description: 'CSS parser',
+887 silly install resolved     keywords: [ 'css', 'parser', 'stylesheet' ],
+887 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+887 silly install resolved     devDependencies: { mocha: '*', should: '*' },
+887 silly install resolved     main: 'index',
+887 silly install resolved     _id: 'css-parse@1.0.4',
+887 silly install resolved     dist:
+887 silly install resolved      { shasum: '38b0503fbf9da9f54e9c1dbda60e145c77117bdd',
+887 silly install resolved        tarball: 'http://registry.npmjs.org/css-parse/-/css-parse-1.0.4.tgz' },
+887 silly install resolved     _npmVersion: '1.1.61',
+887 silly install resolved     _npmUser: { name: 'tjholowaychuk', email: 'tj@vision-media.ca' },
+887 silly install resolved     maintainers: [ [Object] ],
+887 silly install resolved     directories: {},
+887 silly install resolved     _shasum: '38b0503fbf9da9f54e9c1dbda60e145c77117bdd',
+887 silly install resolved     _resolved: 'https://registry.npmjs.org/css-parse/-/css-parse-1.0.4.tgz',
+887 silly install resolved     _from: 'css-parse@1.0.4',
+887 silly install resolved     readme: 'ERROR: No README data found!' },
+887 silly install resolved   { name: 'css-stringify',
+887 silly install resolved     version: '1.0.5',
+887 silly install resolved     description: 'CSS compiler',
+887 silly install resolved     keywords: [ 'css', 'stringify', 'stylesheet' ],
+887 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+887 silly install resolved     devDependencies: { mocha: '*', should: '*', 'css-parse': '1.0.3' },
+887 silly install resolved     main: 'index',
+887 silly install resolved     _id: 'css-stringify@1.0.5',
+887 silly install resolved     dist:
+887 silly install resolved      { shasum: 'b0d042946db2953bb9d292900a6cb5f6d0122031',
+887 silly install resolved        tarball: 'http://registry.npmjs.org/css-stringify/-/css-stringify-1.0.5.tgz' },
+887 silly install resolved     _from: 'css-stringify@1.0.5',
+887 silly install resolved     _npmVersion: '1.2.14',
+887 silly install resolved     _npmUser: { name: 'tjholowaychuk', email: 'tj@vision-media.ca' },
+887 silly install resolved     maintainers: [ [Object] ],
+887 silly install resolved     directories: {},
+887 silly install resolved     _shasum: 'b0d042946db2953bb9d292900a6cb5f6d0122031',
+887 silly install resolved     _resolved: 'https://registry.npmjs.org/css-stringify/-/css-stringify-1.0.5.tgz',
+887 silly install resolved     readme: 'ERROR: No README data found!' } ]
+888 info install css-parse@1.0.4 into /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+889 info install css-stringify@1.0.5 into /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+890 info installOne css-parse@1.0.4
+891 verbose installOne of css-parse to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css not in flight; installing
+892 info installOne css-stringify@1.0.5
+893 verbose installOne of css-stringify to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css not in flight; installing
+894 verbose lock using /home/vagrant/.npm/_locks/css-parse-676a8e30919085df.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+895 verbose lock using /home/vagrant/.npm/_locks/css-stringify-f9d02b3fc962f282.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+896 silly install write writing css-parse 1.0.4 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+897 silly install write writing css-stringify 1.0.5 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+898 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+899 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+900 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse is being purged from base /var/www/BookApi
+901 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+902 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify is being purged from base /var/www/BookApi
+903 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+904 verbose tar unpack /home/vagrant/.npm/css-parse/1.0.4/package.tgz
+905 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+906 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse is being purged
+907 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+908 verbose tar unpack /home/vagrant/.npm/css-stringify/1.0.5/package.tgz
+909 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+910 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify is being purged
+911 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+912 silly gunzTarPerm modes [ '755', '644' ]
+913 silly gunzTarPerm modes [ '755', '644' ]
+914 silly gunzTarPerm extractEntry package.json
+915 silly gunzTarPerm extractEntry package.json
+916 silly gunzTarPerm extractEntry .npmignore
+917 silly gunzTarPerm extractEntry index.js
+918 silly gunzTarPerm extractEntry .npmignore
+919 silly gunzTarPerm extractEntry index.js
+920 silly gunzTarPerm extractEntry component.json
+921 silly gunzTarPerm extractEntry History.md
+922 silly gunzTarPerm extractEntry component.json
+923 silly gunzTarPerm extractEntry History.md
+924 silly gunzTarPerm extractEntry Makefile
+925 silly gunzTarPerm extractEntry Readme.md
+926 silly gunzTarPerm extractEntry Makefile
+927 silly gunzTarPerm extractEntry Readme.md
+928 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify/package.json
+929 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse/package.json
+930 info preinstall css-stringify@1.0.5
+931 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify/package.json
+932 info preinstall css-parse@1.0.4
+933 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse/package.json
+934 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify/package.json
+935 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse/package.json
+936 silly install resolved []
+937 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+938 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+939 silly install resolved []
+940 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+941 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+942 info linkStuff css-stringify@1.0.5
+943 silly linkStuff css-stringify@1.0.5 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules as its parent node_modules
+944 info linkStuff css-parse@1.0.4
+945 silly linkStuff css-parse@1.0.4 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules as its parent node_modules
+946 verbose linkBins css-stringify@1.0.5
+947 verbose linkMans css-stringify@1.0.5
+948 verbose rebuildBundles css-stringify@1.0.5
+949 info install css-stringify@1.0.5
+950 verbose linkBins css-parse@1.0.4
+951 verbose linkMans css-parse@1.0.4
+952 verbose rebuildBundles css-parse@1.0.4
+953 info postinstall css-stringify@1.0.5
+954 info install css-parse@1.0.4
+955 verbose unlock done using /home/vagrant/.npm/_locks/css-stringify-f9d02b3fc962f282.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-stringify
+956 info postinstall css-parse@1.0.4
+957 verbose unlock done using /home/vagrant/.npm/_locks/css-parse-676a8e30919085df.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css/node_modules/css-parse
+958 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+959 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+960 info linkStuff css@1.0.8
+961 silly linkStuff css@1.0.8 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules as its parent node_modules
+962 verbose linkBins css@1.0.8
+963 verbose linkMans css@1.0.8
+964 verbose rebuildBundles css@1.0.8
+965 verbose rebuildBundles [ 'css-parse', 'css-stringify' ]
+966 info install css@1.0.8
+967 info postinstall css@1.0.8
+968 verbose unlock done using /home/vagrant/.npm/_locks/css-ed5821b8581f2962.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/css
+969 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/package.json
+970 info preinstall source-map@0.1.43
+971 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/package.json
+972 silly prepareForInstallMany adding amdefine@>=0.0.4 from source-map dependencies
+973 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/package.json
+974 http 304 https://registry.npmjs.org/wordwrap
+975 silly get cb [ 304,
+975 silly get   { date: 'Sat, 27 Jun 2015 13:39:00 GMT',
+975 silly get     via: '1.1 varnish',
+975 silly get     'cache-control': 'max-age=60',
+975 silly get     etag: '"5TO81278FOKJW7UV893Z7ZH0U"',
+975 silly get     age: '21',
+975 silly get     connection: 'keep-alive',
+975 silly get     'x-served-by': 'cache-fra1233-FRA',
+975 silly get     'x-cache': 'HIT',
+975 silly get     'x-cache-hits': '1',
+975 silly get     'x-timer': 'S1435412340.468189,VS0,VE0',
+975 silly get     vary: 'Accept' } ]
+976 verbose etag https://registry.npmjs.org/wordwrap from cache
+977 verbose get saving wordwrap to /home/vagrant/.npm/registry.npmjs.org/wordwrap/.cache.json
+978 silly addNameRange number 2 { name: 'wordwrap', range: '>=0.0.2 <0.1.0', hasData: true }
+979 silly addNameRange versions [ 'wordwrap', [ '0.0.1', '0.0.2', '0.0.3', '1.0.0' ] ]
+980 silly addNamed wordwrap@0.0.3
+981 verbose addNamed "0.0.3" is a plain semver version for wordwrap
+982 silly cache afterAdd wordwrap@0.0.3
+983 verbose afterAdd /home/vagrant/.npm/wordwrap/0.0.3/package/package.json not in flight; writing
+984 verbose afterAdd /home/vagrant/.npm/wordwrap/0.0.3/package/package.json written
+985 silly install resolved [ { name: 'wordwrap',
+985 silly install resolved     description: 'Wrap those words. Show them at what columns to start and stop.',
+985 silly install resolved     version: '0.0.3',
+985 silly install resolved     repository:
+985 silly install resolved      { type: 'git',
+985 silly install resolved        url: 'git://github.com/substack/node-wordwrap.git' },
+985 silly install resolved     main: './index.js',
+985 silly install resolved     keywords: [ 'word', 'wrap', 'rule', 'format', 'column' ],
+985 silly install resolved     directories: { lib: '.', example: 'example', test: 'test' },
+985 silly install resolved     scripts: { test: 'expresso' },
+985 silly install resolved     devDependencies: { expresso: '=0.7.x' },
+985 silly install resolved     engines: { node: '>=0.4.0' },
+985 silly install resolved     license: 'MIT',
+985 silly install resolved     author:
+985 silly install resolved      { name: 'James Halliday',
+985 silly install resolved        email: 'mail@substack.net',
+985 silly install resolved        url: 'http://substack.net' },
+985 silly install resolved     gitHead: 'e59aa1bd338914019456bdfba034508c9c4cb29d',
+985 silly install resolved     bugs: { url: 'https://github.com/substack/node-wordwrap/issues' },
+985 silly install resolved     homepage: 'https://github.com/substack/node-wordwrap#readme',
+985 silly install resolved     _id: 'wordwrap@0.0.3',
+985 silly install resolved     _shasum: 'a3d5da6cd5c0bc0008d37234bbaf1bed63059107',
+985 silly install resolved     _from: 'wordwrap@>=0.0.2 <0.1.0',
+985 silly install resolved     _npmVersion: '2.9.0',
+985 silly install resolved     _nodeVersion: '2.0.0',
+985 silly install resolved     _npmUser: { name: 'substack', email: 'substack@gmail.com' },
+985 silly install resolved     dist:
+985 silly install resolved      { shasum: 'a3d5da6cd5c0bc0008d37234bbaf1bed63059107',
+985 silly install resolved        tarball: 'http://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz' },
+985 silly install resolved     maintainers: [ [Object] ],
+985 silly install resolved     _resolved: 'https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.3.tgz',
+985 silly install resolved     readme: 'ERROR: No README data found!' } ]
+986 info install wordwrap@0.0.3 into /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+987 info installOne wordwrap@0.0.3
+988 verbose installOne of wordwrap to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist not in flight; installing
+989 verbose lock using /home/vagrant/.npm/_locks/wordwrap-126bd81cf8fe5dae.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+990 silly install write writing wordwrap 0.0.3 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+991 silly cache add args [ 'amdefine@>=0.0.4', null ]
+992 verbose cache add spec amdefine@>=0.0.4
+993 silly cache add parsed spec { raw: 'amdefine@>=0.0.4',
+993 silly cache add   scope: null,
+993 silly cache add   name: 'amdefine',
+993 silly cache add   rawSpec: '>=0.0.4',
+993 silly cache add   spec: '>=0.0.4',
+993 silly cache add   type: 'range' }
+994 silly addNamed amdefine@>=0.0.4
+995 verbose addNamed ">=0.0.4" is a valid semver range for amdefine
+996 silly addNameRange { name: 'amdefine', range: '>=0.0.4', hasData: false }
+997 silly mapToRegistry name amdefine
+998 silly mapToRegistry using default registry
+999 silly mapToRegistry registry https://registry.npmjs.org/
+1000 silly mapToRegistry uri https://registry.npmjs.org/amdefine
+1001 verbose addNameRange registry:https://registry.npmjs.org/amdefine not in flight; fetching
+1002 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+1003 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap is being purged from base /var/www/BookApi
+1004 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+1005 verbose tar unpack /home/vagrant/.npm/wordwrap/0.0.3/package.tgz
+1006 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+1007 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap is being purged
+1008 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+1009 silly gunzTarPerm modes [ '755', '644' ]
+1010 silly gunzTarPerm extractEntry package.json
+1011 silly gunzTarPerm extractEntry LICENSE
+1012 silly gunzTarPerm extractEntry index.js
+1013 verbose request uri https://registry.npmjs.org/amdefine
+1014 verbose request no auth needed
+1015 info attempt registry request try #1 at 1:39:00 PM
+1016 verbose etag "4YYSFNXID9MUWP27KTSW2EKU8"
+1017 http request GET https://registry.npmjs.org/amdefine
+1018 silly gunzTarPerm extractEntry README.markdown
+1019 silly gunzTarPerm extractEntry example/center.js
+1020 silly gunzTarPerm extractEntry example/meat.js
+1021 silly gunzTarPerm extractEntry test/break.js
+1022 silly gunzTarPerm extractEntry test/wrap.js
+1023 silly gunzTarPerm extractEntry test/idleness.txt
+1024 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap/package.json
+1025 info preinstall wordwrap@0.0.3
+1026 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap/package.json
+1027 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap/package.json
+1028 silly install resolved []
+1029 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+1030 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+1031 info linkStuff wordwrap@0.0.3
+1032 silly linkStuff wordwrap@0.0.3 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules as its parent node_modules
+1033 verbose linkBins wordwrap@0.0.3
+1034 verbose linkMans wordwrap@0.0.3
+1035 verbose rebuildBundles wordwrap@0.0.3
+1036 info install wordwrap@0.0.3
+1037 info postinstall wordwrap@0.0.3
+1038 verbose unlock done using /home/vagrant/.npm/_locks/wordwrap-126bd81cf8fe5dae.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap
+1039 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+1040 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+1041 info linkStuff optimist@0.3.7
+1042 silly linkStuff optimist@0.3.7 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules as its parent node_modules
+1043 verbose linkBins optimist@0.3.7
+1044 verbose linkMans optimist@0.3.7
+1045 verbose rebuildBundles optimist@0.3.7
+1046 verbose rebuildBundles [ 'wordwrap' ]
+1047 info install optimist@0.3.7
+1048 info postinstall optimist@0.3.7
+1049 verbose unlock done using /home/vagrant/.npm/_locks/optimist-f42158f44e76e517.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/optimist
+1050 http 304 https://registry.npmjs.org/amdefine
+1051 silly get cb [ 304,
+1051 silly get   { date: 'Sat, 27 Jun 2015 13:39:00 GMT',
+1051 silly get     via: '1.1 varnish',
+1051 silly get     'cache-control': 'max-age=60',
+1051 silly get     etag: '"4YYSFNXID9MUWP27KTSW2EKU8"',
+1051 silly get     age: '21',
+1051 silly get     connection: 'keep-alive',
+1051 silly get     'x-served-by': 'cache-fra1226-FRA',
+1051 silly get     'x-cache': 'HIT',
+1051 silly get     'x-cache-hits': '12',
+1051 silly get     'x-timer': 'S1435412340.717983,VS0,VE0',
+1051 silly get     vary: 'Accept' } ]
+1052 verbose etag https://registry.npmjs.org/amdefine from cache
+1053 verbose get saving amdefine to /home/vagrant/.npm/registry.npmjs.org/amdefine/.cache.json
+1054 silly addNameRange number 2 { name: 'amdefine', range: '>=0.0.4', hasData: true }
+1055 silly addNameRange versions [ 'amdefine',
+1055 silly addNameRange   [ '0.0.1',
+1055 silly addNameRange     '0.0.2',
+1055 silly addNameRange     '0.0.3',
+1055 silly addNameRange     '0.0.4',
+1055 silly addNameRange     '0.0.5',
+1055 silly addNameRange     '0.0.6',
+1055 silly addNameRange     '0.0.7',
+1055 silly addNameRange     '0.0.8',
+1055 silly addNameRange     '0.1.0',
+1055 silly addNameRange     '0.1.1' ] ]
+1056 silly addNamed amdefine@0.1.1
+1057 verbose addNamed "0.1.1" is a plain semver version for amdefine
+1058 silly cache afterAdd amdefine@0.1.1
+1059 verbose afterAdd /home/vagrant/.npm/amdefine/0.1.1/package/package.json not in flight; writing
+1060 verbose afterAdd /home/vagrant/.npm/amdefine/0.1.1/package/package.json written
+1061 silly install resolved [ { name: 'amdefine',
+1061 silly install resolved     description: 'Provide AMD\'s define() API for declaring modules in the AMD format',
+1061 silly install resolved     version: '0.1.1',
+1061 silly install resolved     homepage: 'http://github.com/jrburke/amdefine',
+1061 silly install resolved     author:
+1061 silly install resolved      { name: 'James Burke',
+1061 silly install resolved        email: 'jrburke@gmail.com',
+1061 silly install resolved        url: 'http://github.com/jrburke' },
+1061 silly install resolved     license: 'BSD-3-Clause AND MIT',
+1061 silly install resolved     repository:
+1061 silly install resolved      { type: 'git',
+1061 silly install resolved        url: 'git+https://github.com/jrburke/amdefine.git' },
+1061 silly install resolved     main: './amdefine.js',
+1061 silly install resolved     engines: { node: '>=0.4.2' },
+1061 silly install resolved     gitHead: 'fcadcc8080f47084b973bac3b3c4b3dd3e0f957d',
+1061 silly install resolved     bugs: { url: 'https://github.com/jrburke/amdefine/issues' },
+1061 silly install resolved     _id: 'amdefine@0.1.1',
+1061 silly install resolved     scripts: {},
+1061 silly install resolved     _shasum: 'b5c75c532052dccd6a39c0064c772c8d57a06cd2',
+1061 silly install resolved     _from: 'amdefine@>=0.0.4',
+1061 silly install resolved     _npmVersion: '1.4.28',
+1061 silly install resolved     _npmUser: { name: 'jrburke', email: 'jrburke@gmail.com' },
+1061 silly install resolved     maintainers: [ [Object] ],
+1061 silly install resolved     dist:
+1061 silly install resolved      { shasum: 'b5c75c532052dccd6a39c0064c772c8d57a06cd2',
+1061 silly install resolved        tarball: 'http://registry.npmjs.org/amdefine/-/amdefine-0.1.1.tgz' },
+1061 silly install resolved     directories: {},
+1061 silly install resolved     _resolved: 'https://registry.npmjs.org/amdefine/-/amdefine-0.1.1.tgz',
+1061 silly install resolved     readme: 'ERROR: No README data found!' } ]
+1062 info install amdefine@0.1.1 into /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+1063 info installOne amdefine@0.1.1
+1064 verbose installOne of amdefine to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map not in flight; installing
+1065 verbose lock using /home/vagrant/.npm/_locks/amdefine-621c07d16ca1cfef.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1066 silly install write writing amdefine 0.1.1 to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1067 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1068 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine is being purged from base /var/www/BookApi
+1069 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1070 verbose tar unpack /home/vagrant/.npm/amdefine/0.1.1/package.tgz
+1071 verbose tar unpacking to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1072 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine is being purged
+1073 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1074 silly gunzTarPerm modes [ '755', '644' ]
+1075 silly gunzTarPerm extractEntry package.json
+1076 silly gunzTarPerm extractEntry README.md
+1077 silly gunzTarPerm extractEntry LICENSE
+1078 silly gunzTarPerm extractEntry amdefine.js
+1079 silly gunzTarPerm extractEntry intercept.js
+1080 verbose write writing to /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/package.json
+1081 info preinstall amdefine@0.1.1
+1082 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/package.json
+1083 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine/package.json
+1084 silly install resolved []
+1085 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1086 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1087 info linkStuff amdefine@0.1.1
+1088 silly linkStuff amdefine@0.1.1 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules as its parent node_modules
+1089 verbose linkBins amdefine@0.1.1
+1090 verbose linkMans amdefine@0.1.1
+1091 verbose rebuildBundles amdefine@0.1.1
+1092 info install amdefine@0.1.1
+1093 info postinstall amdefine@0.1.1
+1094 verbose unlock done using /home/vagrant/.npm/_locks/amdefine-621c07d16ca1cfef.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map/node_modules/amdefine
+1095 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+1096 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+1097 info linkStuff source-map@0.1.43
+1098 silly linkStuff source-map@0.1.43 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules as its parent node_modules
+1099 verbose linkBins source-map@0.1.43
+1100 verbose linkMans source-map@0.1.43
+1101 verbose rebuildBundles source-map@0.1.43
+1102 verbose rebuildBundles [ 'amdefine' ]
+1103 info install source-map@0.1.43
+1104 info postinstall source-map@0.1.43
+1105 verbose unlock done using /home/vagrant/.npm/_locks/source-map-d391f4d8e547c290.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js/node_modules/source-map
+1106 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+1107 info build /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+1108 info linkStuff uglify-js@2.2.5
+1109 silly linkStuff uglify-js@2.2.5 has /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules as its parent node_modules
+1110 verbose linkBins uglify-js@2.2.5
+1111 verbose link bins [ { uglifyjs: 'bin/uglifyjs' },
+1111 verbose link bins   '/var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/.bin',
+1111 verbose link bins   false ]
+1112 verbose linkMans uglify-js@2.2.5
+1113 verbose rebuildBundles uglify-js@2.2.5
+1114 verbose rebuildBundles [ 'optimist', 'source-map' ]
+1115 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/.bin/uglifyjs is being purged
+1116 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/.bin/uglifyjs
+1117 verbose unlock done using /home/vagrant/.npm/_locks/uglify-js-1fec3f5825d1c834.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+1118 verbose about to build /var/www/BookApi/node_modules/transform/node_modules/transformers
+1119 verbose unlock done using /home/vagrant/.npm/_locks/transformers-fcb9c66c3365dd9f.lock for /var/www/BookApi/node_modules/transform/node_modules/transformers
+1120 verbose about to build /var/www/BookApi/node_modules/transform
+1121 verbose unlock done using /home/vagrant/.npm/_locks/transform-bb34038ad5e7b09d.lock for /var/www/BookApi/node_modules/transform
+1122 verbose stack Error: EPROTO, symlink '../uglify-js/bin/uglifyjs'
+1122 verbose stack     at Error (native)
+1123 verbose cwd /var/www/BookApi
+1124 error Linux 3.13.0-32-generic
+1125 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "transform" "--save"
+1126 error node v0.12.5
+1127 error npm  v2.11.2
+1128 error path ../uglify-js/bin/uglifyjs
+1129 error code EPROTO
+1130 error errno -71
+1131 error EPROTO, symlink '../uglify-js/bin/uglifyjs'
+1132 error If you need help, you may report this error at:
+1132 error     <https://github.com/npm/npm/issues>
+1133 verbose exit [ -71, true ]
+1134 verbose unbuild node_modules/transform/node_modules/transformers/node_modules/uglify-js
+1135 info preuninstall uglify-js@2.2.5
+1136 info uninstall uglify-js@2.2.5
+1137 verbose unbuild rmStuff uglify-js@2.2.5 from /var/www/BookApi/node_modules
+1138 verbose unbuild rmStuff in /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules
+1139 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/.bin/uglifyjs is being gently removed
+1140 silly gentlyRm verifying /var/www/BookApi is an npm working directory
+1141 silly gentlyRm containing path /var/www/BookApi is under npm's control, in /var/www/BookApi
+1142 silly gentlyRm deletion target /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/.bin/uglifyjs is under /var/www/BookApi
+1143 verbose gentlyRm vacuuming from /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/.bin/uglifyjs up to /var/www/BookApi
+1144 info postuninstall uglify-js@2.2.5
+1145 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js is being purged from base /var/www/BookApi
+1146 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+1147 silly vacuum-fs purging /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules/uglify-js
+1148 silly vacuum-fs quitting because other entries in /var/www/BookApi/node_modules/transform/node_modules/transformers/node_modules
+1149 verbose unbuild node_modules/transform/node_modules/transformers
+1150 info preuninstall transformers@2.1.0
+1151 info uninstall transformers@2.1.0
+1152 verbose unbuild rmStuff transformers@2.1.0 from /var/www/BookApi/node_modules
+1153 verbose unbuild rmStuff in /var/www/BookApi/node_modules/transform/node_modules
+1154 info postuninstall transformers@2.1.0
+1155 silly gentlyRm /var/www/BookApi/node_modules/transform/node_modules/transformers is being purged from base /var/www/BookApi
+1156 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform/node_modules/transformers
+1157 silly vacuum-fs purging /var/www/BookApi/node_modules/transform/node_modules/transformers
+1158 silly vacuum-fs quitting because other entries in /var/www/BookApi/node_modules/transform/node_modules
+1159 verbose unbuild node_modules/transform
+1160 info preuninstall transform@1.1.2
+1161 info uninstall transform@1.1.2
+1162 verbose unbuild rmStuff transform@1.1.2 from /var/www/BookApi/node_modules
+1163 info postuninstall transform@1.1.2
+1164 silly gentlyRm /var/www/BookApi/node_modules/transform is being purged from base /var/www/BookApi
+1165 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/transform
+1166 silly vacuum-fs purging /var/www/BookApi/node_modules/transform
+1167 silly vacuum-fs quitting because other entries in /var/www/BookApi/node_modules
