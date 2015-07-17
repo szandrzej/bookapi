@@ -7,15 +7,12 @@ var router = express.Router();
 
 var authorCreateFields = ['firstName', 'lastName', 'nationality', 'birthday'];
 
-router.use(function(req, res, next){
-    console.log('Question about authors!');
-    next();
-});
-
 /* Get all authors */
 router.get('/', function(req, res, next) {
     Authors.findAll().then(function(result){
-        res.body = result;
+        res.body = {
+            authors: result
+        };
         res.statusCode = 200;
         next();
     });
@@ -23,8 +20,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next){
     var data = req.body;
-    console.log(data);
-
     res.send(data);
 });
 
