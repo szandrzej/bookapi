@@ -1,5 +1,8 @@
 "use strict";
 
+var bcrypt = require('bcrypt');
+var randomString = require('random-string');
+
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
             username:
@@ -28,9 +31,40 @@ module.exports = function(sequelize, DataTypes) {
             {
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            password:
+            {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            refreshToken:
+            {
+                type: DataTypes.STRING(120),
+                allowNull: true
+            },
+            role:{
+                type: DataTypes.ENUM('admin', 'user'),
+                allowNull: false
             }
         },
         {
+            hooks: {
+                beforeValidate: function (user) {
+                    var plainPwd = user.password;
+                    var salt = bcrypt.genSaltSync(10);
+                    var hash = bcrypt.hashSync(plainPwd, salt);
+
+                    user.salt = salt;
+                    user.password = hash;
+
+                    if(user.role === undefined){
+                        user.role = 'user';
+                    }
+                },
+                beforeCreate: function(user){
+                    user.refreshToken = randomString({length: 120});
+                }
+            },
             getterMethods   : {
                 fullName       : function()  {
                     return this.firstName + ' ' + this.lastName

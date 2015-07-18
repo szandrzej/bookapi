@@ -1,27 +1,35 @@
 "use strict";
 
+var randomString = require('random-string');
+var env = process.env.NODE_ENV || "development";
+var config = require('../config/conf.json')[env];
+
 module.exports = function(sequelize, DataTypes) {
     var Token = sequelize.define("Token", {
-            expireToken:
+            accessToken:
             {
                 type: DataTypes.STRING(60),
                 allowNull: false
             },
-            refreshToken:
-            {
-                type: DataTypes.STRING(60),
-                allowNull: false
-            },
-            expireDate:
+            expirationDate:
             {
                 type: DataTypes.DATE,
                 allowNull: false
             }
         },
         {
+            hooks:{
+              beforeValidate: function(entity){
+                  if(env !== 'test'){
+                      var date = new Date();
+                      entity.accessToken = randomString({length: 60});
+                      entity.expirationDate = date.getTime() + config.expirationTime * 1000;
+                  }
+              }
+            },
             defaultScope: {
                 where: {
-                    expireDate: {
+                    expirationDate: {
                         $gt: new Date()
                     }
                 }

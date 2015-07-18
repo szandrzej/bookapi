@@ -1,0 +1,2291 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'sequelize-fixtures',
+1 verbose cli   '--save' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose install initial load of /var/www/BookApi/package.json
+5 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/async/package.json
+6 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/body-parser/package.json
+7 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/chai/package.json
+8 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/chai-as-promised/package.json
+9 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/cookie-parser/package.json
+10 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/cors/package.json
+11 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/debug/package.json
+12 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/express/package.json
+13 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/express-bearer-token/package.json
+14 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/gulp/package.json
+15 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/jade/package.json
+16 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/mocha/package.json
+17 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/morgan/package.json
+18 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/mysql/package.json
+19 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/oauth2orize/package.json
+20 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/passport/package.json
+21 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/passport-http/package.json
+22 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/passport-http-bearer/package.json
+23 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/passport-local/package.json
+24 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/passport-oauth2-client-password/package.json
+25 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/sequelize/package.json
+26 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/serve-favicon/package.json
+27 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/sinon/package.json
+28 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/supertest/package.json
+29 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/transform/package.json
+30 verbose installManyTop reading scoped package data from /var/www/BookApi/node_modules/winston/package.json
+31 info package.json express-bearer-token@2.1.0 No license field.
+32 info package.json gulp@3.8.11 No license field.
+33 info package.json oauth2orize@1.0.1 No license field.
+34 info package.json passport-http@0.2.2 No license field.
+35 info package.json passport-http-bearer@1.0.1 No license field.
+36 info package.json passport-local@1.0.0 No license field.
+37 info package.json passport-oauth2-client-password@0.1.2 No license field.
+38 info package.json sinon@1.14.1 No license field.
+39 verbose readDependencies loading dependencies from /var/www/BookApi/package.json
+40 silly cache add args [ 'sequelize-fixtures', null ]
+41 verbose cache add spec sequelize-fixtures
+42 silly cache add parsed spec { raw: 'sequelize-fixtures',
+42 silly cache add   scope: null,
+42 silly cache add   name: 'sequelize-fixtures',
+42 silly cache add   rawSpec: '',
+42 silly cache add   spec: '*',
+42 silly cache add   type: 'range' }
+43 silly addNamed sequelize-fixtures@*
+44 verbose addNamed "*" is a valid semver range for sequelize-fixtures
+45 silly addNameRange { name: 'sequelize-fixtures', range: '*', hasData: false }
+46 silly mapToRegistry name sequelize-fixtures
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry uri https://registry.npmjs.org/sequelize-fixtures
+50 verbose addNameRange registry:https://registry.npmjs.org/sequelize-fixtures not in flight; fetching
+51 verbose request uri https://registry.npmjs.org/sequelize-fixtures
+52 verbose request no auth needed
+53 info attempt registry request try #1 at 3:56:35 PM
+54 verbose request id 2e564b54deff4895
+55 http request GET https://registry.npmjs.org/sequelize-fixtures
+56 http 200 https://registry.npmjs.org/sequelize-fixtures
+57 silly get cb [ 200,
+57 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+57 silly get     etag: '"5PZ57N49CZO7A0CG7868WK4IM"',
+57 silly get     'content-type': 'application/json',
+57 silly get     'cache-control': 'max-age=60',
+57 silly get     'content-length': '28070',
+57 silly get     'accept-ranges': 'bytes',
+57 silly get     date: 'Sat, 18 Jul 2015 15:56:35 GMT',
+57 silly get     via: '1.1 varnish',
+57 silly get     age: '0',
+57 silly get     connection: 'keep-alive',
+57 silly get     'x-served-by': 'cache-fra1231-FRA',
+57 silly get     'x-cache': 'MISS',
+57 silly get     'x-cache-hits': '0',
+57 silly get     'x-timer': 'S1437234995.323238,VS0,VE533',
+57 silly get     vary: 'Accept' } ]
+58 verbose get saving sequelize-fixtures to /home/vagrant/.npm/registry.npmjs.org/sequelize-fixtures/.cache.json
+59 silly addNameRange number 2 { name: 'sequelize-fixtures', range: '*', hasData: true }
+60 silly addNameRange versions [ 'sequelize-fixtures',
+60 silly addNameRange   [ '0.0.1',
+60 silly addNameRange     '0.1.0',
+60 silly addNameRange     '0.2.0',
+60 silly addNameRange     '0.3.0',
+60 silly addNameRange     '0.3.1',
+60 silly addNameRange     '0.3.2',
+60 silly addNameRange     '0.3.3',
+60 silly addNameRange     '0.3.4',
+60 silly addNameRange     '0.3.5',
+60 silly addNameRange     '0.4.0',
+60 silly addNameRange     '0.4.1',
+60 silly addNameRange     '0.4.2',
+60 silly addNameRange     '0.4.3',
+60 silly addNameRange     '0.4.4',
+60 silly addNameRange     '0.4.5',
+60 silly addNameRange     '0.4.6',
+60 silly addNameRange     '0.4.7' ] ]
+61 silly addNamed sequelize-fixtures@0.4.7
+62 verbose addNamed "0.4.7" is a plain semver version for sequelize-fixtures
+63 silly mapToRegistry name sequelize-fixtures
+64 silly mapToRegistry using default registry
+65 silly mapToRegistry registry https://registry.npmjs.org/
+66 silly mapToRegistry uri https://registry.npmjs.org/sequelize-fixtures
+67 verbose addRemoteTarball https://registry.npmjs.org/sequelize-fixtures/-/sequelize-fixtures-0.4.7.tgz not in flight; adding
+68 verbose addRemoteTarball [ 'https://registry.npmjs.org/sequelize-fixtures/-/sequelize-fixtures-0.4.7.tgz',
+68 verbose addRemoteTarball   '95969c22c57eb93f02c773fea9a3868316f33224' ]
+69 info retry fetch attempt 1 at 3:56:35 PM
+70 info attempt registry request try #1 at 3:56:35 PM
+71 http fetch GET https://registry.npmjs.org/sequelize-fixtures/-/sequelize-fixtures-0.4.7.tgz
+72 http fetch 200 https://registry.npmjs.org/sequelize-fixtures/-/sequelize-fixtures-0.4.7.tgz
+73 silly fetchAndShaCheck shasum 95969c22c57eb93f02c773fea9a3868316f33224
+74 verbose addTmpTarball /tmp/npm-8401-66657bd2/registry.npmjs.org/sequelize-fixtures/-/sequelize-fixtures-0.4.7.tgz not in flight; adding
+75 verbose addTmpTarball already have metadata; skipping unpack for sequelize-fixtures@0.4.7
+76 silly cache afterAdd sequelize-fixtures@0.4.7
+77 verbose afterAdd /home/vagrant/.npm/sequelize-fixtures/0.4.7/package/package.json not in flight; writing
+78 verbose afterAdd /home/vagrant/.npm/sequelize-fixtures/0.4.7/package/package.json written
+79 silly install resolved [ { name: 'sequelize-fixtures',
+79 silly install resolved     version: '0.4.7',
+79 silly install resolved     description: 'sequelize fixture loader',
+79 silly install resolved     main: 'index.js',
+79 silly install resolved     scripts: { test: 'rm -f ./testdb.sqlite && ./node_modules/.bin/mocha tests' },
+79 silly install resolved     engines: { node: '*' },
+79 silly install resolved     keywords: [ 'sequelize', 'fixtures' ],
+79 silly install resolved     dependencies: { bluebird: '^2.4.2', glob: '~3.2.1', 'js-yaml': '~2.1.0' },
+79 silly install resolved     devDependencies:
+79 silly install resolved      { mocha: '*',
+79 silly install resolved        sequelize: '*',
+79 silly install resolved        should: '*',
+79 silly install resolved        sinon: '^1.14.1',
+79 silly install resolved        sqlite3: '*' },
+79 silly install resolved     repository:
+79 silly install resolved      { type: 'git',
+79 silly install resolved        url: 'git://github.com/domasx2/sequelize-fixtures.git' },
+79 silly install resolved     bugs: { url: 'https://github.com/domasx2/sequelize-fixtures/issues' },
+79 silly install resolved     author: { name: 'Domas Lapinskas', email: 'domasx2@gmail.com' },
+79 silly install resolved     license: 'BSD',
+79 silly install resolved     gitHead: '2f9fea12d44817874432a97737eaeaaf751899e6',
+79 silly install resolved     homepage: 'https://github.com/domasx2/sequelize-fixtures#readme',
+79 silly install resolved     _id: 'sequelize-fixtures@0.4.7',
+79 silly install resolved     _shasum: '95969c22c57eb93f02c773fea9a3868316f33224',
+79 silly install resolved     _from: 'sequelize-fixtures@*',
+79 silly install resolved     _npmVersion: '2.10.1',
+79 silly install resolved     _nodeVersion: '0.12.4',
+79 silly install resolved     _npmUser: { name: 'domasx2', email: 'domasx2@gmail.com' },
+79 silly install resolved     maintainers: [ [Object] ],
+79 silly install resolved     dist:
+79 silly install resolved      { shasum: '95969c22c57eb93f02c773fea9a3868316f33224',
+79 silly install resolved        tarball: 'http://registry.npmjs.org/sequelize-fixtures/-/sequelize-fixtures-0.4.7.tgz' },
+79 silly install resolved     directories: {},
+79 silly install resolved     _resolved: 'https://registry.npmjs.org/sequelize-fixtures/-/sequelize-fixtures-0.4.7.tgz' } ]
+80 info install sequelize-fixtures@0.4.7 into /var/www/BookApi
+81 info installOne sequelize-fixtures@0.4.7
+82 verbose installOne of sequelize-fixtures to /var/www/BookApi not in flight; installing
+83 verbose lock using /home/vagrant/.npm/_locks/sequelize-fixtures-6ef6b22598f158ff.lock for /var/www/BookApi/node_modules/sequelize-fixtures
+84 silly install write writing sequelize-fixtures 0.4.7 to /var/www/BookApi/node_modules/sequelize-fixtures
+85 verbose unbuild node_modules/sequelize-fixtures
+86 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures is being purged from base /var/www/BookApi
+87 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures
+88 verbose tar unpack /home/vagrant/.npm/sequelize-fixtures/0.4.7/package.tgz
+89 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures
+90 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures is being purged
+91 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures
+92 silly gunzTarPerm modes [ '775', '664' ]
+93 silly gunzTarPerm extractEntry package.json
+94 silly gunzTarPerm extractEntry .npmignore
+95 silly gunzTarPerm extractEntry README.md
+96 silly gunzTarPerm extractEntry Gruntfile.js
+97 silly gunzTarPerm extractEntry index.js
+98 silly gunzTarPerm extractEntry lib/loader.js
+99 silly gunzTarPerm extractEntry lib/reader.js
+100 silly gunzTarPerm extractEntry .travis.yml
+101 silly gunzTarPerm extractEntry tests/tests.js
+102 silly gunzTarPerm extractEntry tests/fixtures/fixture1.js
+103 silly gunzTarPerm extractEntry tests/fixtures/associd.yaml
+104 silly gunzTarPerm modified mode [ 'tests/fixtures/associd.yaml', 438, 436 ]
+105 silly gunzTarPerm extractEntry tests/fixtures/custompk.yaml
+106 silly gunzTarPerm modified mode [ 'tests/fixtures/custompk.yaml', 438, 436 ]
+107 silly gunzTarPerm extractEntry tests/fixtures/fixture1.json
+108 silly gunzTarPerm extractEntry tests/fixtures/fixture2.json
+109 silly gunzTarPerm extractEntry tests/fixtures/fixture3.yaml
+110 silly gunzTarPerm extractEntry tests/fixtures/many2manyid.yaml
+111 silly gunzTarPerm extractEntry tests/fixtures/many2manynatural.yaml
+112 silly gunzTarPerm extractEntry tests/fixtures/natkeys.yaml
+113 silly gunzTarPerm extractEntry tests/models/Actor.js
+114 silly gunzTarPerm extractEntry tests/models/Article.js
+115 silly gunzTarPerm extractEntry tests/models/Bar.js
+116 silly gunzTarPerm extractEntry tests/models/Foo.js
+117 silly gunzTarPerm extractEntry tests/models/Movie.js
+118 silly gunzTarPerm extractEntry tests/models/Person.js
+119 silly gunzTarPerm modified mode [ 'tests/models/Person.js', 438, 436 ]
+120 silly gunzTarPerm extractEntry tests/models/Play.js
+121 silly gunzTarPerm modified mode [ 'tests/models/Play.js', 438, 436 ]
+122 silly gunzTarPerm extractEntry tests/models/Producer.js
+123 silly gunzTarPerm modified mode [ 'tests/models/Producer.js', 438, 436 ]
+124 silly gunzTarPerm extractEntry tests/models/Project.js
+125 silly gunzTarPerm modified mode [ 'tests/models/Project.js', 438, 436 ]
+126 silly gunzTarPerm extractEntry tests/models/index.js
+127 silly gunzTarPerm extractEntry tasks/fixtures.json
+128 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/package.json
+129 info preinstall sequelize-fixtures@0.4.7
+130 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/package.json
+131 silly prepareForInstallMany adding bluebird@^2.4.2 from sequelize-fixtures dependencies
+132 silly prepareForInstallMany adding glob@~3.2.1 from sequelize-fixtures dependencies
+133 silly prepareForInstallMany adding js-yaml@~2.1.0 from sequelize-fixtures dependencies
+134 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/package.json
+135 silly cache add args [ 'bluebird@^2.4.2', null ]
+136 verbose cache add spec bluebird@^2.4.2
+137 silly cache add args [ 'glob@~3.2.1', null ]
+138 verbose cache add spec glob@~3.2.1
+139 silly cache add parsed spec { raw: 'bluebird@^2.4.2',
+139 silly cache add   scope: null,
+139 silly cache add   name: 'bluebird',
+139 silly cache add   rawSpec: '^2.4.2',
+139 silly cache add   spec: '>=2.4.2 <3.0.0',
+139 silly cache add   type: 'range' }
+140 silly addNamed bluebird@>=2.4.2 <3.0.0
+141 verbose addNamed ">=2.4.2 <3.0.0" is a valid semver range for bluebird
+142 silly addNameRange { name: 'bluebird', range: '>=2.4.2 <3.0.0', hasData: false }
+143 silly mapToRegistry name bluebird
+144 silly mapToRegistry using default registry
+145 silly mapToRegistry registry https://registry.npmjs.org/
+146 silly mapToRegistry uri https://registry.npmjs.org/bluebird
+147 verbose addNameRange registry:https://registry.npmjs.org/bluebird not in flight; fetching
+148 silly cache add parsed spec { raw: 'glob@~3.2.1',
+148 silly cache add   scope: null,
+148 silly cache add   name: 'glob',
+148 silly cache add   rawSpec: '~3.2.1',
+148 silly cache add   spec: '>=3.2.1 <3.3.0',
+148 silly cache add   type: 'range' }
+149 silly addNamed glob@>=3.2.1 <3.3.0
+150 verbose addNamed ">=3.2.1 <3.3.0" is a valid semver range for glob
+151 silly addNameRange { name: 'glob', range: '>=3.2.1 <3.3.0', hasData: false }
+152 silly mapToRegistry name glob
+153 silly mapToRegistry using default registry
+154 silly mapToRegistry registry https://registry.npmjs.org/
+155 silly mapToRegistry uri https://registry.npmjs.org/glob
+156 verbose addNameRange registry:https://registry.npmjs.org/glob not in flight; fetching
+157 silly cache add args [ 'js-yaml@~2.1.0', null ]
+158 verbose cache add spec js-yaml@~2.1.0
+159 silly cache add parsed spec { raw: 'js-yaml@~2.1.0',
+159 silly cache add   scope: null,
+159 silly cache add   name: 'js-yaml',
+159 silly cache add   rawSpec: '~2.1.0',
+159 silly cache add   spec: '>=2.1.0 <2.2.0',
+159 silly cache add   type: 'range' }
+160 silly addNamed js-yaml@>=2.1.0 <2.2.0
+161 verbose addNamed ">=2.1.0 <2.2.0" is a valid semver range for js-yaml
+162 silly addNameRange { name: 'js-yaml', range: '>=2.1.0 <2.2.0', hasData: false }
+163 silly mapToRegistry name js-yaml
+164 silly mapToRegistry using default registry
+165 silly mapToRegistry registry https://registry.npmjs.org/
+166 silly mapToRegistry uri https://registry.npmjs.org/js-yaml
+167 verbose addNameRange registry:https://registry.npmjs.org/js-yaml not in flight; fetching
+168 verbose request uri https://registry.npmjs.org/glob
+169 verbose request no auth needed
+170 info attempt registry request try #1 at 3:56:36 PM
+171 verbose etag "E1MS4PMH5TNMRXSSCVGOMDJOP"
+172 http request GET https://registry.npmjs.org/glob
+173 verbose request uri https://registry.npmjs.org/bluebird
+174 verbose request no auth needed
+175 info attempt registry request try #1 at 3:56:36 PM
+176 verbose etag "41RAS9JDRU4YJV5YISCF498L0"
+177 http request GET https://registry.npmjs.org/bluebird
+178 verbose request uri https://registry.npmjs.org/js-yaml
+179 verbose request no auth needed
+180 info attempt registry request try #1 at 3:56:36 PM
+181 verbose etag "E8G21XRS4GSJDYJB62V3ML2PT"
+182 http request GET https://registry.npmjs.org/js-yaml
+183 http 200 https://registry.npmjs.org/js-yaml
+184 silly get cb [ 200,
+184 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+184 silly get     etag: '"DN9OQY4NZO44HH90GNFH4BYY2"',
+184 silly get     'content-type': 'application/json',
+184 silly get     'cache-control': 'max-age=60',
+184 silly get     'content-length': '59057',
+184 silly get     'accept-ranges': 'bytes',
+184 silly get     date: 'Sat, 18 Jul 2015 15:56:37 GMT',
+184 silly get     via: '1.1 varnish',
+184 silly get     age: '4',
+184 silly get     connection: 'keep-alive',
+184 silly get     'x-served-by': 'cache-fra1233-FRA',
+184 silly get     'x-cache': 'HIT',
+184 silly get     'x-cache-hits': '1',
+184 silly get     'x-timer': 'S1437234997.055893,VS0,VE0',
+184 silly get     vary: 'Accept' } ]
+185 verbose get saving js-yaml to /home/vagrant/.npm/registry.npmjs.org/js-yaml/.cache.json
+186 silly addNameRange number 2 { name: 'js-yaml', range: '>=2.1.0 <2.2.0', hasData: true }
+187 silly addNameRange versions [ 'js-yaml',
+187 silly addNameRange   [ '0.2.0',
+187 silly addNameRange     '0.2.1',
+187 silly addNameRange     '0.2.2',
+187 silly addNameRange     '0.3.0',
+187 silly addNameRange     '0.3.1',
+187 silly addNameRange     '0.3.2',
+187 silly addNameRange     '0.3.3',
+187 silly addNameRange     '0.3.4',
+187 silly addNameRange     '0.3.5',
+187 silly addNameRange     '0.3.6',
+187 silly addNameRange     '0.3.7',
+187 silly addNameRange     '1.0.0',
+187 silly addNameRange     '1.0.1',
+187 silly addNameRange     '1.0.2',
+187 silly addNameRange     '1.0.3',
+187 silly addNameRange     '2.0.0',
+187 silly addNameRange     '2.0.1',
+187 silly addNameRange     '2.0.2',
+187 silly addNameRange     '2.0.3',
+187 silly addNameRange     '2.0.4',
+187 silly addNameRange     '2.0.5',
+187 silly addNameRange     '2.1.0',
+187 silly addNameRange     '2.1.1',
+187 silly addNameRange     '2.1.2',
+187 silly addNameRange     '2.1.3',
+187 silly addNameRange     '3.0.0',
+187 silly addNameRange     '3.0.1',
+187 silly addNameRange     '3.0.2',
+187 silly addNameRange     '3.1.0',
+187 silly addNameRange     '3.2.1',
+187 silly addNameRange     '3.2.2',
+187 silly addNameRange     '3.2.3',
+187 silly addNameRange     '3.2.4',
+187 silly addNameRange     '3.2.5',
+187 silly addNameRange     '3.2.6',
+187 silly addNameRange     '3.2.7',
+187 silly addNameRange     '3.3.0',
+187 silly addNameRange     '3.3.1' ] ]
+188 silly addNamed js-yaml@2.1.3
+189 verbose addNamed "2.1.3" is a plain semver version for js-yaml
+190 silly mapToRegistry name js-yaml
+191 silly mapToRegistry using default registry
+192 silly mapToRegistry registry https://registry.npmjs.org/
+193 silly mapToRegistry uri https://registry.npmjs.org/js-yaml
+194 verbose addRemoteTarball https://registry.npmjs.org/js-yaml/-/js-yaml-2.1.3.tgz not in flight; adding
+195 verbose addRemoteTarball [ 'https://registry.npmjs.org/js-yaml/-/js-yaml-2.1.3.tgz',
+195 verbose addRemoteTarball   '0ffb5617be55525878063d7a16aee7fdd282e84c' ]
+196 info retry fetch attempt 1 at 3:56:37 PM
+197 info attempt registry request try #1 at 3:56:37 PM
+198 http fetch GET https://registry.npmjs.org/js-yaml/-/js-yaml-2.1.3.tgz
+199 http 200 https://registry.npmjs.org/glob
+200 silly get cb [ 200,
+200 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+200 silly get     etag: '"5GYC1DJ1MN8BE12EXNMHVEORR"',
+200 silly get     'content-type': 'application/json',
+200 silly get     'cache-control': 'max-age=60',
+200 silly get     'content-length': '107372',
+200 silly get     'accept-ranges': 'bytes',
+200 silly get     date: 'Sat, 18 Jul 2015 15:56:37 GMT',
+200 silly get     via: '1.1 varnish',
+200 silly get     age: '16',
+200 silly get     connection: 'keep-alive',
+200 silly get     'x-served-by': 'cache-fra1228-FRA',
+200 silly get     'x-cache': 'HIT',
+200 silly get     'x-cache-hits': '1',
+200 silly get     'x-timer': 'S1437234997.028644,VS0,VE1',
+200 silly get     vary: 'Accept' } ]
+201 verbose get saving glob to /home/vagrant/.npm/registry.npmjs.org/glob/.cache.json
+202 silly addNameRange number 2 { name: 'glob', range: '>=3.2.1 <3.3.0', hasData: true }
+203 silly addNameRange versions [ 'glob',
+203 silly addNameRange   [ '1.1.0',
+203 silly addNameRange     '2.0.9',
+203 silly addNameRange     '2.0.8',
+203 silly addNameRange     '2.0.7',
+203 silly addNameRange     '2.1.0',
+203 silly addNameRange     '3.0.0',
+203 silly addNameRange     '3.0.1',
+203 silly addNameRange     '3.1.0',
+203 silly addNameRange     '3.1.1',
+203 silly addNameRange     '3.1.2',
+203 silly addNameRange     '3.1.3',
+203 silly addNameRange     '3.1.4',
+203 silly addNameRange     '3.1.5',
+203 silly addNameRange     '3.1.6',
+203 silly addNameRange     '3.1.7',
+203 silly addNameRange     '3.1.9',
+203 silly addNameRange     '3.1.10',
+203 silly addNameRange     '3.1.11',
+203 silly addNameRange     '3.1.12',
+203 silly addNameRange     '3.1.13',
+203 silly addNameRange     '3.1.14',
+203 silly addNameRange     '3.1.15',
+203 silly addNameRange     '3.1.16',
+203 silly addNameRange     '3.1.17',
+203 silly addNameRange     '3.1.18',
+203 silly addNameRange     '3.1.19',
+203 silly addNameRange     '3.1.20',
+203 silly addNameRange     '3.1.21',
+203 silly addNameRange     '3.2.0',
+203 silly addNameRange     '3.2.1',
+203 silly addNameRange     '3.2.3',
+203 silly addNameRange     '3.2.4',
+203 silly addNameRange     '3.2.5',
+203 silly addNameRange     '3.2.6',
+203 silly addNameRange     '3.2.7',
+203 silly addNameRange     '3.2.8',
+203 silly addNameRange     '3.2.9',
+203 silly addNameRange     '3.2.10',
+203 silly addNameRange     '3.2.11',
+203 silly addNameRange     '4.0.0',
+203 silly addNameRange     '4.0.1',
+203 silly addNameRange     '4.0.2',
+203 silly addNameRange     '4.0.3',
+203 silly addNameRange     '4.0.4',
+203 silly addNameRange     '4.0.5',
+203 silly addNameRange     '4.0.6',
+203 silly addNameRange     '4.1.2-beta',
+203 silly addNameRange     '4.1.2',
+203 silly addNameRange     '4.1.3',
+203 silly addNameRange     '4.1.4',
+203 silly addNameRange     '4.1.5',
+203 silly addNameRange     '4.1.6',
+203 silly addNameRange     '4.2.0',
+203 silly addNameRange     '4.2.1',
+203 silly addNameRange     '4.2.2',
+203 silly addNameRange     '4.3.0',
+203 silly addNameRange     '4.3.1',
+203 silly addNameRange     '4.3.2',
+203 silly addNameRange     '4.3.3',
+203 silly addNameRange     '4.3.4',
+203 silly addNameRange     '4.3.5',
+203 silly addNameRange     '4.4.0',
+203 silly addNameRange     '4.4.2',
+203 silly addNameRange     '4.5.0',
+203 silly addNameRange     '5.0.0',
+203 silly addNameRange     '4.5.1',
+203 silly addNameRange     '5.0.1',
+203 silly addNameRange     '4.5.2',
+203 silly addNameRange     '5.0.2',
+203 silly addNameRange     '4.5.3',
+203 silly addNameRange     '5.0.3',
+203 silly addNameRange     '5.0.4',
+203 silly addNameRange     '5.0.5',
+203 silly addNameRange     '5.0.6',
+203 silly addNameRange     '5.0.7',
+203 silly addNameRange     '5.0.9',
+203 silly addNameRange     '5.0.10',
+203 silly addNameRange     '5.0.11',
+203 silly addNameRange     '5.0.12',
+203 silly addNameRange     '5.0.13',
+203 silly addNameRange     '5.0.14' ] ]
+204 silly addNamed glob@3.2.11
+205 verbose addNamed "3.2.11" is a plain semver version for glob
+206 silly cache afterAdd glob@3.2.11
+207 verbose afterAdd /home/vagrant/.npm/glob/3.2.11/package/package.json not in flight; writing
+208 verbose afterAdd /home/vagrant/.npm/glob/3.2.11/package/package.json written
+209 http 200 https://registry.npmjs.org/bluebird
+210 silly get cb [ 200,
+210 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+210 silly get     etag: '"8IUVWUHD4BT0ITHXMH0VGBPLS"',
+210 silly get     'content-type': 'application/json',
+210 silly get     'cache-control': 'max-age=60',
+210 silly get     'content-length': '336837',
+210 silly get     'accept-ranges': 'bytes',
+210 silly get     date: 'Sat, 18 Jul 2015 15:56:37 GMT',
+210 silly get     via: '1.1 varnish',
+210 silly get     age: '48',
+210 silly get     connection: 'keep-alive',
+210 silly get     'x-served-by': 'cache-fra1247-FRA',
+210 silly get     'x-cache': 'HIT',
+210 silly get     'x-cache-hits': '1',
+210 silly get     'x-timer': 'S1437234997.023762,VS0,VE1',
+210 silly get     vary: 'Accept' } ]
+211 verbose get saving bluebird to /home/vagrant/.npm/registry.npmjs.org/bluebird/.cache.json
+212 silly addNameRange number 2 { name: 'bluebird', range: '>=2.4.2 <3.0.0', hasData: true }
+213 silly addNameRange versions [ 'bluebird',
+213 silly addNameRange   [ '0.7.1-1',
+213 silly addNameRange     '0.7.1-2',
+213 silly addNameRange     '0.7.1-3',
+213 silly addNameRange     '0.7.1-4',
+213 silly addNameRange     '0.7.1-5',
+213 silly addNameRange     '0.7.2-0',
+213 silly addNameRange     '0.7.3-0',
+213 silly addNameRange     '0.7.4-0',
+213 silly addNameRange     '0.7.4-1',
+213 silly addNameRange     '0.7.5-0',
+213 silly addNameRange     '0.7.6-0',
+213 silly addNameRange     '0.7.7-0',
+213 silly addNameRange     '0.7.7-1',
+213 silly addNameRange     '0.7.8-0',
+213 silly addNameRange     '0.7.8-1',
+213 silly addNameRange     '0.7.9-0',
+213 silly addNameRange     '0.7.9-1',
+213 silly addNameRange     '0.7.10-0',
+213 silly addNameRange     '0.7.10-1',
+213 silly addNameRange     '0.7.11-0',
+213 silly addNameRange     '0.7.12-0',
+213 silly addNameRange     '0.7.12-1',
+213 silly addNameRange     '0.7.12-2',
+213 silly addNameRange     '0.8.0-0',
+213 silly addNameRange     '0.8.0-1',
+213 silly addNameRange     '0.8.0-2',
+213 silly addNameRange     '0.8.0-3',
+213 silly addNameRange     '0.8.1-0',
+213 silly addNameRange     '0.8.2-0',
+213 silly addNameRange     '0.8.2-1',
+213 silly addNameRange     '0.8.2-2',
+213 silly addNameRange     '0.8.3-0',
+213 silly addNameRange     '0.8.3-1',
+213 silly addNameRange     '0.8.3-2',
+213 silly addNameRange     '0.8.3-3',
+213 silly addNameRange     '0.8.4-0',
+213 silly addNameRange     '0.8.4-1',
+213 silly addNameRange     '0.8.5-0',
+213 silly addNameRange     '0.8.5-1',
+213 silly addNameRange     '0.9.0-0',
+213 silly addNameRange     '0.9.1-0',
+213 silly addNameRange     '0.9.1-1',
+213 silly addNameRange     '0.9.2-0',
+213 silly addNameRange     '0.9.2-1',
+213 silly addNameRange     '0.9.3-0',
+213 silly addNameRange     '0.9.4-0',
+213 silly addNameRange     '0.9.4-1',
+213 silly addNameRange     '0.9.5-0',
+213 silly addNameRange     '0.9.6-0',
+213 silly addNameRange     '0.9.7-0',
+213 silly addNameRange     '0.9.8-0',
+213 silly addNameRange     '0.9.9-0',
+213 silly addNameRange     '0.9.10-0',
+213 silly addNameRange     '0.9.10-1',
+213 silly addNameRange     '0.9.11-0',
+213 silly addNameRange     '0.9.11-1',
+213 silly addNameRange     '0.10.0-0',
+213 silly addNameRange     '0.10.0-1',
+213 silly addNameRange     '0.10.1-0',
+213 silly addNameRange     '0.10.2-0',
+213 silly addNameRange     '0.10.2-1',
+213 silly addNameRange     '0.10.3-0',
+213 silly addNameRange     '0.10.4-0',
+213 silly addNameRange     '0.10.4-1',
+213 silly addNameRange     '0.10.5-0',
+213 silly addNameRange     '0.10.6-0',
+213 silly addNameRange     '0.10.7-0',
+213 silly addNameRange     '0.10.8-0',
+213 silly addNameRange     '0.10.9-0',
+213 silly addNameRange     '0.10.9-1',
+213 silly addNameRange     '0.10.10-0',
+213 silly addNameRange     '0.10.11-0',
+213 silly addNameRange     '0.10.11-1',
+213 silly addNameRange     '0.10.11-2',
+213 silly addNameRange     '0.10.11-4',
+213 silly addNameRange     '0.10.12-0',
+213 silly addNameRange     '0.10.13-0',
+213 silly addNameRange     '0.10.13-1',
+213 silly addNameRange     '0.10.14-0',
+213 silly addNameRange     '0.11.0-0',
+213 silly addNameRange     '0.11.1-0',
+213 silly addNameRange     '0.11.2-0',
+213 silly addNameRange     '0.11.3-0',
+213 silly addNameRange     '0.11.4-0',
+213 silly addNameRange     '0.11.4-1',
+213 silly addNameRange     '0.11.5-0',
+213 silly addNameRange     '0.11.5-1',
+213 silly addNameRange     '0.11.6-0',
+213 silly addNameRange     '1.0.0',
+213 silly addNameRange     '1.0.1',
+213 silly addNameRange     '1.0.2',
+213 silly addNameRange     '1.0.3',
+213 silly addNameRange     '1.0.4',
+213 silly addNameRange     '1.0.5',
+213 silly addNameRange     '1.0.7',
+213 silly addNameRange     '1.0.8',
+213 silly addNameRange     '1.1.0',
+213 silly addNameRange     '1.1.1',
+213 silly addNameRange     '1.2.0',
+213 silly addNameRange     '1.2.1',
+213 silly addNameRange     '1.2.2',
+213 silly addNameRange     '1.2.3',
+213 silly addNameRange     '1.2.4',
+213 silly addNameRange     '2.0.2',
+213 silly addNameRange     '2.0.3',
+213 silly addNameRange     '2.0.4',
+213 silly addNameRange     '2.0.5',
+213 silly addNameRange     '2.0.6',
+213 silly addNameRange     '2.0.7',
+213 silly addNameRange     '2.1.1',
+213 silly addNameRange     '2.1.2',
+213 silly addNameRange     '2.1.3',
+213 silly addNameRange     '2.2.0',
+213 silly addNameRange     '2.2.1',
+213 silly addNameRange     '2.2.2',
+213 silly addNameRange     '2.3.0',
+213 silly addNameRange     '2.3.1',
+213 silly addNameRange     '2.3.2',
+213 silly addNameRange     '2.3.3',
+213 silly addNameRange     '2.3.4',
+213 silly addNameRange     '2.3.5',
+213 silly addNameRange     '0.11.6',
+213 silly addNameRange     '2.3.6',
+213 silly addNameRange     '2.3.9',
+213 silly addNameRange     '2.3.10',
+213 silly addNameRange     '2.3.11',
+213 silly addNameRange     '2.4.0',
+213 silly addNameRange     '2.4.1',
+213 silly addNameRange     '2.4.2',
+213 silly addNameRange     '2.4.3',
+213 silly addNameRange     '2.5.0',
+213 silly addNameRange     '2.5.1',
+213 silly addNameRange     '2.5.2',
+213 silly addNameRange     '2.5.3',
+213 silly addNameRange     '2.6.0',
+213 silly addNameRange     '2.6.1',
+213 silly addNameRange     '2.6.2',
+213 silly addNameRange     '2.6.3',
+213 silly addNameRange     '2.6.4',
+213 silly addNameRange     '2.7.0',
+213 silly addNameRange     '2.7.1',
+213 silly addNameRange     '2.8.0',
+213 silly addNameRange     '2.8.1',
+213 silly addNameRange     '2.8.2',
+213 silly addNameRange     '2.9.0',
+213 silly addNameRange     '2.9.1',
+213 silly addNameRange     '2.9.2',
+213 silly addNameRange     '2.9.3',
+213 silly addNameRange     '2.9.4',
+213 silly addNameRange     '2.9.5',
+213 silly addNameRange     '2.9.6',
+213 silly addNameRange     '2.9.7',
+213 silly addNameRange     '2.9.8',
+213 silly addNameRange     '2.9.9',
+213 silly addNameRange     '2.9.10',
+213 silly addNameRange     '2.9.11',
+213 silly addNameRange     '2.9.12',
+213 silly addNameRange     '2.9.13',
+213 silly addNameRange     '2.9.14',
+213 silly addNameRange     '2.9.15',
+213 silly addNameRange     '2.9.16',
+213 silly addNameRange     '2.9.17',
+213 silly addNameRange     '2.9.18',
+213 silly addNameRange     '2.9.19',
+213 silly addNameRange     '2.9.20',
+213 silly addNameRange     '2.9.21',
+213 silly addNameRange     '2.9.22',
+213 silly addNameRange     '2.9.23',
+213 silly addNameRange     '2.9.24',
+213 silly addNameRange     '2.9.25',
+213 silly addNameRange     '2.9.26',
+213 silly addNameRange     '2.9.27',
+213 silly addNameRange     '2.9.28',
+213 silly addNameRange     '2.9.29',
+213 silly addNameRange     '2.9.30',
+213 silly addNameRange     '2.9.31',
+213 silly addNameRange     '2.9.32',
+213 silly addNameRange     '2.9.33',
+213 silly addNameRange     '2.9.34' ] ]
+214 silly addNamed bluebird@2.9.34
+215 verbose addNamed "2.9.34" is a plain semver version for bluebird
+216 silly mapToRegistry name bluebird
+217 silly mapToRegistry using default registry
+218 silly mapToRegistry registry https://registry.npmjs.org/
+219 silly mapToRegistry uri https://registry.npmjs.org/bluebird
+220 verbose addRemoteTarball https://registry.npmjs.org/bluebird/-/bluebird-2.9.34.tgz not in flight; adding
+221 verbose addRemoteTarball [ 'https://registry.npmjs.org/bluebird/-/bluebird-2.9.34.tgz',
+221 verbose addRemoteTarball   '2f7b4ec80216328a9fddebdf69c8d4942feff7d8' ]
+222 info retry fetch attempt 1 at 3:56:37 PM
+223 info attempt registry request try #1 at 3:56:37 PM
+224 http fetch GET https://registry.npmjs.org/bluebird/-/bluebird-2.9.34.tgz
+225 http fetch 200 https://registry.npmjs.org/js-yaml/-/js-yaml-2.1.3.tgz
+226 silly fetchAndShaCheck shasum 0ffb5617be55525878063d7a16aee7fdd282e84c
+227 verbose addTmpTarball /tmp/npm-8401-66657bd2/registry.npmjs.org/js-yaml/-/js-yaml-2.1.3.tgz not in flight; adding
+228 verbose addTmpTarball already have metadata; skipping unpack for js-yaml@2.1.3
+229 silly cache afterAdd js-yaml@2.1.3
+230 verbose afterAdd /home/vagrant/.npm/js-yaml/2.1.3/package/package.json not in flight; writing
+231 verbose afterAdd /home/vagrant/.npm/js-yaml/2.1.3/package/package.json written
+232 http fetch 200 https://registry.npmjs.org/bluebird/-/bluebird-2.9.34.tgz
+233 silly fetchAndShaCheck shasum 2f7b4ec80216328a9fddebdf69c8d4942feff7d8
+234 verbose addTmpTarball /tmp/npm-8401-66657bd2/registry.npmjs.org/bluebird/-/bluebird-2.9.34.tgz not in flight; adding
+235 verbose addTmpTarball already have metadata; skipping unpack for bluebird@2.9.34
+236 silly cache afterAdd bluebird@2.9.34
+237 verbose afterAdd /home/vagrant/.npm/bluebird/2.9.34/package/package.json not in flight; writing
+238 verbose afterAdd /home/vagrant/.npm/bluebird/2.9.34/package/package.json written
+239 silly install resolved [ { author:
+239 silly install resolved      { name: 'Isaac Z. Schlueter',
+239 silly install resolved        email: 'i@izs.me',
+239 silly install resolved        url: 'http://blog.izs.me/' },
+239 silly install resolved     name: 'glob',
+239 silly install resolved     description: 'a little globber',
+239 silly install resolved     version: '3.2.11',
+239 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/node-glob.git' },
+239 silly install resolved     main: 'glob.js',
+239 silly install resolved     engines: { node: '*' },
+239 silly install resolved     dependencies: { inherits: '2', minimatch: '0.3' },
+239 silly install resolved     devDependencies: { tap: '~0.4.0', mkdirp: '0', rimraf: '1' },
+239 silly install resolved     scripts:
+239 silly install resolved      { test: 'tap test/*.js',
+239 silly install resolved        'test-regen': 'TEST_REGEN=1 node test/00-setup.js' },
+239 silly install resolved     license: 'BSD',
+239 silly install resolved     gitHead: '73f57e99510582b2024b762305970ebcf9b70aa2',
+239 silly install resolved     bugs: { url: 'https://github.com/isaacs/node-glob/issues' },
+239 silly install resolved     homepage: 'https://github.com/isaacs/node-glob',
+239 silly install resolved     _id: 'glob@3.2.11',
+239 silly install resolved     _shasum: '4a973f635b9190f715d10987d5c00fd2815ebe3d',
+239 silly install resolved     _from: 'glob@>=3.2.1 <3.3.0',
+239 silly install resolved     _npmVersion: '1.4.10',
+239 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+239 silly install resolved     maintainers: [ [Object] ],
+239 silly install resolved     dist:
+239 silly install resolved      { shasum: '4a973f635b9190f715d10987d5c00fd2815ebe3d',
+239 silly install resolved        tarball: 'http://registry.npmjs.org/glob/-/glob-3.2.11.tgz' },
+239 silly install resolved     directories: {},
+239 silly install resolved     _resolved: 'https://registry.npmjs.org/glob/-/glob-3.2.11.tgz',
+239 silly install resolved     readme: 'ERROR: No README data found!' },
+239 silly install resolved   { name: 'js-yaml',
+239 silly install resolved     version: '2.1.3',
+239 silly install resolved     description: 'YAML 1.2 parser and serializer',
+239 silly install resolved     keywords: [ 'yaml', 'parser', 'serializer', 'pyyaml' ],
+239 silly install resolved     homepage: 'https://github.com/nodeca/js-yaml',
+239 silly install resolved     author: { name: 'Dervus Grim', email: 'dervus.grim@gmail.com' },
+239 silly install resolved     contributors: [ [Object], [Object] ],
+239 silly install resolved     bugs: { url: 'https://github.com/nodeca/js-yaml/issues' },
+239 silly install resolved     license:
+239 silly install resolved      { type: 'MIT',
+239 silly install resolved        url: 'https://github.com/nodeca/js-yaml/blob/master/LICENSE' },
+239 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodeca/js-yaml.git' },
+239 silly install resolved     main: './index.js',
+239 silly install resolved     bin: { 'js-yaml': 'bin/js-yaml.js' },
+239 silly install resolved     scripts: { test: 'make test' },
+239 silly install resolved     dependencies: { argparse: '~ 0.1.11', esprima: '~ 1.0.2' },
+239 silly install resolved     devDependencies: { mocha: '*' },
+239 silly install resolved     engines: { node: '>= 0.6.0' },
+239 silly install resolved     _id: 'js-yaml@2.1.3',
+239 silly install resolved     dist:
+239 silly install resolved      { shasum: '0ffb5617be55525878063d7a16aee7fdd282e84c',
+239 silly install resolved        tarball: 'http://registry.npmjs.org/js-yaml/-/js-yaml-2.1.3.tgz' },
+239 silly install resolved     _from: 'js-yaml@>=2.1.0 <2.2.0',
+239 silly install resolved     _resolved: 'https://registry.npmjs.org/js-yaml/-/js-yaml-2.1.3.tgz',
+239 silly install resolved     _npmVersion: '1.3.8',
+239 silly install resolved     _npmUser: { name: 'vitaly', email: 'vitaly@rcdesign.ru' },
+239 silly install resolved     maintainers: [ [Object] ],
+239 silly install resolved     directories: {},
+239 silly install resolved     _shasum: '0ffb5617be55525878063d7a16aee7fdd282e84c' },
+239 silly install resolved   { name: 'bluebird',
+239 silly install resolved     description: 'Full featured Promises/A+ implementation with exceptionally good performance',
+239 silly install resolved     version: '2.9.34',
+239 silly install resolved     keywords:
+239 silly install resolved      [ 'promise',
+239 silly install resolved        'performance',
+239 silly install resolved        'promises',
+239 silly install resolved        'promises-a',
+239 silly install resolved        'promises-aplus',
+239 silly install resolved        'async',
+239 silly install resolved        'await',
+239 silly install resolved        'deferred',
+239 silly install resolved        'deferreds',
+239 silly install resolved        'future',
+239 silly install resolved        'flow control',
+239 silly install resolved        'dsl',
+239 silly install resolved        'fluent interface',
+239 silly install resolved        'parallel',
+239 silly install resolved        'thread',
+239 silly install resolved        'concurrency' ],
+239 silly install resolved     scripts:
+239 silly install resolved      { lint: 'node scripts/jshint.js',
+239 silly install resolved        test: 'node tools/test.js',
+239 silly install resolved        istanbul: 'istanbul',
+239 silly install resolved        prepublish: 'node tools/build.js --no-debug --main --zalgo --browser --minify' },
+239 silly install resolved     homepage: 'https://github.com/petkaantonov/bluebird',
+239 silly install resolved     repository:
+239 silly install resolved      { type: 'git',
+239 silly install resolved        url: 'git://github.com/petkaantonov/bluebird.git' },
+239 silly install resolved     bugs: { url: 'http://github.com/petkaantonov/bluebird/issues' },
+239 silly install resolved     license: 'MIT',
+239 silly install resolved     author:
+239 silly install resolved      { name: 'Petka Antonov',
+239 silly install resolved        email: 'petka_antonov@hotmail.com',
+239 silly install resolved        url: 'http://github.com/petkaantonov/' },
+239 silly install resolved     devDependencies:
+239 silly install resolved      { acorn: '~0.6.0',
+239 silly install resolved        baconjs: '^0.7.43',
+239 silly install resolved        bluebird: '^2.9.2',
+239 silly install resolved        'body-parser': '^1.10.2',
+239 silly install resolved        browserify: '^8.1.1',
+239 silly install resolved        'cli-table': '~0.3.1',
+239 silly install resolved        co: '^4.2.0',
+239 silly install resolved        'cross-spawn': '^0.2.3',
+239 silly install resolved        glob: '^4.3.2',
+239 silly install resolved        'grunt-saucelabs': '~8.4.1',
+239 silly install resolved        highland: '^2.3.0',
+239 silly install resolved        istanbul: '^0.3.5',
+239 silly install resolved        jshint: '^2.6.0',
+239 silly install resolved        'jshint-stylish': '~0.2.0',
+239 silly install resolved        mkdirp: '~0.5.0',
+239 silly install resolved        mocha: '~2.1',
+239 silly install resolved        open: '~0.0.5',
+239 silly install resolved        optimist: '~0.6.1',
+239 silly install resolved        rimraf: '~2.2.6',
+239 silly install resolved        rx: '^2.3.25',
+239 silly install resolved        'serve-static': '^1.7.1',
+239 silly install resolved        sinon: '~1.7.3',
+239 silly install resolved        'uglify-js': '~2.4.16',
+239 silly install resolved        kefir: '^2.4.1' },
+239 silly install resolved     main: './js/main/bluebird.js',
+239 silly install resolved     browser: './js/browser/bluebird.js',
+239 silly install resolved     files: [ 'js/browser', 'js/main', 'js/zalgo', 'zalgo.js' ],
+239 silly install resolved     gitHead: '386ba4f7d588693e5d675290a6b7fade08e0d626',
+239 silly install resolved     _id: 'bluebird@2.9.34',
+239 silly install resolved     _shasum: '2f7b4ec80216328a9fddebdf69c8d4942feff7d8',
+239 silly install resolved     _from: 'bluebird@>=2.4.2 <3.0.0',
+239 silly install resolved     _npmVersion: '2.11.1',
+239 silly install resolved     _nodeVersion: '2.3.0',
+239 silly install resolved     _npmUser: { name: 'esailija', email: 'petka_antonov@hotmail.com' },
+239 silly install resolved     maintainers: [ [Object] ],
+239 silly install resolved     dist:
+239 silly install resolved      { shasum: '2f7b4ec80216328a9fddebdf69c8d4942feff7d8',
+239 silly install resolved        tarball: 'http://registry.npmjs.org/bluebird/-/bluebird-2.9.34.tgz' },
+239 silly install resolved     directories: {},
+239 silly install resolved     _resolved: 'https://registry.npmjs.org/bluebird/-/bluebird-2.9.34.tgz' } ]
+240 info install glob@3.2.11 into /var/www/BookApi/node_modules/sequelize-fixtures
+241 info install js-yaml@2.1.3 into /var/www/BookApi/node_modules/sequelize-fixtures
+242 info install bluebird@2.9.34 into /var/www/BookApi/node_modules/sequelize-fixtures
+243 info installOne glob@3.2.11
+244 verbose installOne of glob to /var/www/BookApi/node_modules/sequelize-fixtures not in flight; installing
+245 info installOne js-yaml@2.1.3
+246 verbose installOne of js-yaml to /var/www/BookApi/node_modules/sequelize-fixtures not in flight; installing
+247 info installOne bluebird@2.9.34
+248 verbose installOne of bluebird to /var/www/BookApi/node_modules/sequelize-fixtures not in flight; installing
+249 verbose lock using /home/vagrant/.npm/_locks/glob-b854ce0abb8fe4e1.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+250 silly install write writing glob 3.2.11 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+251 verbose unbuild node_modules/sequelize-fixtures/node_modules/glob
+252 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob is being purged from base /var/www/BookApi
+253 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+254 verbose tar unpack /home/vagrant/.npm/glob/3.2.11/package.tgz
+255 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+256 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob is being purged
+257 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+258 silly gunzTarPerm modes [ '775', '664' ]
+259 verbose lock using /home/vagrant/.npm/_locks/js-yaml-b1294b4f94a2619c.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+260 verbose lock using /home/vagrant/.npm/_locks/bluebird-bb952afb8d02cea1.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird
+261 silly install write writing js-yaml 2.1.3 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+262 verbose unbuild node_modules/sequelize-fixtures/node_modules/js-yaml
+263 silly install write writing bluebird 2.9.34 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird
+264 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml is being purged from base /var/www/BookApi
+265 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+266 verbose unbuild node_modules/sequelize-fixtures/node_modules/bluebird
+267 silly gunzTarPerm extractEntry package.json
+268 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+269 verbose tar unpack /home/vagrant/.npm/js-yaml/2.1.3/package.tgz
+270 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+271 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml is being purged
+272 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+273 silly gunzTarPerm modes [ '775', '664' ]
+274 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird is being purged from base /var/www/BookApi
+275 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird
+276 verbose tar unpack /home/vagrant/.npm/bluebird/2.9.34/package.tgz
+277 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird
+278 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird is being purged
+279 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird
+280 silly gunzTarPerm modes [ '775', '664' ]
+281 silly gunzTarPerm extractEntry .npmignore
+282 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+283 silly gunzTarPerm extractEntry README.md
+284 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+285 silly gunzTarPerm extractEntry package.json
+286 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+287 silly gunzTarPerm extractEntry package.json
+288 silly gunzTarPerm extractEntry README.md
+289 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+290 silly gunzTarPerm extractEntry LICENSE
+291 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+292 silly gunzTarPerm extractEntry README.md
+293 silly gunzTarPerm extractEntry LICENSE
+294 silly gunzTarPerm extractEntry LICENSE
+295 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+296 silly gunzTarPerm extractEntry glob.js
+297 silly gunzTarPerm modified mode [ 'glob.js', 420, 436 ]
+298 silly gunzTarPerm extractEntry index.js
+299 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+300 silly gunzTarPerm extractEntry examples/custom_types.js
+301 silly gunzTarPerm modified mode [ 'examples/custom_types.js', 420, 436 ]
+302 silly gunzTarPerm extractEntry .travis.yml
+303 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+304 silly gunzTarPerm extractEntry changelog.md
+305 silly gunzTarPerm extractEntry js/browser/bluebird.js
+306 silly gunzTarPerm extractEntry examples/dumper.js
+307 silly gunzTarPerm modified mode [ 'examples/dumper.js', 420, 436 ]
+308 silly gunzTarPerm extractEntry js/browser/bluebird.min.js
+309 silly gunzTarPerm extractEntry examples/g.js
+310 silly gunzTarPerm modified mode [ 'examples/g.js', 420, 436 ]
+311 silly gunzTarPerm extractEntry examples/usr-local.js
+312 silly gunzTarPerm modified mode [ 'examples/usr-local.js', 420, 436 ]
+313 silly gunzTarPerm extractEntry examples/sample_document.js
+314 silly gunzTarPerm modified mode [ 'examples/sample_document.js', 420, 436 ]
+315 silly gunzTarPerm extractEntry examples/custom_types.yaml
+316 silly gunzTarPerm modified mode [ 'examples/custom_types.yaml', 420, 436 ]
+317 silly gunzTarPerm extractEntry test/00-setup.js
+318 silly gunzTarPerm modified mode [ 'test/00-setup.js', 420, 436 ]
+319 silly gunzTarPerm extractEntry test/cwd-test.js
+320 silly gunzTarPerm modified mode [ 'test/cwd-test.js', 420, 436 ]
+321 silly gunzTarPerm extractEntry test/globstar-match.js
+322 silly gunzTarPerm modified mode [ 'test/globstar-match.js', 420, 436 ]
+323 silly gunzTarPerm extractEntry examples/dumper.json
+324 silly gunzTarPerm modified mode [ 'examples/dumper.json', 420, 436 ]
+325 silly gunzTarPerm extractEntry examples/sample_document.yaml
+326 silly gunzTarPerm modified mode [ 'examples/sample_document.yaml', 420, 436 ]
+327 silly gunzTarPerm extractEntry js/main/any.js
+328 silly gunzTarPerm extractEntry test/mark.js
+329 silly gunzTarPerm modified mode [ 'test/mark.js', 420, 436 ]
+330 silly gunzTarPerm extractEntry js/main/finally.js
+331 silly gunzTarPerm extractEntry js/main/generators.js
+332 silly gunzTarPerm extractEntry js/main/join.js
+333 silly gunzTarPerm extractEntry HISTORY.md
+334 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
+335 silly gunzTarPerm extractEntry bin/js-yaml.js
+336 silly gunzTarPerm modified mode [ 'bin/js-yaml.js', 493, 509 ]
+337 silly gunzTarPerm extractEntry test/stat.js
+338 silly gunzTarPerm modified mode [ 'test/stat.js', 420, 436 ]
+339 silly gunzTarPerm extractEntry test/bash-comparison.js
+340 silly gunzTarPerm modified mode [ 'test/bash-comparison.js', 420, 436 ]
+341 silly gunzTarPerm extractEntry lib/js-yaml.js
+342 silly gunzTarPerm modified mode [ 'lib/js-yaml.js', 420, 436 ]
+343 silly gunzTarPerm extractEntry lib/js-yaml/common.js
+344 silly gunzTarPerm modified mode [ 'lib/js-yaml/common.js', 420, 436 ]
+345 silly gunzTarPerm extractEntry test/pause-resume.js
+346 silly gunzTarPerm modified mode [ 'test/pause-resume.js', 420, 436 ]
+347 silly gunzTarPerm extractEntry test/readme-issue.js
+348 silly gunzTarPerm modified mode [ 'test/readme-issue.js', 420, 436 ]
+349 silly gunzTarPerm extractEntry js/main/filter.js
+350 silly gunzTarPerm extractEntry lib/js-yaml/dumper.js
+351 silly gunzTarPerm modified mode [ 'lib/js-yaml/dumper.js', 420, 436 ]
+352 silly gunzTarPerm extractEntry lib/js-yaml/exception.js
+353 silly gunzTarPerm modified mode [ 'lib/js-yaml/exception.js', 420, 436 ]
+354 silly gunzTarPerm extractEntry test/root-nomount.js
+355 silly gunzTarPerm modified mode [ 'test/root-nomount.js', 420, 436 ]
+356 silly gunzTarPerm extractEntry test/root.js
+357 silly gunzTarPerm modified mode [ 'test/root.js', 420, 436 ]
+358 silly gunzTarPerm extractEntry lib/js-yaml/loader.js
+359 silly gunzTarPerm modified mode [ 'lib/js-yaml/loader.js', 420, 436 ]
+360 silly gunzTarPerm extractEntry lib/js-yaml/mark.js
+361 silly gunzTarPerm modified mode [ 'lib/js-yaml/mark.js', 420, 436 ]
+362 silly gunzTarPerm extractEntry test/new-glob-optional-options.js
+363 silly gunzTarPerm modified mode [ 'test/new-glob-optional-options.js', 420, 436 ]
+364 silly gunzTarPerm extractEntry test/zz-cleanup.js
+365 silly gunzTarPerm modified mode [ 'test/zz-cleanup.js', 420, 436 ]
+366 silly gunzTarPerm extractEntry js/main/method.js
+367 silly gunzTarPerm extractEntry lib/js-yaml/require.js
+368 silly gunzTarPerm modified mode [ 'lib/js-yaml/require.js', 420, 436 ]
+369 silly gunzTarPerm extractEntry lib/js-yaml/schema.js
+370 silly gunzTarPerm modified mode [ 'lib/js-yaml/schema.js', 420, 436 ]
+371 silly gunzTarPerm extractEntry js/main/nodeify.js
+372 silly gunzTarPerm extractEntry js/main/progress.js
+373 silly gunzTarPerm extractEntry js/main/promise.js
+374 silly gunzTarPerm extractEntry test/nocase-nomagic.js
+375 silly gunzTarPerm modified mode [ 'test/nocase-nomagic.js', 420, 436 ]
+376 silly gunzTarPerm extractEntry test/bash-results.json
+377 silly gunzTarPerm modified mode [ 'test/bash-results.json', 420, 436 ]
+378 silly gunzTarPerm extractEntry lib/js-yaml/type.js
+379 silly gunzTarPerm modified mode [ 'lib/js-yaml/type.js', 420, 436 ]
+380 silly gunzTarPerm extractEntry lib/js-yaml/schema/core.js
+381 silly gunzTarPerm modified mode [ 'lib/js-yaml/schema/core.js', 420, 436 ]
+382 silly gunzTarPerm extractEntry lib/js-yaml/schema/default_full.js
+383 silly gunzTarPerm modified mode [ 'lib/js-yaml/schema/default_full.js', 420, 436 ]
+384 silly gunzTarPerm extractEntry lib/js-yaml/schema/default_safe.js
+385 silly gunzTarPerm modified mode [ 'lib/js-yaml/schema/default_safe.js', 420, 436 ]
+386 silly gunzTarPerm extractEntry js/main/promise_array.js
+387 silly gunzTarPerm extractEntry lib/js-yaml/schema/failsafe.js
+388 silly gunzTarPerm modified mode [ 'lib/js-yaml/schema/failsafe.js', 420, 436 ]
+389 silly gunzTarPerm extractEntry lib/js-yaml/schema/json.js
+390 silly gunzTarPerm modified mode [ 'lib/js-yaml/schema/json.js', 420, 436 ]
+391 silly gunzTarPerm extractEntry js/main/es5.js
+392 silly gunzTarPerm extractEntry lib/js-yaml/type/binary.js
+393 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/binary.js', 420, 436 ]
+394 silly gunzTarPerm extractEntry lib/js-yaml/type/int.js
+395 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/int.js', 420, 436 ]
+396 silly gunzTarPerm extractEntry js/main/promise_resolver.js
+397 silly gunzTarPerm extractEntry lib/js-yaml/type/str.js
+398 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/str.js', 420, 436 ]
+399 silly gunzTarPerm extractEntry lib/js-yaml/type/map.js
+400 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/map.js', 420, 436 ]
+401 silly gunzTarPerm extractEntry js/main/errors.js
+402 silly gunzTarPerm extractEntry lib/js-yaml/type/float.js
+403 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/float.js', 420, 436 ]
+404 silly gunzTarPerm extractEntry lib/js-yaml/type/bool.js
+405 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/bool.js', 420, 436 ]
+406 silly gunzTarPerm extractEntry js/main/promisify.js
+407 silly gunzTarPerm extractEntry lib/js-yaml/type/omap.js
+408 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/omap.js', 420, 436 ]
+409 silly gunzTarPerm extractEntry lib/js-yaml/type/pairs.js
+410 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/pairs.js', 420, 436 ]
+411 silly gunzTarPerm extractEntry lib/js-yaml/type/seq.js
+412 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/seq.js', 420, 436 ]
+413 silly gunzTarPerm extractEntry js/main/each.js
+414 silly gunzTarPerm extractEntry lib/js-yaml/type/set.js
+415 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/set.js', 420, 436 ]
+416 silly gunzTarPerm extractEntry js/main/props.js
+417 silly gunzTarPerm extractEntry lib/js-yaml/type/merge.js
+418 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/merge.js', 420, 436 ]
+419 silly gunzTarPerm extractEntry js/main/direct_resolve.js
+420 silly gunzTarPerm extractEntry lib/js-yaml/type/timestamp.js
+421 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/timestamp.js', 420, 436 ]
+422 silly gunzTarPerm extractEntry lib/js-yaml/type/null.js
+423 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/null.js', 420, 436 ]
+424 silly gunzTarPerm extractEntry js/main/queue.js
+425 silly gunzTarPerm extractEntry lib/js-yaml/type/js/function.js
+426 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/js/function.js', 420, 436 ]
+427 silly gunzTarPerm extractEntry lib/js-yaml/type/js/regexp.js
+428 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/js/regexp.js', 420, 436 ]
+429 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/package.json
+430 info preinstall glob@3.2.11
+431 silly gunzTarPerm extractEntry lib/js-yaml/type/js/undefined.js
+432 silly gunzTarPerm modified mode [ 'lib/js-yaml/type/js/undefined.js', 420, 436 ]
+433 silly gunzTarPerm extractEntry js/main/debuggability.js
+434 silly gunzTarPerm extractEntry js/main/race.js
+435 silly gunzTarPerm extractEntry js/main/context.js
+436 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/package.json
+437 silly prepareForInstallMany adding inherits@2 from glob dependencies
+438 silly prepareForInstallMany adding minimatch@0.3 from glob dependencies
+439 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/package.json
+440 silly cache add args [ 'inherits@2', null ]
+441 verbose cache add spec inherits@2
+442 silly cache add args [ 'minimatch@0.3', null ]
+443 verbose cache add spec minimatch@0.3
+444 silly cache add parsed spec { raw: 'inherits@2',
+444 silly cache add   scope: null,
+444 silly cache add   name: 'inherits',
+444 silly cache add   rawSpec: '2',
+444 silly cache add   spec: '>=2.0.0 <3.0.0',
+444 silly cache add   type: 'range' }
+445 silly addNamed inherits@>=2.0.0 <3.0.0
+446 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for inherits
+447 silly addNameRange { name: 'inherits', range: '>=2.0.0 <3.0.0', hasData: false }
+448 silly mapToRegistry name inherits
+449 silly mapToRegistry using default registry
+450 silly mapToRegistry registry https://registry.npmjs.org/
+451 silly mapToRegistry uri https://registry.npmjs.org/inherits
+452 verbose addNameRange registry:https://registry.npmjs.org/inherits not in flight; fetching
+453 silly cache add parsed spec { raw: 'minimatch@0.3',
+453 silly cache add   scope: null,
+453 silly cache add   name: 'minimatch',
+453 silly cache add   rawSpec: '0.3',
+453 silly cache add   spec: '>=0.3.0 <0.4.0',
+453 silly cache add   type: 'range' }
+454 silly addNamed minimatch@>=0.3.0 <0.4.0
+455 verbose addNamed ">=0.3.0 <0.4.0" is a valid semver range for minimatch
+456 silly addNameRange { name: 'minimatch', range: '>=0.3.0 <0.4.0', hasData: false }
+457 silly mapToRegistry name minimatch
+458 silly mapToRegistry using default registry
+459 silly mapToRegistry registry https://registry.npmjs.org/
+460 silly mapToRegistry uri https://registry.npmjs.org/minimatch
+461 verbose addNameRange registry:https://registry.npmjs.org/minimatch not in flight; fetching
+462 silly gunzTarPerm extractEntry js/main/reduce.js
+463 silly gunzTarPerm extractEntry js/main/catch_filter.js
+464 silly gunzTarPerm extractEntry js/main/schedule.js
+465 verbose request uri https://registry.npmjs.org/inherits
+466 verbose request no auth needed
+467 info attempt registry request try #1 at 3:56:38 PM
+468 verbose etag "DPT0HCFHSA8NG4H8MNHKEH1FI"
+469 http request GET https://registry.npmjs.org/inherits
+470 silly gunzTarPerm extractEntry js/main/captured_trace.js
+471 silly gunzTarPerm extractEntry js/main/settle.js
+472 silly gunzTarPerm extractEntry js/main/cancel.js
+473 verbose request uri https://registry.npmjs.org/minimatch
+474 verbose request no auth needed
+475 info attempt registry request try #1 at 3:56:38 PM
+476 verbose etag "3SWUPJIRJT9N7J8OYW4R6W5A8"
+477 http request GET https://registry.npmjs.org/minimatch
+478 silly gunzTarPerm extractEntry js/main/some.js
+479 silly gunzTarPerm extractEntry js/main/call_get.js
+480 silly gunzTarPerm extractEntry js/main/synchronous_inspection.js
+481 silly gunzTarPerm extractEntry js/main/bluebird.js
+482 silly gunzTarPerm extractEntry js/main/thenables.js
+483 silly gunzTarPerm extractEntry js/main/bind.js
+484 silly gunzTarPerm extractEntry js/main/timers.js
+485 silly gunzTarPerm extractEntry js/main/async.js
+486 silly gunzTarPerm extractEntry js/main/using.js
+487 silly gunzTarPerm extractEntry js/main/assert.js
+488 silly gunzTarPerm extractEntry js/main/util.js
+489 silly gunzTarPerm extractEntry js/main/map.js
+490 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/package.json
+491 info preinstall js-yaml@2.1.3
+492 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/package.json
+493 silly prepareForInstallMany adding argparse@~ 0.1.11 from js-yaml dependencies
+494 silly prepareForInstallMany adding esprima@~ 1.0.2 from js-yaml dependencies
+495 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/package.json
+496 http 304 https://registry.npmjs.org/inherits
+497 silly get cb [ 304,
+497 silly get   { date: 'Sat, 18 Jul 2015 15:56:38 GMT',
+497 silly get     via: '1.1 varnish',
+497 silly get     'cache-control': 'max-age=60',
+497 silly get     etag: '"DPT0HCFHSA8NG4H8MNHKEH1FI"',
+497 silly get     age: '1',
+497 silly get     connection: 'keep-alive',
+497 silly get     'x-served-by': 'cache-fra1228-FRA',
+497 silly get     'x-cache': 'HIT',
+497 silly get     'x-cache-hits': '1',
+497 silly get     'x-timer': 'S1437234998.481515,VS0,VE0',
+497 silly get     vary: 'Accept' } ]
+498 verbose etag https://registry.npmjs.org/inherits from cache
+499 verbose get saving inherits to /home/vagrant/.npm/registry.npmjs.org/inherits/.cache.json
+500 silly cache add args [ 'argparse@~ 0.1.11', null ]
+501 verbose cache add spec argparse@~ 0.1.11
+502 silly cache add args [ 'esprima@~ 1.0.2', null ]
+503 verbose cache add spec esprima@~ 1.0.2
+504 silly cache add parsed spec { raw: 'argparse@~ 0.1.11',
+504 silly cache add   scope: null,
+504 silly cache add   name: 'argparse',
+504 silly cache add   rawSpec: '~ 0.1.11',
+504 silly cache add   spec: '>=0.1.11 <0.2.0',
+504 silly cache add   type: 'range' }
+505 silly addNamed argparse@>=0.1.11 <0.2.0
+506 verbose addNamed ">=0.1.11 <0.2.0" is a valid semver range for argparse
+507 silly addNameRange { name: 'argparse', range: '>=0.1.11 <0.2.0', hasData: false }
+508 silly mapToRegistry name argparse
+509 silly mapToRegistry using default registry
+510 silly mapToRegistry registry https://registry.npmjs.org/
+511 silly mapToRegistry uri https://registry.npmjs.org/argparse
+512 verbose addNameRange registry:https://registry.npmjs.org/argparse not in flight; fetching
+513 silly cache add parsed spec { raw: 'esprima@~ 1.0.2',
+513 silly cache add   scope: null,
+513 silly cache add   name: 'esprima',
+513 silly cache add   rawSpec: '~ 1.0.2',
+513 silly cache add   spec: '>=1.0.2 <1.1.0',
+513 silly cache add   type: 'range' }
+514 silly addNamed esprima@>=1.0.2 <1.1.0
+515 verbose addNamed ">=1.0.2 <1.1.0" is a valid semver range for esprima
+516 silly addNameRange { name: 'esprima', range: '>=1.0.2 <1.1.0', hasData: false }
+517 silly mapToRegistry name esprima
+518 silly mapToRegistry using default registry
+519 silly mapToRegistry registry https://registry.npmjs.org/
+520 silly mapToRegistry uri https://registry.npmjs.org/esprima
+521 verbose addNameRange registry:https://registry.npmjs.org/esprima not in flight; fetching
+522 silly addNameRange number 2 { name: 'inherits', range: '>=2.0.0 <3.0.0', hasData: true }
+523 silly addNameRange versions [ 'inherits', [ '1.0.0', '2.0.0', '2.0.1' ] ]
+524 silly addNamed inherits@2.0.1
+525 verbose addNamed "2.0.1" is a plain semver version for inherits
+526 verbose request uri https://registry.npmjs.org/esprima
+527 verbose request no auth needed
+528 info attempt registry request try #1 at 3:56:38 PM
+529 verbose etag "BIA6VDFI82VA5ULJ4HMU5JMGN"
+530 http request GET https://registry.npmjs.org/esprima
+531 http 304 https://registry.npmjs.org/minimatch
+532 silly get cb [ 304,
+532 silly get   { date: 'Sat, 18 Jul 2015 15:56:38 GMT',
+532 silly get     via: '1.1 varnish',
+532 silly get     'cache-control': 'max-age=60',
+532 silly get     etag: '"3SWUPJIRJT9N7J8OYW4R6W5A8"',
+532 silly get     age: '59',
+532 silly get     connection: 'keep-alive',
+532 silly get     'x-served-by': 'cache-fra1246-FRA',
+532 silly get     'x-cache': 'HIT',
+532 silly get     'x-cache-hits': '2',
+532 silly get     'x-timer': 'S1437234998.518851,VS0,VE0',
+532 silly get     vary: 'Accept' } ]
+533 verbose etag https://registry.npmjs.org/minimatch from cache
+534 verbose get saving minimatch to /home/vagrant/.npm/registry.npmjs.org/minimatch/.cache.json
+535 verbose request uri https://registry.npmjs.org/argparse
+536 verbose request no auth needed
+537 info attempt registry request try #1 at 3:56:38 PM
+538 verbose etag "EZ8MXN3H4NCB2NOG0SQN5HF4F"
+539 http request GET https://registry.npmjs.org/argparse
+540 silly addNameRange number 2 { name: 'minimatch', range: '>=0.3.0 <0.4.0', hasData: true }
+541 silly addNameRange versions [ 'minimatch',
+541 silly addNameRange   [ '0.0.1',
+541 silly addNameRange     '0.0.2',
+541 silly addNameRange     '0.0.4',
+541 silly addNameRange     '0.0.5',
+541 silly addNameRange     '0.1.1',
+541 silly addNameRange     '0.1.2',
+541 silly addNameRange     '0.1.3',
+541 silly addNameRange     '0.1.4',
+541 silly addNameRange     '0.1.5',
+541 silly addNameRange     '0.2.0',
+541 silly addNameRange     '0.2.2',
+541 silly addNameRange     '0.2.3',
+541 silly addNameRange     '0.2.4',
+541 silly addNameRange     '0.2.5',
+541 silly addNameRange     '0.2.6',
+541 silly addNameRange     '0.2.7',
+541 silly addNameRange     '0.2.8',
+541 silly addNameRange     '0.2.9',
+541 silly addNameRange     '0.2.10',
+541 silly addNameRange     '0.2.11',
+541 silly addNameRange     '0.2.12',
+541 silly addNameRange     '0.2.13',
+541 silly addNameRange     '0.2.14',
+541 silly addNameRange     '0.3.0',
+541 silly addNameRange     '0.4.0',
+541 silly addNameRange     '1.0.0',
+541 silly addNameRange     '2.0.0',
+541 silly addNameRange     '2.0.1',
+541 silly addNameRange     '2.0.2',
+541 silly addNameRange     '2.0.3',
+541 silly addNameRange     '2.0.4',
+541 silly addNameRange     '2.0.5',
+541 silly addNameRange     '2.0.6',
+541 silly addNameRange     '2.0.7',
+541 silly addNameRange     '2.0.8' ] ]
+542 silly addNamed minimatch@0.3.0
+543 verbose addNamed "0.3.0" is a plain semver version for minimatch
+544 silly cache afterAdd inherits@2.0.1
+545 verbose afterAdd /home/vagrant/.npm/inherits/2.0.1/package/package.json not in flight; writing
+546 verbose afterAdd /home/vagrant/.npm/inherits/2.0.1/package/package.json written
+547 silly cache afterAdd minimatch@0.3.0
+548 verbose afterAdd /home/vagrant/.npm/minimatch/0.3.0/package/package.json not in flight; writing
+549 verbose afterAdd /home/vagrant/.npm/minimatch/0.3.0/package/package.json written
+550 silly install resolved [ { name: 'inherits',
+550 silly install resolved     description: 'Browser-friendly inheritance fully compatible with standard node.js inherits()',
+550 silly install resolved     version: '2.0.1',
+550 silly install resolved     keywords:
+550 silly install resolved      [ 'inheritance',
+550 silly install resolved        'class',
+550 silly install resolved        'klass',
+550 silly install resolved        'oop',
+550 silly install resolved        'object-oriented',
+550 silly install resolved        'inherits',
+550 silly install resolved        'browser',
+550 silly install resolved        'browserify' ],
+550 silly install resolved     main: './inherits.js',
+550 silly install resolved     browser: './inherits_browser.js',
+550 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/inherits.git' },
+550 silly install resolved     license: 'ISC',
+550 silly install resolved     scripts: { test: 'node test' },
+550 silly install resolved     bugs: { url: 'https://github.com/isaacs/inherits/issues' },
+550 silly install resolved     _id: 'inherits@2.0.1',
+550 silly install resolved     dist:
+550 silly install resolved      { shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+550 silly install resolved        tarball: 'http://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz' },
+550 silly install resolved     _from: 'inherits@>=2.0.0 <3.0.0',
+550 silly install resolved     _npmVersion: '1.3.8',
+550 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+550 silly install resolved     maintainers: [ [Object] ],
+550 silly install resolved     directories: {},
+550 silly install resolved     _shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+550 silly install resolved     _resolved: 'https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz',
+550 silly install resolved     readme: 'ERROR: No README data found!',
+550 silly install resolved     homepage: 'https://github.com/isaacs/inherits#readme' },
+550 silly install resolved   { author:
+550 silly install resolved      { name: 'Isaac Z. Schlueter',
+550 silly install resolved        email: 'i@izs.me',
+550 silly install resolved        url: 'http://blog.izs.me' },
+550 silly install resolved     name: 'minimatch',
+550 silly install resolved     description: 'a glob matcher in javascript',
+550 silly install resolved     version: '0.3.0',
+550 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/minimatch.git' },
+550 silly install resolved     main: 'minimatch.js',
+550 silly install resolved     scripts: { test: 'tap test/*.js' },
+550 silly install resolved     engines: { node: '*' },
+550 silly install resolved     dependencies: { 'lru-cache': '2', sigmund: '~1.0.0' },
+550 silly install resolved     devDependencies: { tap: '' },
+550 silly install resolved     license:
+550 silly install resolved      { type: 'MIT',
+550 silly install resolved        url: 'http://github.com/isaacs/minimatch/raw/master/LICENSE' },
+550 silly install resolved     bugs: { url: 'https://github.com/isaacs/minimatch/issues' },
+550 silly install resolved     homepage: 'https://github.com/isaacs/minimatch',
+550 silly install resolved     _id: 'minimatch@0.3.0',
+550 silly install resolved     _shasum: '275d8edaac4f1bb3326472089e7949c8394699dd',
+550 silly install resolved     _from: 'minimatch@>=0.3.0 <0.4.0',
+550 silly install resolved     _npmVersion: '1.4.10',
+550 silly install resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+550 silly install resolved     maintainers: [ [Object] ],
+550 silly install resolved     dist:
+550 silly install resolved      { shasum: '275d8edaac4f1bb3326472089e7949c8394699dd',
+550 silly install resolved        tarball: 'http://registry.npmjs.org/minimatch/-/minimatch-0.3.0.tgz' },
+550 silly install resolved     directories: {},
+550 silly install resolved     _resolved: 'https://registry.npmjs.org/minimatch/-/minimatch-0.3.0.tgz',
+550 silly install resolved     readme: 'ERROR: No README data found!' } ]
+551 info install inherits@2.0.1 into /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+552 info install minimatch@0.3.0 into /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+553 info installOne inherits@2.0.1
+554 verbose installOne of inherits to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob not in flight; installing
+555 info installOne minimatch@0.3.0
+556 verbose installOne of minimatch to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob not in flight; installing
+557 verbose lock using /home/vagrant/.npm/_locks/inherits-3f0d5da956a46c07.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+558 verbose lock using /home/vagrant/.npm/_locks/minimatch-8ad09d2934dbc4d5.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+559 silly install write writing inherits 2.0.1 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+560 verbose unbuild node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+561 silly install write writing minimatch 0.3.0 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+562 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits is being purged from base /var/www/BookApi
+563 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+564 verbose tar unpack /home/vagrant/.npm/inherits/2.0.1/package.tgz
+565 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+566 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits is being purged
+567 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+568 verbose unbuild node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+569 silly gunzTarPerm modes [ '775', '664' ]
+570 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch is being purged from base /var/www/BookApi
+571 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+572 verbose tar unpack /home/vagrant/.npm/minimatch/0.3.0/package.tgz
+573 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+574 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch is being purged
+575 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+576 silly gunzTarPerm modes [ '775', '664' ]
+577 silly gunzTarPerm extractEntry package.json
+578 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+579 silly gunzTarPerm extractEntry README.md
+580 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+581 silly gunzTarPerm extractEntry LICENSE
+582 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+583 silly gunzTarPerm extractEntry package.json
+584 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+585 silly gunzTarPerm extractEntry .npmignore
+586 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+587 silly gunzTarPerm extractEntry README.md
+588 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+589 silly gunzTarPerm extractEntry inherits.js
+590 silly gunzTarPerm modified mode [ 'inherits.js', 420, 436 ]
+591 silly gunzTarPerm extractEntry inherits_browser.js
+592 silly gunzTarPerm modified mode [ 'inherits_browser.js', 420, 436 ]
+593 silly gunzTarPerm extractEntry LICENSE
+594 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+595 silly gunzTarPerm extractEntry minimatch.js
+596 silly gunzTarPerm modified mode [ 'minimatch.js', 420, 436 ]
+597 silly gunzTarPerm extractEntry test.js
+598 silly gunzTarPerm modified mode [ 'test.js', 420, 436 ]
+599 silly gunzTarPerm extractEntry test/basic.js
+600 silly gunzTarPerm modified mode [ 'test/basic.js', 420, 436 ]
+601 silly gunzTarPerm extractEntry test/brace-expand.js
+602 silly gunzTarPerm modified mode [ 'test/brace-expand.js', 420, 436 ]
+603 silly gunzTarPerm extractEntry test/caching.js
+604 silly gunzTarPerm modified mode [ 'test/caching.js', 420, 436 ]
+605 silly gunzTarPerm extractEntry test/defaults.js
+606 silly gunzTarPerm modified mode [ 'test/defaults.js', 420, 436 ]
+607 silly gunzTarPerm extractEntry test/extglob-ending-with-state-char.js
+608 silly gunzTarPerm modified mode [ 'test/extglob-ending-with-state-char.js', 420, 436 ]
+609 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits/package.json
+610 info preinstall inherits@2.0.1
+611 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits/package.json
+612 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits/package.json
+613 silly install resolved []
+614 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+615 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+616 info linkStuff inherits@2.0.1
+617 silly linkStuff inherits@2.0.1 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules as its parent node_modules
+618 verbose linkBins inherits@2.0.1
+619 verbose linkMans inherits@2.0.1
+620 verbose rebuildBundles inherits@2.0.1
+621 info install inherits@2.0.1
+622 info postinstall inherits@2.0.1
+623 verbose unlock done using /home/vagrant/.npm/_locks/inherits-3f0d5da956a46c07.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/inherits
+624 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird/package.json
+625 info preinstall bluebird@2.9.34
+626 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird/package.json
+627 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird/package.json
+628 silly install resolved []
+629 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird
+630 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird
+631 info linkStuff bluebird@2.9.34
+632 silly linkStuff bluebird@2.9.34 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules as its parent node_modules
+633 verbose linkBins bluebird@2.9.34
+634 verbose linkMans bluebird@2.9.34
+635 verbose rebuildBundles bluebird@2.9.34
+636 info install bluebird@2.9.34
+637 info postinstall bluebird@2.9.34
+638 verbose unlock done using /home/vagrant/.npm/_locks/bluebird-bb952afb8d02cea1.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/bluebird
+639 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/package.json
+640 info preinstall minimatch@0.3.0
+641 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/package.json
+642 silly prepareForInstallMany adding lru-cache@2 from minimatch dependencies
+643 silly prepareForInstallMany adding sigmund@~1.0.0 from minimatch dependencies
+644 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/package.json
+645 silly cache add args [ 'lru-cache@2', null ]
+646 verbose cache add spec lru-cache@2
+647 silly cache add args [ 'sigmund@~1.0.0', null ]
+648 verbose cache add spec sigmund@~1.0.0
+649 silly cache add parsed spec { raw: 'lru-cache@2',
+649 silly cache add   scope: null,
+649 silly cache add   name: 'lru-cache',
+649 silly cache add   rawSpec: '2',
+649 silly cache add   spec: '>=2.0.0 <3.0.0',
+649 silly cache add   type: 'range' }
+650 silly addNamed lru-cache@>=2.0.0 <3.0.0
+651 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for lru-cache
+652 silly addNameRange { name: 'lru-cache', range: '>=2.0.0 <3.0.0', hasData: false }
+653 silly mapToRegistry name lru-cache
+654 silly mapToRegistry using default registry
+655 silly mapToRegistry registry https://registry.npmjs.org/
+656 silly mapToRegistry uri https://registry.npmjs.org/lru-cache
+657 verbose addNameRange registry:https://registry.npmjs.org/lru-cache not in flight; fetching
+658 silly cache add parsed spec { raw: 'sigmund@~1.0.0',
+658 silly cache add   scope: null,
+658 silly cache add   name: 'sigmund',
+658 silly cache add   rawSpec: '~1.0.0',
+658 silly cache add   spec: '>=1.0.0 <1.1.0',
+658 silly cache add   type: 'range' }
+659 silly addNamed sigmund@>=1.0.0 <1.1.0
+660 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for sigmund
+661 silly addNameRange { name: 'sigmund', range: '>=1.0.0 <1.1.0', hasData: false }
+662 silly mapToRegistry name sigmund
+663 silly mapToRegistry using default registry
+664 silly mapToRegistry registry https://registry.npmjs.org/
+665 silly mapToRegistry uri https://registry.npmjs.org/sigmund
+666 verbose addNameRange registry:https://registry.npmjs.org/sigmund not in flight; fetching
+667 verbose request uri https://registry.npmjs.org/lru-cache
+668 verbose request no auth needed
+669 info attempt registry request try #1 at 3:56:38 PM
+670 verbose etag "982M5AFJC69RMSWQXQS5H8HP9"
+671 http request GET https://registry.npmjs.org/lru-cache
+672 verbose request uri https://registry.npmjs.org/sigmund
+673 verbose request no auth needed
+674 info attempt registry request try #1 at 3:56:38 PM
+675 verbose etag "1TUX00X8YEKNFED6GGWS214S3"
+676 http request GET https://registry.npmjs.org/sigmund
+677 http 200 https://registry.npmjs.org/esprima
+678 silly get cb [ 200,
+678 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+678 silly get     etag: '"73YEYT549JVXRYRBZRCPWP87L"',
+678 silly get     'content-type': 'application/json',
+678 silly get     'cache-control': 'max-age=60',
+678 silly get     'content-length': '52278',
+678 silly get     'accept-ranges': 'bytes',
+678 silly get     date: 'Sat, 18 Jul 2015 15:56:38 GMT',
+678 silly get     via: '1.1 varnish',
+678 silly get     age: '45',
+678 silly get     connection: 'keep-alive',
+678 silly get     'x-served-by': 'cache-fra1232-FRA',
+678 silly get     'x-cache': 'HIT',
+678 silly get     'x-cache-hits': '1',
+678 silly get     'x-timer': 'S1437234998.736867,VS0,VE0',
+678 silly get     vary: 'Accept' } ]
+679 verbose get saving esprima to /home/vagrant/.npm/registry.npmjs.org/esprima/.cache.json
+680 silly addNameRange number 2 { name: 'esprima', range: '>=1.0.2 <1.1.0', hasData: true }
+681 silly addNameRange versions [ 'esprima',
+681 silly addNameRange   [ '0.7.0',
+681 silly addNameRange     '0.8.0',
+681 silly addNameRange     '0.8.1',
+681 silly addNameRange     '0.8.2',
+681 silly addNameRange     '0.9.0',
+681 silly addNameRange     '0.9.1',
+681 silly addNameRange     '0.9.2',
+681 silly addNameRange     '0.9.3',
+681 silly addNameRange     '0.9.4',
+681 silly addNameRange     '0.9.5',
+681 silly addNameRange     '0.9.6',
+681 silly addNameRange     '0.9.7',
+681 silly addNameRange     '0.9.8',
+681 silly addNameRange     '0.9.9',
+681 silly addNameRange     '1.0.0',
+681 silly addNameRange     '1.0.1',
+681 silly addNameRange     '1.0.2',
+681 silly addNameRange     '1.0.3',
+681 silly addNameRange     '1.0.4',
+681 silly addNameRange     '1.1.0',
+681 silly addNameRange     '1.1.1',
+681 silly addNameRange     '1.2.0',
+681 silly addNameRange     '1.2.1',
+681 silly addNameRange     '1.2.2',
+681 silly addNameRange     '1.2.3',
+681 silly addNameRange     '1.2.4',
+681 silly addNameRange     '2.0.0',
+681 silly addNameRange     '1.2.5',
+681 silly addNameRange     '2.1.0',
+681 silly addNameRange     '2.2.0',
+681 silly addNameRange     '2.3.0',
+681 silly addNameRange     '2.4.0',
+681 silly addNameRange     '2.4.1' ] ]
+682 silly addNamed esprima@1.0.4
+683 verbose addNamed "1.0.4" is a plain semver version for esprima
+684 silly cache afterAdd esprima@1.0.4
+685 verbose afterAdd /home/vagrant/.npm/esprima/1.0.4/package/package.json not in flight; writing
+686 verbose afterAdd /home/vagrant/.npm/esprima/1.0.4/package/package.json written
+687 http 304 https://registry.npmjs.org/lru-cache
+688 silly get cb [ 304,
+688 silly get   { date: 'Sat, 18 Jul 2015 15:56:39 GMT',
+688 silly get     via: '1.1 varnish',
+688 silly get     'cache-control': 'max-age=60',
+688 silly get     etag: '"982M5AFJC69RMSWQXQS5H8HP9"',
+688 silly get     age: '59',
+688 silly get     connection: 'keep-alive',
+688 silly get     'x-served-by': 'cache-fra1225-FRA',
+688 silly get     'x-cache': 'HIT',
+688 silly get     'x-cache-hits': '1',
+688 silly get     'x-timer': 'S1437234999.020090,VS0,VE0',
+688 silly get     vary: 'Accept' } ]
+689 verbose etag https://registry.npmjs.org/lru-cache from cache
+690 verbose get saving lru-cache to /home/vagrant/.npm/registry.npmjs.org/lru-cache/.cache.json
+691 silly addNameRange number 2 { name: 'lru-cache', range: '>=2.0.0 <3.0.0', hasData: true }
+692 silly addNameRange versions [ 'lru-cache',
+692 silly addNameRange   [ '1.0.1',
+692 silly addNameRange     '1.0.2',
+692 silly addNameRange     '1.0.3',
+692 silly addNameRange     '1.0.4',
+692 silly addNameRange     '1.0.5',
+692 silly addNameRange     '1.0.6',
+692 silly addNameRange     '1.1.0',
+692 silly addNameRange     '1.1.1',
+692 silly addNameRange     '2.0.0',
+692 silly addNameRange     '2.0.1',
+692 silly addNameRange     '2.0.2',
+692 silly addNameRange     '2.0.3',
+692 silly addNameRange     '2.0.4',
+692 silly addNameRange     '2.1.0',
+692 silly addNameRange     '2.2.0',
+692 silly addNameRange     '2.2.1',
+692 silly addNameRange     '2.2.2',
+692 silly addNameRange     '2.2.4',
+692 silly addNameRange     '2.3.0',
+692 silly addNameRange     '2.3.1',
+692 silly addNameRange     '2.5.0',
+692 silly addNameRange     '2.5.1',
+692 silly addNameRange     '2.5.2',
+692 silly addNameRange     '2.6.0',
+692 silly addNameRange     '2.6.1',
+692 silly addNameRange     '2.6.2',
+692 silly addNameRange     '2.6.3',
+692 silly addNameRange     '2.6.4',
+692 silly addNameRange     '2.6.5' ] ]
+693 silly addNamed lru-cache@2.6.5
+694 verbose addNamed "2.6.5" is a plain semver version for lru-cache
+695 http 304 https://registry.npmjs.org/sigmund
+696 silly get cb [ 304,
+696 silly get   { date: 'Sat, 18 Jul 2015 15:56:39 GMT',
+696 silly get     via: '1.1 varnish',
+696 silly get     'cache-control': 'max-age=60',
+696 silly get     etag: '"1TUX00X8YEKNFED6GGWS214S3"',
+696 silly get     age: '16',
+696 silly get     connection: 'keep-alive',
+696 silly get     'x-served-by': 'cache-fra1232-FRA',
+696 silly get     'x-cache': 'HIT',
+696 silly get     'x-cache-hits': '1',
+696 silly get     'x-timer': 'S1437234999.026441,VS0,VE0',
+696 silly get     vary: 'Accept' } ]
+697 verbose etag https://registry.npmjs.org/sigmund from cache
+698 verbose get saving sigmund to /home/vagrant/.npm/registry.npmjs.org/sigmund/.cache.json
+699 silly addNameRange number 2 { name: 'sigmund', range: '>=1.0.0 <1.1.0', hasData: true }
+700 silly addNameRange versions [ 'sigmund', [ '1.0.0', '1.0.1' ] ]
+701 silly addNamed sigmund@1.0.1
+702 verbose addNamed "1.0.1" is a plain semver version for sigmund
+703 silly cache afterAdd lru-cache@2.6.5
+704 verbose afterAdd /home/vagrant/.npm/lru-cache/2.6.5/package/package.json not in flight; writing
+705 verbose afterAdd /home/vagrant/.npm/lru-cache/2.6.5/package/package.json written
+706 silly cache afterAdd sigmund@1.0.1
+707 verbose afterAdd /home/vagrant/.npm/sigmund/1.0.1/package/package.json not in flight; writing
+708 verbose afterAdd /home/vagrant/.npm/sigmund/1.0.1/package/package.json written
+709 silly install resolved [ { name: 'lru-cache',
+709 silly install resolved     description: 'A cache object that deletes the least-recently-used items.',
+709 silly install resolved     version: '2.6.5',
+709 silly install resolved     author: { name: 'Isaac Z. Schlueter', email: 'i@izs.me' },
+709 silly install resolved     keywords: [ 'mru', 'lru', 'cache' ],
+709 silly install resolved     scripts: { test: 'tap test --gc' },
+709 silly install resolved     main: 'lib/lru-cache.js',
+709 silly install resolved     repository:
+709 silly install resolved      { type: 'git',
+709 silly install resolved        url: 'git://github.com/isaacs/node-lru-cache.git' },
+709 silly install resolved     devDependencies: { tap: '^1.2.0', weak: '' },
+709 silly install resolved     license: 'ISC',
+709 silly install resolved     gitHead: '7062a0c891bfb80a294be9217e4de0f882e75776',
+709 silly install resolved     bugs: { url: 'https://github.com/isaacs/node-lru-cache/issues' },
+709 silly install resolved     homepage: 'https://github.com/isaacs/node-lru-cache#readme',
+709 silly install resolved     _id: 'lru-cache@2.6.5',
+709 silly install resolved     _shasum: 'e56d6354148ede8d7707b58d143220fd08df0fd5',
+709 silly install resolved     _from: 'lru-cache@>=2.0.0 <3.0.0',
+709 silly install resolved     _npmVersion: '3.0.0',
+709 silly install resolved     _nodeVersion: '2.2.1',
+709 silly install resolved     _npmUser: { name: 'isaacs', email: 'isaacs@npmjs.com' },
+709 silly install resolved     dist:
+709 silly install resolved      { shasum: 'e56d6354148ede8d7707b58d143220fd08df0fd5',
+709 silly install resolved        tarball: 'http://registry.npmjs.org/lru-cache/-/lru-cache-2.6.5.tgz' },
+709 silly install resolved     maintainers: [ [Object], [Object] ],
+709 silly install resolved     directories: {},
+709 silly install resolved     _resolved: 'https://registry.npmjs.org/lru-cache/-/lru-cache-2.6.5.tgz',
+709 silly install resolved     readme: 'ERROR: No README data found!' },
+709 silly install resolved   { name: 'sigmund',
+709 silly install resolved     version: '1.0.1',
+709 silly install resolved     description: 'Quick and dirty signatures for Objects.',
+709 silly install resolved     main: 'sigmund.js',
+709 silly install resolved     directories: { test: 'test' },
+709 silly install resolved     dependencies: {},
+709 silly install resolved     devDependencies: { tap: '~0.3.0' },
+709 silly install resolved     scripts: { test: 'tap test/*.js', bench: 'node bench.js' },
+709 silly install resolved     repository: { type: 'git', url: 'git://github.com/isaacs/sigmund.git' },
+709 silly install resolved     keywords: [ 'object', 'signature', 'key', 'data', 'psychoanalysis' ],
+709 silly install resolved     author:
+709 silly install resolved      { name: 'Isaac Z. Schlueter',
+709 silly install resolved        email: 'i@izs.me',
+709 silly install resolved        url: 'http://blog.izs.me/' },
+709 silly install resolved     license: 'ISC',
+709 silly install resolved     gitHead: '527f97aa5bb253d927348698c0cd3bb267d098c6',
+709 silly install resolved     bugs: { url: 'https://github.com/isaacs/sigmund/issues' },
+709 silly install resolved     homepage: 'https://github.com/isaacs/sigmund#readme',
+709 silly install resolved     _id: 'sigmund@1.0.1',
+709 silly install resolved     _shasum: '3ff21f198cad2175f9f3b781853fd94d0d19b590',
+709 silly install resolved     _from: 'sigmund@>=1.0.0 <1.1.0',
+709 silly install resolved     _npmVersion: '2.10.0',
+709 silly install resolved     _nodeVersion: '2.0.1',
+709 silly install resolved     _npmUser: { name: 'isaacs', email: 'isaacs@npmjs.com' },
+709 silly install resolved     dist:
+709 silly install resolved      { shasum: '3ff21f198cad2175f9f3b781853fd94d0d19b590',
+709 silly install resolved        tarball: 'http://registry.npmjs.org/sigmund/-/sigmund-1.0.1.tgz' },
+709 silly install resolved     maintainers: [ [Object] ],
+709 silly install resolved     _resolved: 'https://registry.npmjs.org/sigmund/-/sigmund-1.0.1.tgz',
+709 silly install resolved     readme: 'ERROR: No README data found!' } ]
+710 info install lru-cache@2.6.5 into /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+711 info install sigmund@1.0.1 into /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+712 info installOne lru-cache@2.6.5
+713 verbose installOne of lru-cache to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch not in flight; installing
+714 info installOne sigmund@1.0.1
+715 verbose installOne of sigmund to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch not in flight; installing
+716 verbose lock using /home/vagrant/.npm/_locks/lru-cache-48e767f43eb5cfbe.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+717 verbose lock using /home/vagrant/.npm/_locks/sigmund-3507db64c6ec1dda.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+718 silly install write writing sigmund 1.0.1 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+719 silly install write writing lru-cache 2.6.5 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+720 verbose unbuild node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+721 verbose unbuild node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+722 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund is being purged from base /var/www/BookApi
+723 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+724 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache is being purged from base /var/www/BookApi
+725 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+726 verbose tar unpack /home/vagrant/.npm/sigmund/1.0.1/package.tgz
+727 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+728 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund is being purged
+729 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+730 verbose tar unpack /home/vagrant/.npm/lru-cache/2.6.5/package.tgz
+731 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+732 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache is being purged
+733 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+734 silly gunzTarPerm modes [ '775', '664' ]
+735 silly gunzTarPerm modes [ '775', '664' ]
+736 silly gunzTarPerm extractEntry package.json
+737 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+738 silly gunzTarPerm extractEntry README.md
+739 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+740 silly gunzTarPerm extractEntry LICENSE
+741 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+742 silly gunzTarPerm extractEntry package.json
+743 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+744 silly gunzTarPerm extractEntry bench.js
+745 silly gunzTarPerm modified mode [ 'bench.js', 420, 436 ]
+746 silly gunzTarPerm extractEntry sigmund.js
+747 silly gunzTarPerm modified mode [ 'sigmund.js', 420, 436 ]
+748 silly gunzTarPerm extractEntry .npmignore
+749 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+750 silly gunzTarPerm extractEntry README.md
+751 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+752 silly gunzTarPerm extractEntry test/basic.js
+753 silly gunzTarPerm modified mode [ 'test/basic.js', 420, 436 ]
+754 silly gunzTarPerm extractEntry LICENSE
+755 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+756 silly gunzTarPerm extractEntry .travis.yml
+757 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+758 silly gunzTarPerm extractEntry CONTRIBUTORS
+759 silly gunzTarPerm modified mode [ 'CONTRIBUTORS', 420, 436 ]
+760 silly gunzTarPerm extractEntry lib/lru-cache.js
+761 silly gunzTarPerm modified mode [ 'lib/lru-cache.js', 420, 436 ]
+762 silly gunzTarPerm extractEntry test/basic.js
+763 silly gunzTarPerm modified mode [ 'test/basic.js', 420, 436 ]
+764 silly gunzTarPerm extractEntry test/foreach.js
+765 silly gunzTarPerm modified mode [ 'test/foreach.js', 420, 436 ]
+766 silly gunzTarPerm extractEntry test/memory-leak.js
+767 silly gunzTarPerm modified mode [ 'test/memory-leak.js', 420, 436 ]
+768 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund/package.json
+769 info preinstall sigmund@1.0.1
+770 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund/package.json
+771 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund/package.json
+772 silly install resolved []
+773 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+774 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+775 info linkStuff sigmund@1.0.1
+776 silly linkStuff sigmund@1.0.1 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules as its parent node_modules
+777 verbose linkBins sigmund@1.0.1
+778 verbose linkMans sigmund@1.0.1
+779 verbose rebuildBundles sigmund@1.0.1
+780 info install sigmund@1.0.1
+781 info postinstall sigmund@1.0.1
+782 verbose unlock done using /home/vagrant/.npm/_locks/sigmund-3507db64c6ec1dda.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/sigmund
+783 http 304 https://registry.npmjs.org/argparse
+784 silly get cb [ 304,
+784 silly get   { date: 'Sat, 18 Jul 2015 15:56:38 GMT',
+784 silly get     via: '1.1 varnish',
+784 silly get     'cache-control': 'max-age=60',
+784 silly get     etag: '"EZ8MXN3H4NCB2NOG0SQN5HF4F"',
+784 silly get     age: '0',
+784 silly get     connection: 'keep-alive',
+784 silly get     'x-served-by': 'cache-fra1236-FRA',
+784 silly get     'x-cache': 'HIT',
+784 silly get     'x-cache-hits': '1',
+784 silly get     'x-timer': 'S1437234998.740890,VS0,VE419',
+784 silly get     vary: 'Accept' } ]
+785 verbose etag https://registry.npmjs.org/argparse from cache
+786 verbose get saving argparse to /home/vagrant/.npm/registry.npmjs.org/argparse/.cache.json
+787 silly addNameRange number 2 { name: 'argparse', range: '>=0.1.11 <0.2.0', hasData: true }
+788 silly addNameRange versions [ 'argparse',
+788 silly addNameRange   [ '0.1.0',
+788 silly addNameRange     '0.1.1',
+788 silly addNameRange     '0.1.2',
+788 silly addNameRange     '0.1.3',
+788 silly addNameRange     '0.1.4',
+788 silly addNameRange     '0.1.5',
+788 silly addNameRange     '0.1.6',
+788 silly addNameRange     '0.1.7',
+788 silly addNameRange     '0.1.8',
+788 silly addNameRange     '0.1.9',
+788 silly addNameRange     '0.1.10',
+788 silly addNameRange     '0.1.11',
+788 silly addNameRange     '0.1.12',
+788 silly addNameRange     '0.1.13',
+788 silly addNameRange     '0.1.14',
+788 silly addNameRange     '0.1.15',
+788 silly addNameRange     '0.1.16',
+788 silly addNameRange     '1.0.0',
+788 silly addNameRange     '1.0.1',
+788 silly addNameRange     '1.0.2' ] ]
+789 silly addNamed argparse@0.1.16
+790 verbose addNamed "0.1.16" is a plain semver version for argparse
+791 silly cache afterAdd argparse@0.1.16
+792 verbose afterAdd /home/vagrant/.npm/argparse/0.1.16/package/package.json not in flight; writing
+793 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache/package.json
+794 verbose afterAdd /home/vagrant/.npm/argparse/0.1.16/package/package.json written
+795 silly install resolved [ { name: 'esprima',
+795 silly install resolved     description: 'ECMAScript parsing infrastructure for multipurpose analysis',
+795 silly install resolved     homepage: 'http://esprima.org',
+795 silly install resolved     main: 'esprima.js',
+795 silly install resolved     bin:
+795 silly install resolved      { esparse: './bin/esparse.js',
+795 silly install resolved        esvalidate: './bin/esvalidate.js' },
+795 silly install resolved     files:
+795 silly install resolved      [ 'bin',
+795 silly install resolved        'test/run.js',
+795 silly install resolved        'test/runner.js',
+795 silly install resolved        'test/test.js',
+795 silly install resolved        'test/compat.js',
+795 silly install resolved        'test/reflect.js',
+795 silly install resolved        'esprima.js' ],
+795 silly install resolved     version: '1.0.4',
+795 silly install resolved     engines: { node: '>=0.4.0' },
+795 silly install resolved     maintainers: [ [Object] ],
+795 silly install resolved     repository:
+795 silly install resolved      { type: 'git',
+795 silly install resolved        url: 'git+ssh://git@github.com/ariya/esprima.git' },
+795 silly install resolved     licenses: [ [Object] ],
+795 silly install resolved     keywords: [ 'ast', 'ecmascript', 'javascript', 'parser', 'syntax' ],
+795 silly install resolved     scripts:
+795 silly install resolved      { test: 'node test/run.js',
+795 silly install resolved        benchmark: 'node test/benchmarks.js',
+795 silly install resolved        'benchmark-quick': 'node test/benchmarks.js quick' },
+795 silly install resolved     _id: 'esprima@1.0.4',
+795 silly install resolved     dist:
+795 silly install resolved      { shasum: '9f557e08fc3b4d26ece9dd34f8fbf476b62585ad',
+795 silly install resolved        tarball: 'http://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz' },
+795 silly install resolved     _npmVersion: '1.1.61',
+795 silly install resolved     _npmUser: { name: 'ariya', email: 'ariya.hidayat@gmail.com' },
+795 silly install resolved     directories: {},
+795 silly install resolved     _shasum: '9f557e08fc3b4d26ece9dd34f8fbf476b62585ad',
+795 silly install resolved     _resolved: 'https://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz',
+795 silly install resolved     _from: 'esprima@>=1.0.2 <1.1.0',
+795 silly install resolved     bugs: { url: 'https://github.com/ariya/esprima/issues' },
+795 silly install resolved     readme: 'ERROR: No README data found!' },
+795 silly install resolved   { name: 'argparse',
+795 silly install resolved     description: 'Very powerful CLI arguments parser. Native port of argparse - python\'s options parsing library',
+795 silly install resolved     version: '0.1.16',
+795 silly install resolved     keywords: [ 'cli', 'parser', 'argparse', 'option', 'args' ],
+795 silly install resolved     homepage: 'https://github.com/nodeca/argparse',
+795 silly install resolved     contributors: [ [Object], [Object] ],
+795 silly install resolved     bugs: { url: 'https://github.com/nodeca/argparse/issues' },
+795 silly install resolved     license: 'MIT',
+795 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodeca/argparse.git' },
+795 silly install resolved     main: './index.js',
+795 silly install resolved     scripts: { test: 'make test' },
+795 silly install resolved     dependencies: { underscore: '~1.7.0', 'underscore.string': '~2.4.0' },
+795 silly install resolved     devDependencies: { mocha: '*' },
+795 silly install resolved     gitHead: '9c32eb1405d5d4b5686087d95bac010774979659',
+795 silly install resolved     _id: 'argparse@0.1.16',
+795 silly install resolved     _shasum: 'cfd01e0fbba3d6caed049fbd758d40f65196f57c',
+795 silly install resolved     _from: 'argparse@>=0.1.11 <0.2.0',
+795 silly install resolved     _npmVersion: '1.4.28',
+795 silly install resolved     _npmUser: { name: 'vitaly', email: 'vitaly@rcdesign.ru' },
+795 silly install resolved     maintainers: [ [Object] ],
+795 silly install resolved     dist:
+795 silly install resolved      { shasum: 'cfd01e0fbba3d6caed049fbd758d40f65196f57c',
+795 silly install resolved        tarball: 'http://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz' },
+795 silly install resolved     directories: {},
+795 silly install resolved     _resolved: 'https://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz',
+795 silly install resolved     readme: 'ERROR: No README data found!' } ]
+796 info install esprima@1.0.4 into /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+797 info install argparse@0.1.16 into /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+798 info installOne esprima@1.0.4
+799 verbose installOne of esprima to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml not in flight; installing
+800 info installOne argparse@0.1.16
+801 verbose installOne of argparse to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml not in flight; installing
+802 verbose lock using /home/vagrant/.npm/_locks/esprima-40946b9afd5952a6.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+803 verbose lock using /home/vagrant/.npm/_locks/argparse-bab6e75e7cfee412.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+804 silly install write writing esprima 1.0.4 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+805 silly install write writing argparse 0.1.16 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+806 verbose unbuild node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+807 verbose unbuild node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+808 info preinstall lru-cache@2.6.5
+809 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse is being purged from base /var/www/BookApi
+810 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+811 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima is being purged from base /var/www/BookApi
+812 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+813 verbose tar unpack /home/vagrant/.npm/argparse/0.1.16/package.tgz
+814 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+815 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse is being purged
+816 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+817 verbose tar unpack /home/vagrant/.npm/esprima/1.0.4/package.tgz
+818 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+819 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima is being purged
+820 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+821 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache/package.json
+822 silly gunzTarPerm modes [ '775', '664' ]
+823 silly gunzTarPerm modes [ '775', '664' ]
+824 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache/package.json
+825 silly gunzTarPerm extractEntry package.json
+826 silly gunzTarPerm extractEntry package.json
+827 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+828 silly install resolved []
+829 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+830 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+831 silly gunzTarPerm extractEntry README.md
+832 silly gunzTarPerm extractEntry LICENSE
+833 silly gunzTarPerm extractEntry README.md
+834 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+835 silly gunzTarPerm extractEntry esprima.js
+836 silly gunzTarPerm modified mode [ 'esprima.js', 420, 436 ]
+837 info linkStuff lru-cache@2.6.5
+838 silly linkStuff lru-cache@2.6.5 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules as its parent node_modules
+839 verbose linkBins lru-cache@2.6.5
+840 verbose linkMans lru-cache@2.6.5
+841 verbose rebuildBundles lru-cache@2.6.5
+842 silly gunzTarPerm extractEntry index.js
+843 silly gunzTarPerm extractEntry HISTORY.md
+844 info install lru-cache@2.6.5
+845 silly gunzTarPerm extractEntry bin/esparse.js
+846 silly gunzTarPerm modified mode [ 'bin/esparse.js', 420, 436 ]
+847 info postinstall lru-cache@2.6.5
+848 verbose unlock done using /home/vagrant/.npm/_locks/lru-cache-48e767f43eb5cfbe.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch/node_modules/lru-cache
+849 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+850 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+851 info linkStuff minimatch@0.3.0
+852 silly linkStuff minimatch@0.3.0 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules as its parent node_modules
+853 silly gunzTarPerm extractEntry bin/esvalidate.js
+854 silly gunzTarPerm modified mode [ 'bin/esvalidate.js', 493, 509 ]
+855 silly gunzTarPerm extractEntry test/compat.js
+856 silly gunzTarPerm modified mode [ 'test/compat.js', 420, 436 ]
+857 silly gunzTarPerm extractEntry test/reflect.js
+858 silly gunzTarPerm modified mode [ 'test/reflect.js', 420, 436 ]
+859 verbose linkBins minimatch@0.3.0
+860 verbose linkMans minimatch@0.3.0
+861 verbose rebuildBundles minimatch@0.3.0
+862 silly gunzTarPerm extractEntry examples/arguments.js
+863 verbose rebuildBundles [ 'lru-cache', 'sigmund' ]
+864 info install minimatch@0.3.0
+865 info postinstall minimatch@0.3.0
+866 verbose unlock done using /home/vagrant/.npm/_locks/minimatch-8ad09d2934dbc4d5.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob/node_modules/minimatch
+867 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+868 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+869 info linkStuff glob@3.2.11
+870 silly linkStuff glob@3.2.11 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules as its parent node_modules
+871 silly gunzTarPerm extractEntry examples/choice.js
+872 silly gunzTarPerm extractEntry examples/constants.js
+873 silly gunzTarPerm extractEntry test/run.js
+874 silly gunzTarPerm modified mode [ 'test/run.js', 420, 436 ]
+875 verbose linkBins glob@3.2.11
+876 verbose linkMans glob@3.2.11
+877 verbose rebuildBundles glob@3.2.11
+878 verbose rebuildBundles [ 'inherits', 'minimatch' ]
+879 info install glob@3.2.11
+880 silly gunzTarPerm extractEntry examples/help.js
+881 silly gunzTarPerm extractEntry examples/nargs.js
+882 info postinstall glob@3.2.11
+883 verbose unlock done using /home/vagrant/.npm/_locks/glob-b854ce0abb8fe4e1.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/glob
+884 silly gunzTarPerm extractEntry test/runner.js
+885 silly gunzTarPerm modified mode [ 'test/runner.js', 420, 436 ]
+886 silly gunzTarPerm extractEntry examples/parents.js
+887 silly gunzTarPerm extractEntry examples/prefix_chars.js
+888 silly gunzTarPerm extractEntry test/test.js
+889 silly gunzTarPerm modified mode [ 'test/test.js', 420, 436 ]
+890 silly gunzTarPerm extractEntry examples/sub_commands.js
+891 silly gunzTarPerm extractEntry examples/sum.js
+892 silly gunzTarPerm extractEntry examples/testformatters.js
+893 silly gunzTarPerm extractEntry lib/action.js
+894 silly gunzTarPerm extractEntry lib/action_container.js
+895 silly gunzTarPerm extractEntry lib/argparse.js
+896 silly gunzTarPerm extractEntry lib/argument_parser.js
+897 silly gunzTarPerm extractEntry lib/const.js
+898 silly gunzTarPerm extractEntry lib/namespace.js
+899 silly gunzTarPerm extractEntry lib/action/append.js
+900 silly gunzTarPerm extractEntry lib/action/count.js
+901 silly gunzTarPerm extractEntry lib/action/help.js
+902 silly gunzTarPerm extractEntry lib/action/store.js
+903 silly gunzTarPerm extractEntry lib/action/subparsers.js
+904 silly gunzTarPerm extractEntry lib/action/version.js
+905 silly gunzTarPerm extractEntry lib/action/append/constant.js
+906 silly gunzTarPerm extractEntry lib/action/store/constant.js
+907 silly gunzTarPerm extractEntry lib/action/store/false.js
+908 silly gunzTarPerm extractEntry lib/action/store/true.js
+909 silly gunzTarPerm extractEntry lib/argument/error.js
+910 silly gunzTarPerm extractEntry lib/argument/exclusive.js
+911 silly gunzTarPerm extractEntry lib/argument/group.js
+912 silly gunzTarPerm extractEntry lib/help/added_formatters.js
+913 silly gunzTarPerm extractEntry lib/help/formatter.js
+914 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/package.json
+915 info preinstall argparse@0.1.16
+916 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/package.json
+917 silly prepareForInstallMany adding underscore@~1.7.0 from argparse dependencies
+918 silly prepareForInstallMany adding underscore.string@~2.4.0 from argparse dependencies
+919 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/package.json
+920 silly cache add args [ 'underscore@~1.7.0', null ]
+921 verbose cache add spec underscore@~1.7.0
+922 silly cache add parsed spec { raw: 'underscore@~1.7.0',
+922 silly cache add   scope: null,
+922 silly cache add   name: 'underscore',
+922 silly cache add   rawSpec: '~1.7.0',
+922 silly cache add   spec: '>=1.7.0 <1.8.0',
+922 silly cache add   type: 'range' }
+923 silly addNamed underscore@>=1.7.0 <1.8.0
+924 verbose addNamed ">=1.7.0 <1.8.0" is a valid semver range for underscore
+925 silly addNameRange { name: 'underscore', range: '>=1.7.0 <1.8.0', hasData: false }
+926 silly mapToRegistry name underscore
+927 silly mapToRegistry using default registry
+928 silly mapToRegistry registry https://registry.npmjs.org/
+929 silly mapToRegistry uri https://registry.npmjs.org/underscore
+930 verbose addNameRange registry:https://registry.npmjs.org/underscore not in flight; fetching
+931 silly cache add args [ 'underscore.string@~2.4.0', null ]
+932 verbose cache add spec underscore.string@~2.4.0
+933 silly cache add parsed spec { raw: 'underscore.string@~2.4.0',
+933 silly cache add   scope: null,
+933 silly cache add   name: 'underscore.string',
+933 silly cache add   rawSpec: '~2.4.0',
+933 silly cache add   spec: '>=2.4.0 <2.5.0',
+933 silly cache add   type: 'range' }
+934 silly addNamed underscore.string@>=2.4.0 <2.5.0
+935 verbose addNamed ">=2.4.0 <2.5.0" is a valid semver range for underscore.string
+936 silly addNameRange { name: 'underscore.string',
+936 silly addNameRange   range: '>=2.4.0 <2.5.0',
+936 silly addNameRange   hasData: false }
+937 silly mapToRegistry name underscore.string
+938 silly mapToRegistry using default registry
+939 silly mapToRegistry registry https://registry.npmjs.org/
+940 silly mapToRegistry uri https://registry.npmjs.org/underscore.string
+941 verbose addNameRange registry:https://registry.npmjs.org/underscore.string not in flight; fetching
+942 verbose request uri https://registry.npmjs.org/underscore
+943 verbose request no auth needed
+944 info attempt registry request try #1 at 3:56:39 PM
+945 verbose etag "3UQP1FXOKYE5RILZ0ME3VNRI2"
+946 http request GET https://registry.npmjs.org/underscore
+947 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima/package.json
+948 info preinstall esprima@1.0.4
+949 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima/package.json
+950 verbose request uri https://registry.npmjs.org/underscore.string
+951 verbose request no auth needed
+952 info attempt registry request try #1 at 3:56:39 PM
+953 verbose etag "42XVVLS85OA5X9B930MT3LD6Y"
+954 http request GET https://registry.npmjs.org/underscore.string
+955 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima/package.json
+956 silly install resolved []
+957 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+958 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+959 info linkStuff esprima@1.0.4
+960 silly linkStuff esprima@1.0.4 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules as its parent node_modules
+961 verbose linkBins esprima@1.0.4
+962 verbose link bins [ { esparse: './bin/esparse.js',
+962 verbose link bins     esvalidate: './bin/esvalidate.js' },
+962 verbose link bins   '/var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin',
+962 verbose link bins   false ]
+963 verbose linkMans esprima@1.0.4
+964 verbose rebuildBundles esprima@1.0.4
+965 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esparse is being purged
+966 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esparse
+967 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esvalidate is being purged
+968 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esvalidate
+969 verbose unlock done using /home/vagrant/.npm/_locks/esprima-40946b9afd5952a6.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+970 http 304 https://registry.npmjs.org/underscore.string
+971 silly get cb [ 304,
+971 silly get   { date: 'Sat, 18 Jul 2015 15:56:39 GMT',
+971 silly get     via: '1.1 varnish',
+971 silly get     'cache-control': 'max-age=60',
+971 silly get     etag: '"42XVVLS85OA5X9B930MT3LD6Y"',
+971 silly get     age: '3',
+971 silly get     connection: 'keep-alive',
+971 silly get     'x-served-by': 'cache-fra1240-FRA',
+971 silly get     'x-cache': 'HIT',
+971 silly get     'x-cache-hits': '1',
+971 silly get     'x-timer': 'S1437234999.799123,VS0,VE0',
+971 silly get     vary: 'Accept' } ]
+972 verbose etag https://registry.npmjs.org/underscore.string from cache
+973 verbose get saving underscore.string to /home/vagrant/.npm/registry.npmjs.org/underscore.string/.cache.json
+974 silly addNameRange number 2 { name: 'underscore.string',
+974 silly addNameRange   range: '>=2.4.0 <2.5.0',
+974 silly addNameRange   hasData: true }
+975 silly addNameRange versions [ 'underscore.string',
+975 silly addNameRange   [ '0.9.2',
+975 silly addNameRange     '1.0.0',
+975 silly addNameRange     '1.1.3',
+975 silly addNameRange     '1.1.4',
+975 silly addNameRange     '1.1.5',
+975 silly addNameRange     '1.1.6',
+975 silly addNameRange     '2.0.0',
+975 silly addNameRange     '2.1.0',
+975 silly addNameRange     '2.1.1',
+975 silly addNameRange     '2.3.0',
+975 silly addNameRange     '2.3.1',
+975 silly addNameRange     '2.3.2',
+975 silly addNameRange     '2.2.1',
+975 silly addNameRange     '2.2.0-rc',
+975 silly addNameRange     '2.3.3',
+975 silly addNameRange     '2.4.0',
+975 silly addNameRange     '3.0.0',
+975 silly addNameRange     '3.0.1',
+975 silly addNameRange     '3.0.2',
+975 silly addNameRange     '3.0.3',
+975 silly addNameRange     '3.1.0',
+975 silly addNameRange     '3.1.1' ] ]
+976 silly addNamed underscore.string@2.4.0
+977 verbose addNamed "2.4.0" is a plain semver version for underscore.string
+978 silly cache afterAdd underscore.string@2.4.0
+979 verbose afterAdd /home/vagrant/.npm/underscore.string/2.4.0/package/package.json not in flight; writing
+980 verbose afterAdd /home/vagrant/.npm/underscore.string/2.4.0/package/package.json written
+981 http 200 https://registry.npmjs.org/underscore
+982 silly get cb [ 200,
+982 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+982 silly get     etag: '"AAG270T96LGZ58ZX01J1J1BI6"',
+982 silly get     'content-type': 'application/json',
+982 silly get     'cache-control': 'max-age=60',
+982 silly get     'content-length': '40944',
+982 silly get     'accept-ranges': 'bytes',
+982 silly get     date: 'Sat, 18 Jul 2015 15:56:39 GMT',
+982 silly get     via: '1.1 varnish',
+982 silly get     age: '39',
+982 silly get     connection: 'keep-alive',
+982 silly get     'x-served-by': 'cache-fra1221-FRA',
+982 silly get     'x-cache': 'HIT',
+982 silly get     'x-cache-hits': '2',
+982 silly get     'x-timer': 'S1437234999.798857,VS0,VE0',
+982 silly get     vary: 'Accept' } ]
+983 verbose get saving underscore to /home/vagrant/.npm/registry.npmjs.org/underscore/.cache.json
+984 silly addNameRange number 2 { name: 'underscore', range: '>=1.7.0 <1.8.0', hasData: true }
+985 silly addNameRange versions [ 'underscore',
+985 silly addNameRange   [ '1.0.3',
+985 silly addNameRange     '1.0.4',
+985 silly addNameRange     '1.1.0',
+985 silly addNameRange     '1.1.1',
+985 silly addNameRange     '1.1.2',
+985 silly addNameRange     '1.1.3',
+985 silly addNameRange     '1.1.4',
+985 silly addNameRange     '1.1.5',
+985 silly addNameRange     '1.1.6',
+985 silly addNameRange     '1.1.7',
+985 silly addNameRange     '1.2.0',
+985 silly addNameRange     '1.2.1',
+985 silly addNameRange     '1.2.2',
+985 silly addNameRange     '1.2.3',
+985 silly addNameRange     '1.2.4',
+985 silly addNameRange     '1.3.0',
+985 silly addNameRange     '1.3.1',
+985 silly addNameRange     '1.3.2',
+985 silly addNameRange     '1.3.3',
+985 silly addNameRange     '1.4.0',
+985 silly addNameRange     '1.4.1',
+985 silly addNameRange     '1.4.2',
+985 silly addNameRange     '1.4.3',
+985 silly addNameRange     '1.4.4',
+985 silly addNameRange     '1.5.0',
+985 silly addNameRange     '1.5.1',
+985 silly addNameRange     '1.5.2',
+985 silly addNameRange     '1.6.0',
+985 silly addNameRange     '1.7.0',
+985 silly addNameRange     '1.8.0',
+985 silly addNameRange     '1.8.1',
+985 silly addNameRange     '1.8.2',
+985 silly addNameRange     '1.8.3' ] ]
+986 silly addNamed underscore@1.7.0
+987 verbose addNamed "1.7.0" is a plain semver version for underscore
+988 silly cache afterAdd underscore@1.7.0
+989 verbose afterAdd /home/vagrant/.npm/underscore/1.7.0/package/package.json not in flight; writing
+990 verbose afterAdd /home/vagrant/.npm/underscore/1.7.0/package/package.json written
+991 silly install resolved [ { name: 'underscore.string',
+991 silly install resolved     version: '2.4.0',
+991 silly install resolved     description: 'String manipulation extensions for Underscore.js javascript library.',
+991 silly install resolved     homepage: 'http://epeli.github.com/underscore.string/',
+991 silly install resolved     contributors:
+991 silly install resolved      [ [Object],
+991 silly install resolved        [Object],
+991 silly install resolved        [Object],
+991 silly install resolved        [Object],
+991 silly install resolved        [Object],
+991 silly install resolved        [Object],
+991 silly install resolved        [Object],
+991 silly install resolved        [Object] ],
+991 silly install resolved     keywords: [ 'underscore', 'string' ],
+991 silly install resolved     main: './lib/underscore.string.js',
+991 silly install resolved     directories: { lib: './lib' },
+991 silly install resolved     engines: { node: '*' },
+991 silly install resolved     repository:
+991 silly install resolved      { type: 'git',
+991 silly install resolved        url: 'git+https://github.com/epeli/underscore.string.git' },
+991 silly install resolved     bugs: { url: 'https://github.com/epeli/underscore.string/issues' },
+991 silly install resolved     licenses: [ [Object] ],
+991 silly install resolved     scripts: { test: 'gulp test' },
+991 silly install resolved     devDependencies:
+991 silly install resolved      { gulp: '~3.8.10',
+991 silly install resolved        'gulp-uglify': '~1.0.1',
+991 silly install resolved        'gulp-qunit': '~1.0.0',
+991 silly install resolved        'gulp-clean': '~0.3.1',
+991 silly install resolved        'gulp-rename': '~1.2.0' },
+991 silly install resolved     _id: 'underscore.string@2.4.0',
+991 silly install resolved     dist:
+991 silly install resolved      { shasum: '8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b',
+991 silly install resolved        tarball: 'http://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz' },
+991 silly install resolved     _from: 'underscore.string@>=2.4.0 <2.5.0',
+991 silly install resolved     _npmVersion: '1.3.24',
+991 silly install resolved     _npmUser: { name: 'epeli', email: 'esa-matti@suuronen.org' },
+991 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+991 silly install resolved     _shasum: '8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b',
+991 silly install resolved     _resolved: 'https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz',
+991 silly install resolved     readme: 'ERROR: No README data found!' },
+991 silly install resolved   { name: 'underscore',
+991 silly install resolved     description: 'JavaScript\'s functional programming helper library.',
+991 silly install resolved     homepage: 'http://underscorejs.org',
+991 silly install resolved     keywords: [ 'util', 'functional', 'server', 'client', 'browser' ],
+991 silly install resolved     author: { name: 'Jeremy Ashkenas', email: 'jeremy@documentcloud.org' },
+991 silly install resolved     repository:
+991 silly install resolved      { type: 'git',
+991 silly install resolved        url: 'git://github.com/jashkenas/underscore.git' },
+991 silly install resolved     main: 'underscore.js',
+991 silly install resolved     version: '1.7.0',
+991 silly install resolved     devDependencies:
+991 silly install resolved      { docco: '0.6.x',
+991 silly install resolved        phantomjs: '1.9.7-1',
+991 silly install resolved        'uglify-js': '2.4.x',
+991 silly install resolved        eslint: '0.6.x' },
+991 silly install resolved     scripts:
+991 silly install resolved      { test: 'phantomjs test/vendor/runner.js test/index.html?noglobals=true && eslint underscore.js test/*.js test/vendor/runner.js',
+991 silly install resolved        build: 'uglifyjs underscore.js -c "evaluate=false" --comments "/    .*/" -m --source-map underscore-min.map -o underscore-min.js',
+991 silly install resolved        doc: 'docco underscore.js' },
+991 silly install resolved     licenses: [ [Object] ],
+991 silly install resolved     files: [ 'underscore.js', 'underscore-min.js', 'LICENSE' ],
+991 silly install resolved     gitHead: 'da996e665deb0b69b257e80e3e257c04fde4191c',
+991 silly install resolved     bugs: { url: 'https://github.com/jashkenas/underscore/issues' },
+991 silly install resolved     _id: 'underscore@1.7.0',
+991 silly install resolved     _shasum: '6bbaf0877500d36be34ecaa584e0db9fef035209',
+991 silly install resolved     _from: 'underscore@>=1.7.0 <1.8.0',
+991 silly install resolved     _npmVersion: '1.4.24',
+991 silly install resolved     _npmUser: { name: 'jashkenas', email: 'jashkenas@gmail.com' },
+991 silly install resolved     maintainers: [ [Object] ],
+991 silly install resolved     dist:
+991 silly install resolved      { shasum: '6bbaf0877500d36be34ecaa584e0db9fef035209',
+991 silly install resolved        tarball: 'http://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz' },
+991 silly install resolved     directories: {},
+991 silly install resolved     _resolved: 'https://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz',
+991 silly install resolved     readme: 'ERROR: No README data found!' } ]
+992 info install underscore.string@2.4.0 into /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+993 info install underscore@1.7.0 into /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+994 info installOne underscore.string@2.4.0
+995 verbose installOne of underscore.string to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse not in flight; installing
+996 info installOne underscore@1.7.0
+997 verbose installOne of underscore to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse not in flight; installing
+998 verbose lock using /home/vagrant/.npm/_locks/underscore-string-721edf077aa4bf97.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+999 verbose lock using /home/vagrant/.npm/_locks/underscore-db9c5ab24e5c86ef.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1000 silly install write writing underscore 1.7.0 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1001 silly install write writing underscore.string 2.4.0 to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+1002 verbose unbuild node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1003 verbose unbuild node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+1004 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore is being purged from base /var/www/BookApi
+1005 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1006 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string is being purged from base /var/www/BookApi
+1007 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+1008 verbose tar unpack /home/vagrant/.npm/underscore/1.7.0/package.tgz
+1009 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1010 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore is being purged
+1011 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1012 verbose tar unpack /home/vagrant/.npm/underscore.string/2.4.0/package.tgz
+1013 verbose tar unpacking to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+1014 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string is being purged
+1015 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+1016 silly gunzTarPerm modes [ '775', '664' ]
+1017 silly gunzTarPerm modes [ '775', '664' ]
+1018 silly gunzTarPerm extractEntry package.json
+1019 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+1020 silly gunzTarPerm extractEntry README.md
+1021 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+1022 silly gunzTarPerm extractEntry LICENSE
+1023 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+1024 silly gunzTarPerm extractEntry package.json
+1025 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+1026 silly gunzTarPerm extractEntry .npmignore
+1027 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+1028 silly gunzTarPerm extractEntry foo.js
+1029 silly gunzTarPerm modified mode [ 'foo.js', 420, 436 ]
+1030 silly gunzTarPerm extractEntry underscore-min.js
+1031 silly gunzTarPerm modified mode [ 'underscore-min.js', 420, 436 ]
+1032 silly gunzTarPerm extractEntry gulpfile.js
+1033 silly gunzTarPerm modified mode [ 'gulpfile.js', 420, 436 ]
+1034 silly gunzTarPerm extractEntry .travis.yml
+1035 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+1036 silly gunzTarPerm extractEntry underscore.js
+1037 silly gunzTarPerm modified mode [ 'underscore.js', 420, 436 ]
+1038 silly gunzTarPerm extractEntry README.markdown
+1039 silly gunzTarPerm modified mode [ 'README.markdown', 420, 436 ]
+1040 silly gunzTarPerm extractEntry bower.json
+1041 silly gunzTarPerm modified mode [ 'bower.json', 420, 436 ]
+1042 silly gunzTarPerm extractEntry component.json
+1043 silly gunzTarPerm modified mode [ 'component.json', 420, 436 ]
+1044 silly gunzTarPerm extractEntry lib/underscore.string.js
+1045 silly gunzTarPerm modified mode [ 'lib/underscore.string.js', 420, 436 ]
+1046 silly gunzTarPerm extractEntry libpeerconnection.log
+1047 silly gunzTarPerm modified mode [ 'libpeerconnection.log', 420, 436 ]
+1048 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/package.json
+1049 info preinstall underscore@1.7.0
+1050 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/package.json
+1051 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/package.json
+1052 silly install resolved []
+1053 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1054 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1055 info linkStuff underscore@1.7.0
+1056 silly linkStuff underscore@1.7.0 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules as its parent node_modules
+1057 verbose linkBins underscore@1.7.0
+1058 verbose linkMans underscore@1.7.0
+1059 verbose rebuildBundles underscore@1.7.0
+1060 info install underscore@1.7.0
+1061 info postinstall underscore@1.7.0
+1062 verbose unlock done using /home/vagrant/.npm/_locks/underscore-db9c5ab24e5c86ef.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore
+1063 verbose write writing to /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/package.json
+1064 info preinstall underscore.string@2.4.0
+1065 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/package.json
+1066 verbose readDependencies loading dependencies from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string/package.json
+1067 silly install resolved []
+1068 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+1069 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+1070 info linkStuff underscore.string@2.4.0
+1071 silly linkStuff underscore.string@2.4.0 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules as its parent node_modules
+1072 verbose linkBins underscore.string@2.4.0
+1073 verbose linkMans underscore.string@2.4.0
+1074 verbose rebuildBundles underscore.string@2.4.0
+1075 info install underscore.string@2.4.0
+1076 info postinstall underscore.string@2.4.0
+1077 verbose unlock done using /home/vagrant/.npm/_locks/underscore-string-721edf077aa4bf97.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse/node_modules/underscore.string
+1078 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+1079 info build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+1080 info linkStuff argparse@0.1.16
+1081 silly linkStuff argparse@0.1.16 has /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules as its parent node_modules
+1082 verbose linkBins argparse@0.1.16
+1083 verbose linkMans argparse@0.1.16
+1084 verbose rebuildBundles argparse@0.1.16
+1085 verbose rebuildBundles [ 'underscore', 'underscore.string' ]
+1086 info install argparse@0.1.16
+1087 info postinstall argparse@0.1.16
+1088 verbose unlock done using /home/vagrant/.npm/_locks/argparse-bab6e75e7cfee412.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/argparse
+1089 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+1090 verbose unlock done using /home/vagrant/.npm/_locks/js-yaml-b1294b4f94a2619c.lock for /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+1091 verbose about to build /var/www/BookApi/node_modules/sequelize-fixtures
+1092 verbose unlock done using /home/vagrant/.npm/_locks/sequelize-fixtures-6ef6b22598f158ff.lock for /var/www/BookApi/node_modules/sequelize-fixtures
+1093 verbose stack Error: EPROTO, symlink '../esprima/bin/esparse.js'
+1093 verbose stack     at Error (native)
+1094 verbose cwd /var/www/BookApi
+1095 error Linux 3.13.0-32-generic
+1096 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "sequelize-fixtures" "--save"
+1097 error node v0.12.5
+1098 error npm  v2.11.2
+1099 error path ../esprima/bin/esparse.js
+1100 error code EPROTO
+1101 error errno -71
+1102 error EPROTO, symlink '../esprima/bin/esparse.js'
+1103 error If you need help, you may report this error at:
+1103 error     <https://github.com/npm/npm/issues>
+1104 verbose exit [ -71, true ]
+1105 verbose unbuild node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+1106 info preuninstall esprima@1.0.4
+1107 info uninstall esprima@1.0.4
+1108 verbose unbuild rmStuff esprima@1.0.4 from /var/www/BookApi/node_modules
+1109 verbose unbuild rmStuff in /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules
+1110 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esparse is being gently removed
+1111 silly gentlyRm verifying /var/www/BookApi is an npm working directory
+1112 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esvalidate is being gently removed
+1113 silly gentlyRm verifying /var/www/BookApi is an npm working directory
+1114 silly gentlyRm containing path /var/www/BookApi is under npm's control, in /var/www/BookApi
+1115 silly gentlyRm deletion target /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esparse is under /var/www/BookApi
+1116 verbose gentlyRm vacuuming from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esparse up to /var/www/BookApi
+1117 silly gentlyRm containing path /var/www/BookApi is under npm's control, in /var/www/BookApi
+1118 silly gentlyRm deletion target /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esvalidate is under /var/www/BookApi
+1119 verbose gentlyRm vacuuming from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/.bin/esvalidate up to /var/www/BookApi
+1120 info postuninstall esprima@1.0.4
+1121 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima is being purged from base /var/www/BookApi
+1122 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+1123 silly vacuum-fs purging /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules/esprima
+1124 silly vacuum-fs quitting because other entries in /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml/node_modules
+1125 verbose unbuild node_modules/sequelize-fixtures/node_modules/js-yaml
+1126 info preuninstall js-yaml@2.1.3
+1127 info uninstall js-yaml@2.1.3
+1128 verbose unbuild rmStuff js-yaml@2.1.3 from /var/www/BookApi/node_modules
+1129 verbose unbuild rmStuff in /var/www/BookApi/node_modules/sequelize-fixtures/node_modules
+1130 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/.bin/js-yaml is being gently removed
+1131 silly gentlyRm verifying /var/www/BookApi is an npm working directory
+1132 silly gentlyRm containing path /var/www/BookApi is under npm's control, in /var/www/BookApi
+1133 silly gentlyRm deletion target /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/.bin/js-yaml is under /var/www/BookApi
+1134 verbose gentlyRm vacuuming from /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/.bin/js-yaml up to /var/www/BookApi
+1135 info postuninstall js-yaml@2.1.3
+1136 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml is being purged from base /var/www/BookApi
+1137 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+1138 silly vacuum-fs purging /var/www/BookApi/node_modules/sequelize-fixtures/node_modules/js-yaml
+1139 silly vacuum-fs quitting because other entries in /var/www/BookApi/node_modules/sequelize-fixtures/node_modules
+1140 verbose unbuild node_modules/sequelize-fixtures
+1141 info preuninstall sequelize-fixtures@0.4.7
+1142 info uninstall sequelize-fixtures@0.4.7
+1143 verbose unbuild rmStuff sequelize-fixtures@0.4.7 from /var/www/BookApi/node_modules
+1144 info postuninstall sequelize-fixtures@0.4.7
+1145 silly gentlyRm /var/www/BookApi/node_modules/sequelize-fixtures is being purged from base /var/www/BookApi
+1146 verbose gentlyRm don't care about contents; nuking /var/www/BookApi/node_modules/sequelize-fixtures
+1147 silly vacuum-fs purging /var/www/BookApi/node_modules/sequelize-fixtures
+1148 silly vacuum-fs quitting because other entries in /var/www/BookApi/node_modules

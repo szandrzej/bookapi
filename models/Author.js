@@ -6,6 +6,7 @@ module.exports = function(sequelize, DataTypes) {
             {
                 type: DataTypes.STRING(24),
                 allowNull: false,
+                unique: 'fullNameIndex',
                 validate: {
                     len: {
                         args: [3, 24],
@@ -17,17 +18,13 @@ module.exports = function(sequelize, DataTypes) {
             {
                 type: DataTypes.STRING(24),
                 allowNull: false,
+                unique: 'fullNameIndex',
                 validate: {
                     len: {
                         args: [3, 24],
                         msg: "Last name is too short!"
                     }
                 }
-            },
-            birthday:
-            {
-                type: DataTypes.DATE,
-                allowNull: true
             },
             nationality:
             {

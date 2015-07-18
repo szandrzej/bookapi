@@ -4,7 +4,8 @@
         "password": "devel",
         "database": "bookapi_dev",
         "host": "127.0.0.1",
-        "dialect": "mysql"
+        "dialect": "mysql",
+        "expirationTime": 1000000
     },
     "test": {
         "username": "devel",
@@ -12,13 +13,15 @@
         "database": "bookapi_test",
         "host": "127.0.0.1",
         "dialect": "mysql",
-        "logging": false
+        "logging": false,
+        "expirationTime": 7200
     },
     "production": {
         "username": "devel",
         "password": "devel",
         "database": "bookapi_prod",
         "host": "127.0.0.1",
-        "dialect": "mysql"
+        "dialect": "mysql",
+        "expirationTime": 7200
     }
 }

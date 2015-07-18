@@ -1,33 +1,209 @@
 process.env.NODE_ENV = 'test';
 
+var seqFixtures = require('sequelize-fixtures');
 var expect = require('chai').expect;
 var request = require('supertest');
 var app = require('../app.js');
 var models = require("../models");
 
-describe('Authors [/api/authors]', function () {
+var correctNewAuthor = {
+    firstName: "Tom",
+    lastName: "Clancy",
+    nationality: "US"
+};
+
+var incorrectNewAuthor = {
+    firstNam: "Tom",
+    lastName: "Clancy",
+    nationality: "US"
+};
+
+describe('AUTHORS', function () {
 
     before(function (done) {
-        models.sequelize.sync({force: true}).then(function(){
-            models.Author.create({
-                firstName: "Andrzej",
-                lastName: "Sapkowski"
-            }).then(function(){
-                done();
-            });
+        models.sequelize.sync({force: true}).then(function() {
+            seqFixtures.loadFixtures( require('../test/fixtures/fixtures'), models )
+                .then(function(){
+                    done();
+                });
         });
     });
 
-    it('should return one author', function (done) {
-        request(app)
-            .get('/api/authors')
-            .set('Content-Type', 'application/json')
-            .send()
-            .expect(function(res){
-                var body = res.body;
-                expect(body.extras.authors).to.have.length(1);
-            })
-            .end(done);
+    describe('[/api/authors]', function(done){
+        it('should return 200 with authorization header', function (done) {
+            request(app)
+                .get('/api/authors')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(200)
+                .end(done);
+        });
+        it('should return 403 without authorization header', function (done) {
+            request(app)
+                .get('/api/authors')
+                .set('Content-Type', 'application/json')
+                .send()
+                .expect(403)
+                .end(done);
+        });
+        it('should return 5 authors', function (done) {
+            request(app)
+                .get('/api/authors')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(function(res){
+                    var body = res.body;
+                    expect(body.extras.authors).to.have.length(5);
+                })
+                .end(done);
+        });
+        it('should first author be Henryk Sienkiewicz', function (done) {
+            request(app)
+                .get('/api/authors')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(function(res){
+                    var extras = res.body.extras;
+                    expect(extras.authors[0].firstName).to.equal('Henryk');
+                    expect(extras.authors[0].lastName).to.equal('Sienkiewicz');
+                })
+                .end(done);
+        });
+        it('should return 201 when correct POST body', function (done) {
+            request(app)
+                .post('/api/authors', correctNewAuthor)
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(201)
+                .end(done);
+        });
+        it('should return new author with id = 6 and nationality US', function (done) {
+            request(app)
+                .post('/api/authors', correctNewAuthor)
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(function(res){
+                    var author = res.body.extras;
+                    expect(author.id).to.equal(6);
+                    expect(author.nationality).to.equal('US');
+                })
+                .end(done);
+        });
+        it('should return 400 when incorrect POST body', function (done) {
+            request(app)
+                .post('/api/authors', incorrectNewAuthor)
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(400)
+                .end(done);
+        });
+        it('should return 409 when send author that exists', function (done) {
+            request(app)
+                .post('/api/authors', {firstName: 'Henryk', lastName: 'Sienkiewicz'})
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(409)
+                .end(done);
+        });
+    });
+    describe('[/api/authors/:id]', function(done){
+        it('should return 200 if id = 1', function (done) {
+            request(app)
+                .get('/api/authors/1')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(200)
+                .end(done);
+        });
+        it('should return author J.R.R Tolkien if id = 2', function (done) {
+            request(app)
+                .get('/api/authors/2')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(function(res){
+                    var author = res.body.extras;
+                    expect(author.firstName).to.equal('J.R.R');
+                    expect(author.lastName).to.equal('Tolkien');
+                })
+                .end(done);
+        });
+        it('should not have field nationality if id = 3', function (done) {
+            request(app)
+                .get('/api/authors/3')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(function(res){
+                    var author = res.body.extras;
+                    expect(author.nationality).to.be.undefined;
+                })
+                .end(done);
+        });
+        it('should return 404 when id = 8', function (done) {
+            request(app)
+                .get('/api/authors/8')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(404)
+                .end(done);
+        });
+        it('should return 403 when try to edit author by not admin', function(done){
+            request(app)
+                .put('/api/authors/1', {firstName: 'Henio'})
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofuserym7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX8')
+                .send()
+                .expect(403)
+                .end(done);
+        });
+        it('should return 200 when try to edit author by admin', function(done){
+            request(app)
+                .put('/api/authors/1', {firstName: 'Henio'})
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(200)
+                .end(done);
+        });
+        it('should return edited authors lastName =  Sapkowski -> Sapekowski', function(done){
+            request(app)
+                .put('/api/authors/2', {lastName: 'Sapekowski'})
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(function(res){
+                    var author = res.body.extras;
+                    expect(author.lastName).to.equal('Sapekowski');
+                })
+                .end(done);
+        });
+        it('should return 403 when try delete author by not admin', function(done){
+            request(app)
+                .delete('/api/authors/1')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofuserym7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX8')
+                .send()
+                .expect(403)
+                .end(done);
+        });
+        it('should return 200 when try delete author by admin', function(done){
+            request(app)
+                .delete('/api/authors/1')
+                .set('Content-Type', 'application/json')
+                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(200)
+                .end(done);
+        });
     });
 });
-

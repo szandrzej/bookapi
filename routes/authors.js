@@ -33,7 +33,6 @@ router.get('/:id', function(req, res, next) {
             } else{
                 res.send(codes.code404("Author not found"));
             }
-
         });
 });
 

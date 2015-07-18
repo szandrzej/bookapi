@@ -11623,8 +11623,8 @@
 12091 silly gunzTarPerm modes [ '775', '664' ]
 12092 silly gunzTarPerm extractEntry test/fixture/js/workarounds.js
 12093 silly gunzTarPerm modified mode [ 'test/fixture/js/workarounds.js', 420, 436 ]
-12094 silly gunzTarPerm extractEntry test/integration/test-fixtures.js
-12095 silly gunzTarPerm modified mode [ 'test/integration/test-fixtures.js', 420, 436 ]
+12094 silly gunzTarPerm extractEntry test/integration/test-fixtures.json
+12095 silly gunzTarPerm modified mode [ 'test/integration/test-fixtures.json', 420, 436 ]
 12096 silly gunzTarPerm extractEntry test/same-type.js
 12097 silly gunzTarPerm modified mode [ 'test/same-type.js', 420, 436 ]
 12098 silly gunzTarPerm extractEntry test/dollar.js
