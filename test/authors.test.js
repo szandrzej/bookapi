@@ -39,7 +39,7 @@ describe('AUTHORS', function () {
                 .expect(200)
                 .end(done);
         });
-        it('should return 403 without authorization header', function (done) {
+        it('should return 201 without authorization header', function (done) {
             request(app)
                 .get('/api/authors')
                 .set('Content-Type', 'application/json')
@@ -72,7 +72,7 @@ describe('AUTHORS', function () {
                 })
                 .end(done);
         });
-        it('should return 201 when correct POST body and should return new author with id = 6 and nationality US', function (done) {
+        it('should return 201 when correct POST body and should return new author with id and nationality US', function (done) {
             request(app)
                 .post('/api/authors')
                 .set('Content-Type', 'application/json')
@@ -81,7 +81,7 @@ describe('AUTHORS', function () {
                 .expect(201)
                 .expect(function(res){
                     var author = res.body.extras;
-                    expect(author.id).to.equal(6);
+                    expect(author.id).to.exist;
                     expect(author.nationality).to.equal('US');
                 })
                 .end(done);

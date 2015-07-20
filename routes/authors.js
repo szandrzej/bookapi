@@ -22,7 +22,6 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next){
     var data = req.body;
     Validator.checkRequiredFields(data, authorCreateFields, function(err, result){
-        console.log(err);
         if(err){
             var error = createError(err, 'error.bad_request', 400);
             next(error);

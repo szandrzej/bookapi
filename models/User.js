@@ -20,6 +20,7 @@ module.exports = function(sequelize, DataTypes) {
             {
                 type: DataTypes.STRING,
                 allowNull: false,
+                unique: true,
                 validate: {
                     isEmail: {
                         args: true,
@@ -36,6 +37,16 @@ module.exports = function(sequelize, DataTypes) {
             {
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            activated:
+            {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            activationCode:
+            {
+                type: DataTypes.STRING(30),
+                allowNull: true
             },
             refreshToken:
             {
@@ -63,10 +74,11 @@ module.exports = function(sequelize, DataTypes) {
                 },
                 beforeCreate: function(user){
                     user.refreshToken = randomString({length: 120});
+                    user.activationCode = randomString({length: 30});
                 }
             },
-            getterMethods   : {
-                fullName       : function()  {
+            getterMethods: {
+                fullName: function()  {
                     return this.firstName + ' ' + this.lastName
                 }
             },
