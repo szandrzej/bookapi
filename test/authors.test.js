@@ -72,21 +72,13 @@ describe('AUTHORS', function () {
                 })
                 .end(done);
         });
-        it('should return 201 when correct POST body', function (done) {
+        it('should return 201 when correct POST body and should return new author with id = 6 and nationality US', function (done) {
             request(app)
-                .post('/api/authors', correctNewAuthor)
+                .post('/api/authors')
                 .set('Content-Type', 'application/json')
                 .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
-                .send()
+                .send(correctNewAuthor)
                 .expect(201)
-                .end(done);
-        });
-        it('should return new author with id = 6 and nationality US', function (done) {
-            request(app)
-                .post('/api/authors', correctNewAuthor)
-                .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
-                .send()
                 .expect(function(res){
                     var author = res.body.extras;
                     expect(author.id).to.equal(6);
@@ -96,19 +88,19 @@ describe('AUTHORS', function () {
         });
         it('should return 400 when incorrect POST body', function (done) {
             request(app)
-                .post('/api/authors', incorrectNewAuthor)
+                .post('/api/authors')
                 .set('Content-Type', 'application/json')
                 .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
-                .send()
+                .send(incorrectNewAuthor)
                 .expect(400)
                 .end(done);
         });
         it('should return 409 when send author that exists', function (done) {
             request(app)
-                .post('/api/authors', {firstName: 'Henryk', lastName: 'Sienkiewicz'})
+                .post('/api/authors')
                 .set('Content-Type', 'application/json')
                 .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
-                .send()
+                .send({firstName: 'Henryk', lastName: 'Sienkiewicz'})
                 .expect(409)
                 .end(done);
         });
@@ -123,9 +115,9 @@ describe('AUTHORS', function () {
                 .expect(200)
                 .end(done);
         });
-        it('should return author J.R.R Tolkien if id = 2', function (done) {
+        it('should return author J.R.R Tolkien if id = 3', function (done) {
             request(app)
-                .get('/api/authors/2')
+                .get('/api/authors/3')
                 .set('Content-Type', 'application/json')
                 .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
@@ -136,7 +128,7 @@ describe('AUTHORS', function () {
                 })
                 .end(done);
         });
-        it('should not have field nationality if id = 3', function (done) {
+        it('should not have field nationality if id = 2', function (done) {
             request(app)
                 .get('/api/authors/3')
                 .set('Content-Type', 'application/json')
@@ -144,7 +136,7 @@ describe('AUTHORS', function () {
                 .send()
                 .expect(function(res){
                     var author = res.body.extras;
-                    expect(author.nationality).to.be.undefined;
+                    expect(author.nationality).to.exists;
                 })
                 .end(done);
         });
@@ -202,7 +194,7 @@ describe('AUTHORS', function () {
                 .set('Content-Type', 'application/json')
                 .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
-                .expect(200)
+                .expect(204)
                 .end(done);
         });
     });

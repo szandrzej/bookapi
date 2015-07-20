@@ -1,15 +1,15 @@
 {
     "development": {
-        "username": "devel",
-        "password": "devel",
+        "username": "dbuser",
+        "password": "123",
         "database": "bookapi_dev",
         "host": "127.0.0.1",
         "dialect": "mysql",
         "expirationTime": 1000000
     },
     "test": {
-        "username": "devel",
-        "password": "devel",
+        "username": "dbuser",
+        "password": "123",
         "database": "bookapi_test",
         "host": "127.0.0.1",
         "dialect": "mysql",
@@ -17,8 +17,8 @@
         "expirationTime": 7200
     },
     "production": {
-        "username": "devel",
-        "password": "devel",
+        "username": "dbuser",
+        "password": "123",
         "database": "bookapi_prod",
         "host": "127.0.0.1",
         "dialect": "mysql",

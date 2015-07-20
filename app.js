@@ -4,12 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var bearerToken = require('express-bearer-token');
 var cors = require('cors');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var authorsRoute = require('./routes/authors');
-var validator = require('./helpers/requestValidator');
+var passport = require('passport');
+var BearerStrategy = require('passport-http-bearer').Strategy;
 
 var app = express();
 
@@ -17,47 +17,63 @@ var app = express();
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(cors());
 
-
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api', bearerToken());
+passport.use(new BearerStrategy(
+    function(token, done) {
+        User.findOne({ token: token }, function (err, user) {
+            if (err) { return done(err); }
+            if (!user) { return done(null, false); }
+            return done(null, user, { scope: 'all' });
+        });
+    }
+));
+
 app.use('/', routes);
 app.use('/auth', users);
 app.use('/api/authors', authorsRoute);
 
-app.use(function(req, res, next){
-  var finalData = {
-    status: 200,
-    extras: res.body
-  };
-  res.send(finalData);
+app.use(function(req, res){
+    var finalData = {
+        status: res.resCode,
+        code: 'success',
+        extras: res.body
+    };
+    res.status(res.resCode);
+    res.send(finalData);
 });
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.send();
-  });
-}
+    app.use(function(err, req, res, next) {
+        var finalData = {
+            status: err.resCode,
+            code: err.desc,
+            errors: err.info
+        };
+        res.status(err.resCode);
+        res.send(finalData);
+    });
+//}
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.send();
+    res.status(err.status || 500);
+    res.send();
 });
 
 module.exports = app;

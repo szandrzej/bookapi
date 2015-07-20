@@ -2,13 +2,17 @@ var codes = require('../routes/codes');
 
 var validator = {
     checkRequiredFields: function(data, fieldsArray, callback){
-        for(var key in fieldsArray){
+        var errors = [];
+        for( var key in fieldsArray ){
             var prop = fieldsArray[key];
-            if(data.hasOwnProperty(prop))
-                return callback(codes.code400(prop + ' cannot be changed.'));
+            if(!data.hasOwnProperty(prop))
+                errors.push(prop + ' is missing');
         }
-
-        callback(null, true);
+        if(errors.length != 0){
+            callback({ errors: errors });
+        } else{
+            callback(null, true);
+        }
     }
 };
 
