@@ -3,8 +3,8 @@ var codes = {
         var error = {
             code: 400,
             description: 'error.request_validation',
-            extras: {
-                info: info
+            errors: {
+                error: info
             }
         };
         return error;
