@@ -8,7 +8,9 @@ module.exports = [
             username: 'Andrzej Szmajnta',
             email: 'andrzej@test.com',
             password: 'qwerty',
-            role: 'admin'
+            role: 'admin',
+            activated: false,
+            activationCode: '123456789'
         }
     },
     {
@@ -17,7 +19,20 @@ module.exports = [
             id: 2,
             username: 'Kasia Szmajnta',
             email: 'kasia@test.com',
-            password: 'qwerty'
+            password: 'qwerty',
+            activated: false,
+            activationCode: '98765431'
+        }
+    },
+    {
+        model: 'User',
+        data: {
+            id: 3,
+            username: 'User Szmajnta',
+            email: 'usero@test.com',
+            password: 'qwerty',
+            activated: true,
+            activationCode: '98765431'
         }
     },
 
