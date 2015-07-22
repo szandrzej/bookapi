@@ -31,7 +31,7 @@ server.listen(port, '0.0.0.0');
 server.on('error', onError);
 server.on('listening', onListening);
 
-models.sequelize.sync({ logging: false});
+models.sequelize.sync({ logging: false, force: true});
 
 /**
  * Normalize a port into a number, string, or false.

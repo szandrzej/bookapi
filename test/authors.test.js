@@ -34,24 +34,24 @@ describe('AUTHORS', function () {
             request(app)
                 .get('/api/authors')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(200)
                 .end(done);
         });
-        it('should return 201 without authorization header', function (done) {
+        it('should return 401 without authorization header', function (done) {
             request(app)
                 .get('/api/authors')
                 .set('Content-Type', 'application/json')
                 .send()
-                .expect(403)
+                .expect(401)
                 .end(done);
         });
         it('should return 5 authors', function (done) {
             request(app)
                 .get('/api/authors')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(function(res){
                     var body = res.body;
@@ -63,7 +63,7 @@ describe('AUTHORS', function () {
             request(app)
                 .get('/api/authors')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(function(res){
                     var extras = res.body.extras;
@@ -76,7 +76,7 @@ describe('AUTHORS', function () {
             request(app)
                 .post('/api/authors')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send(correctNewAuthor)
                 .expect(201)
                 .expect(function(res){
@@ -90,7 +90,7 @@ describe('AUTHORS', function () {
             request(app)
                 .post('/api/authors')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send(incorrectNewAuthor)
                 .expect(400)
                 .end(done);
@@ -99,7 +99,7 @@ describe('AUTHORS', function () {
             request(app)
                 .post('/api/authors')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send({firstName: 'Henryk', lastName: 'Sienkiewicz'})
                 .expect(409)
                 .end(done);
@@ -110,7 +110,7 @@ describe('AUTHORS', function () {
             request(app)
                 .get('/api/authors/1')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(200)
                 .end(done);
@@ -119,7 +119,7 @@ describe('AUTHORS', function () {
             request(app)
                 .get('/api/authors/3')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(function(res){
                     var author = res.body.extras;
@@ -132,7 +132,7 @@ describe('AUTHORS', function () {
             request(app)
                 .get('/api/authors/3')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(function(res){
                     var author = res.body.extras;
@@ -144,7 +144,7 @@ describe('AUTHORS', function () {
             request(app)
                 .get('/api/authors/8')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(404)
                 .end(done);
@@ -153,7 +153,7 @@ describe('AUTHORS', function () {
             request(app)
                 .put('/api/authors/1', {firstName: 'Henio'})
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofuserym7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX8')
+                .set('Authorization', 'Bearer tokenofuserym7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX8')
                 .send()
                 .expect(403)
                 .end(done);
@@ -162,7 +162,7 @@ describe('AUTHORS', function () {
             request(app)
                 .put('/api/authors/1', {firstName: 'Henio'})
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(200)
                 .end(done);
@@ -171,7 +171,7 @@ describe('AUTHORS', function () {
             request(app)
                 .put('/api/authors/2', {lastName: 'Sapekowski'})
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(function(res){
                     var author = res.body.extras;
@@ -183,7 +183,7 @@ describe('AUTHORS', function () {
             request(app)
                 .delete('/api/authors/1')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofuserym7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX8')
+                .set('Authorization', 'Bearer tokenofuserym7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX8')
                 .send()
                 .expect(403)
                 .end(done);
@@ -192,7 +192,7 @@ describe('AUTHORS', function () {
             request(app)
                 .delete('/api/authors/1')
                 .set('Content-Type', 'application/json')
-                .set('x-authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(204)
                 .end(done);

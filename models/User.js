@@ -59,6 +59,9 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         {
+            defaultScope: {
+                attributes: ['id', 'username', 'email', 'role']
+            },
             hooks: {
                 beforeValidate: function (user) {
                     var plainPwd = user.password;
@@ -75,11 +78,6 @@ module.exports = function(sequelize, DataTypes) {
                 beforeCreate: function(user){
                     user.refreshToken = randomString({length: 120});
                     user.activationCode = randomString({length: 30});
-                }
-            },
-            getterMethods: {
-                fullName: function()  {
-                    return this.firstName + ' ' + this.lastName
                 }
             },
             classMethods: {
