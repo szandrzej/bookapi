@@ -9,29 +9,27 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var authorsRoute = require('./routes/authors');
 var passport = require('passport');
-var BearerStrategy = require('passport-http-bearer').Strategy;
+var config = require('./config/authConfig');
 
 var app = express();
+
+config.authInitialization();
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(cors());
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
-passport.use(new BearerStrategy(
-    function(token, done) {
-        User.findOne({ token: token }, function (err, user) {
-            if (err) { return done(err); }
-            if (!user) { return done(null, false); }
-            return done(null, user, { scope: 'all' });
-        });
+app.use('/api', passport.authenticate('bearer', { session: false }),
+    function(req, res, next) {
+        next();
     }
-));
+);
 
 app.use('/', routes);
 app.use('/auth', users);
@@ -58,15 +56,15 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-    app.use(function(err, req, res, next) {
-        var finalData = {
-            status: err.resCode,
-            code: err.desc,
-            errors: err.info
-        };
-        res.status(err.resCode);
-        res.send(finalData);
-    });
+app.use(function(err, req, res, next) {
+    var finalData = {
+        status: err.resCode,
+        code: err.desc,
+        errors: err.info
+    };
+    res.status(err.resCode);
+    res.send(finalData);
+});
 //}
 
 // production error handler
@@ -75,5 +73,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.send();
 });
+
+
 
 module.exports = app;

@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     var Token = sequelize.define("Token", {
             accessToken:
             {
-                type: DataTypes.STRING(60),
+                type: DataTypes.STRING(67),
                 allowNull: false
             },
             expirationDate:
@@ -36,6 +36,7 @@ module.exports = function(sequelize, DataTypes) {
             },
             classMethods: {
                 associate: function(models) {
+                    Token.belongsTo(models.User);
                 }
             }
         });
