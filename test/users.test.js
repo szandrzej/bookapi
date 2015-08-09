@@ -123,6 +123,14 @@ describe('USERS', function () {
                 })
                 .end(done);
         });
+        it('should return 400 if bad request', function (done) {
+            request(app)
+                .post('/auth/login')
+                .set('Content-Type', 'application/json')
+                .send({ email: 'usero@test.com', paword: 'qwerty2'})
+                .expect(400)
+                .end(done);
+        });
         it('should return 401 if credentials are not correct', function (done) {
             request(app)
                 .post('/auth/login')

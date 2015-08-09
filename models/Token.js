@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
         {
             hooks:{
               beforeValidate: function(entity){
-                  if(env !== 'test'){
+                  if(!entity.accessToken){
                       var date = new Date();
                       entity.accessToken = randomString({length: 60});
                       entity.expirationDate = date.getTime() + config.expirationTime * 1000;
@@ -36,7 +36,10 @@ module.exports = function(sequelize, DataTypes) {
             },
             classMethods: {
                 associate: function(models) {
-                    Token.belongsTo(models.User);
+                    Token.belongsTo(models.User, {
+                        as: 'user',
+                        foreignKey: 'UserId'
+                    });
                 }
             }
         });

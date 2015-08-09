@@ -60,6 +60,9 @@ module.exports = function(sequelize, DataTypes) {
             scopes: {
                 activation: {
                     attributes: ['id', 'activationCode', 'activated']
+                },
+                login: {
+                    attributes: ['id', 'email', 'password', 'activated', 'refreshToken']
                 }
             },
             hooks: {
@@ -83,13 +86,28 @@ module.exports = function(sequelize, DataTypes) {
                     }
                 }
             },
+            instanceMethods: {
+                verifyPassword: function(password, callback){
+                    bcrypt.compare(password, this.password, callback);
+                },
+                getLimitedData: function(){
+                    return {
+                        id: this.id,
+                        email: this.email,
+                        username: this.username
+                    }
+                }
+            },
             classMethods: {
                 associate: function(models) {
                     User.belongsToMany(models.Collection, {
                         as: 'Collections',
                         through: 'UsersCollections'
                     });
-                    User.hasMany(models.Token, { as: 'ActiveTokens'});
+                    User.hasMany(models.Token, {
+                        foreignKey: 'UserId',
+                        as: 'tokens'
+                    });
                     User.hasMany(models.Collection, {
                         foreignKey: 'creatorId',
                         as: 'creator'
