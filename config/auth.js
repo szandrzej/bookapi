@@ -5,25 +5,37 @@ var Token = require('../models').Token;
 
 
 module.exports = {
-    authInitialization: function(){
+    init: function(app){
+
+        app.use(passport.initialize());
+        app.use('/api', passport.authenticate('bearer', { session: false }),
+            function(req, res, next) {
+                next();
+            }
+        );
         passport.use(new BearerStrategy(
                 function(token, done) {
                     Token.findOne({
-                        attributes: ['id', 'UserId'],
+                        attributes: ['id'],
                         where: { accessToken: token },
-                        include: [ User ]
+                        include: [{
+                            model: User,
+                            as: 'user'
+                        }]
                     })
                         .then(function (result) {
                             if(!result) done('something is wrong');
                             else {
-                                var token = result.get({plain: true});
+                                var token = result;
                                 if (!token) {
                                     done(null, false);
                                 }
-                                done(null, token.User, {scope: 'all'});
+                                done(null, token.user, {scope: 'all'});
                             }
-                        }
-                    )
+                        })
+                        .catch(function(err){
+                            console.log(err);
+                        })
                 }
             )
         );

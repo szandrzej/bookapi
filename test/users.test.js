@@ -60,7 +60,7 @@ describe('USERS', function () {
             request(app)
                 .post('/auth/register')
                 .set('Content-Type', 'application/json')
-                .send({ email: "kasia@test.com", username: 'Nananana', password: "qwerty"})
+                .send({ email: "andrzejdaniel.szm@gmail.com", username: 'Nananana', password: "qwerty"})
                 .expect(409)
                 .end(done);
         });
@@ -153,7 +153,7 @@ describe('USERS', function () {
             request(app)
                 .post('/auth/resend')
                 .set('Content-Type', 'application/json')
-                .send()
+                .send({email: 'andrzejdaniel.szm@gmail.com'})
                 .expect(200)
                 .end(done);
         });
@@ -167,7 +167,7 @@ describe('USERS', function () {
         });
         it('should return 401 if user is already activated', function (done) {
             request(app)
-                .get('/auth/resend')
+                .post('/auth/resend')
                 .set('Content-Type', 'application/json')
                 .send({email: 'usero@test.com'})
                 .expect(401)
@@ -175,9 +175,9 @@ describe('USERS', function () {
         });
         it('should return 404 if user not found', function (done) {
             request(app)
-                .get('/auth/activate/100/123456780')
+                .post('/auth/resend')
                 .set('Content-Type', 'application/json')
-                .send()
+                .send({email: "nanana@nonoo.com"})
                 .expect(404)
                 .end(done);
         });

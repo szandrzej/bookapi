@@ -6,7 +6,7 @@ module.exports = [
         data: {
             id: 1,
             username: 'Andrzej Szmajnta',
-            email: 'andrzej@test.com',
+            email: 'andrzej.szmajnta@jazzy.pro',
             password: 'qwerty',
             role: 'admin',
             activated: false,
@@ -18,7 +18,7 @@ module.exports = [
         data: {
             id: 2,
             username: 'Kasia Szmajnta',
-            email: 'kasia@test.com',
+            email: 'andrzejdaniel.szm@gmail.com',
             password: 'qwerty',
             activated: false,
             activationCode: '98765431'

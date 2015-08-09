@@ -169,10 +169,10 @@ describe('AUTHORS', function () {
         });
         it('should return edited authors lastName =  Sapkowski -> Sapekowski', function(done){
             request(app)
-                .put('/api/authors/2', {lastName: 'Sapekowski'})
+                .put('/api/authors/2')
                 .set('Content-Type', 'application/json')
                 .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
-                .send()
+                .send({lastName: 'Sapekowski'})
                 .expect(function(res){
                     var author = res.body.extras;
                     expect(author.lastName).to.equal('Sapekowski');

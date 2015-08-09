@@ -9,7 +9,12 @@ var SequelizeValidationError = require('sequelize').ValidationError;
 var SequelizeUniqueContraintError = require('sequelize').UniqueConstraintError;
 
 /* GET users listing. */
-router.post('/register', function(req, res, next) {
+router.post('/register', registerUser);
+router.get('/activate/:id/:code', activateUser);
+router.post('/login', loginUser);
+router.post('/resend', resendActivationCode);
+
+function registerUser(req, res, next){
     async.waterfall([
         function(next){
             Validator.checkRequiredFields(req.body, ['email', 'username', 'password'], next);
@@ -17,14 +22,13 @@ router.post('/register', function(req, res, next) {
         function(result, next){
             Users.create(result)
                 .then(function(user){
-                    next();
+                    next(null, user);
                 })
                 .catch(function(error){
                     next(error);
                 });
         }
     ], function(err, result){
-        //console.log(err);
         if(err){
             if(err instanceof SequelizeUniqueContraintError){
                 var error = Error.createError(err, 'error.email_already_used', 409);
@@ -37,13 +41,21 @@ router.post('/register', function(req, res, next) {
                 return;
             }
         } else{
-            res.resCode = 201;
-            next();
+            var link = 'http://localhost:3000/auth/activate/' + result.id + '/' + result.activationCode;
+            req.app.mailer.sendMail({
+                from: 'Book API ✔ <api@book.api>', // sender address
+                to: result.email, // list of receivers
+                subject: 'Register confirmation', // Subject line
+                text: 'Hello! Follow link to confirm registration: ' + link // plaintext body
+            }, function(err, result){
+                res.resCode = 201;
+                next();
+            });
         }
     });
-});
+}
 
-router.get('/activate/:id/:code', function(req, res, next){
+function activateUser(req, res, next){
     var userId = req.params.id;
     var code = req.params.code;
 
@@ -76,9 +88,9 @@ router.get('/activate/:id/:code', function(req, res, next){
             next(error);
             return;
         });
-});
+}
 
-router.post('/login', function(req, res, next){
+function loginUser(req, res, next){
     async.waterfall([
         function(next){
             Validator.checkRequiredFields(req.body, ['email', 'password'], next);
@@ -111,13 +123,13 @@ router.post('/login', function(req, res, next){
             });
         },
         function(user, next){
-          if(!user.activated){
-              var error = Error.createError(err, 'error.not_activated', 401);
-              next(error);
-              return;
-          } else{
-            next(null, user);
-          }
+            if(!user.activated){
+                var error = Error.createError({}, 'error.not_activated', 401);
+                next(error);
+                return;
+            } else{
+                next(null, user);
+            }
         },
         function(user, next){
             Tokens.create({}).then(function(token){
@@ -144,6 +156,53 @@ router.post('/login', function(req, res, next){
             next();
         }
     });
-});
+}
+
+function resendActivationCode(req, res, next){
+    async.waterfall([
+        function(next){
+            Validator.checkRequiredFields(req.body, ['email'], next);
+        },
+        function(result, next){
+            Users.scope('activation')
+                .find({where: {email: result.email}})
+                .then(function(user){
+                    next(null, user);
+                })
+                .catch(function(err){
+                    var error = Error.createError(err, 'error.user_not_found', 404);
+                    next(error);
+                });
+        },
+        function(user, next){
+            if(user.activated){
+                var error = Error.createError({}, 'error.already_activated', 401);
+                next(error);
+                return;
+            } else{
+                next(null, user);
+            }
+        }
+    ], function(err, result){
+        if(err){
+            if(err.errors){
+                next(Error.createError(err.errors, 'error.bad_request', 400));
+            } else{
+                next(err);
+            }
+        } else{
+            var link = 'http://localhost:3000/auth/activate/' + result.id + '/' + result.activationCode;
+            req.app.mailer.sendMail({
+                from: 'Book API ✔ <api@book.api>', // sender address
+                to: result.email, // list of receivers
+                subject: 'Register confirmation', // Subject line
+                text: 'Hello! Follow link to confirm registration: ' + link // plaintext body
+            }, function(err, result){
+                res.resCode = 200;
+                next();
+            });
+        }
+    });
+}
 
 module.exports = router;

@@ -10,11 +10,10 @@ var users = require('./routes/users');
 var authorsRoute = require('./routes/authors');
 var collectionsRoute = require('./routes/collections');
 var passport = require('passport');
-var config = require('./config/authConfig');
+var authConfig = require('./config/auth');
+var mailerConfig = require('./config/mailer');
 
 var app = express();
-
-config.authInitialization();
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -24,13 +23,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(passport.initialize());
 
-app.use('/api', passport.authenticate('bearer', { session: false }),
-    function(req, res, next) {
-        next();
-    }
-);
+authConfig.init(app);
+mailerConfig.init(app);
 
 app.use('/', routes);
 app.use('/auth', users);

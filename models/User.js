@@ -59,10 +59,10 @@ module.exports = function(sequelize, DataTypes) {
             },
             scopes: {
                 activation: {
-                    attributes: ['id', 'activationCode', 'activated']
+                    attributes: ['id', 'email', 'activationCode', 'activated']
                 },
                 login: {
-                    attributes: ['id', 'email', 'password', 'activated', 'refreshToken']
+                    attributes: ['id', 'email', 'password', 'activated', 'refreshToken', 'username']
                 }
             },
             hooks: {
@@ -96,6 +96,9 @@ module.exports = function(sequelize, DataTypes) {
                         email: this.email,
                         username: this.username
                     }
+                },
+                isAdmin: function(){
+                    return this.role === 'admin';
                 }
             },
             classMethods: {
@@ -106,7 +109,7 @@ module.exports = function(sequelize, DataTypes) {
                     });
                     User.hasMany(models.Token, {
                         foreignKey: 'UserId',
-                        as: 'tokens'
+                        as: 'user'
                     });
                     User.hasMany(models.Collection, {
                         foreignKey: 'creatorId',
