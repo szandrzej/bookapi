@@ -8,6 +8,7 @@ var cors = require('cors');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var authorsRoute = require('./routes/authors');
+var collectionsRoute = require('./routes/collections');
 var passport = require('passport');
 var config = require('./config/authConfig');
 
@@ -34,6 +35,7 @@ app.use('/api', passport.authenticate('bearer', { session: false }),
 app.use('/', routes);
 app.use('/auth', users);
 app.use('/api/authors', authorsRoute);
+app.use('/api/collections', collectionsRoute);
 
 app.use(function(req, res){
     var finalData = {

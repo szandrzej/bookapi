@@ -197,5 +197,19 @@ describe('AUTHORS', function () {
                 .expect(204)
                 .end(done);
         });
+        it('should return two books if id = 3', function (done) {
+            request(app)
+                .get('/api/authors/3/books')
+                .set('Content-Type', 'application/json')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(function(res){
+                    var extras = res.body.extras;
+                    expect(extras.author).to.exists;
+                    expect(extras.books).to.exists;
+                    expect(extras.books).to.have.length(2);
+                })
+                .end(done);
+        });
     });
 });

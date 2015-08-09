@@ -25,7 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="authConfig.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="authConfig.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/authConfig.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
@@ -35,20 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/models/User.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83950615" vertical-offset="1003" max-vertical-offset="1887">
-              <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="fixtures.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/fixtures/fixtures.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2550">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2064" max-vertical-offset="2550">
               <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
               <folding />
             </state>
@@ -58,8 +48,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1445">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1479">
+              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -78,8 +68,18 @@
       <file leaf-file-name="authors.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/authors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="1377">
-              <caret line="51" column="36" selection-start-line="50" selection-start-column="12" selection-end-line="51" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="687" max-vertical-offset="1377">
+              <caret line="57" column="11" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="collections.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/collections.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,10 +110,8 @@
         <option value="$PROJECT_DIR$/models/Token.js" />
         <option value="$PROJECT_DIR$/bin/postinstall.sh" />
         <option value="$PROJECT_DIR$/bin/www" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/test/authors.test.js" />
         <option value="$PROJECT_DIR$/models/Location.js" />
         <option value="$PROJECT_DIR$/config/conf.json" />
         <option value="$PROJECT_DIR$/models/Author.js" />
@@ -128,6 +126,8 @@
         <option value="$PROJECT_DIR$/test/users.test.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/models/User.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/test/authors.test.js" />
       </list>
     </option>
   </component>
@@ -287,6 +287,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Vagrants\Nodejs\BookApi\routes" />
       <recent name="D:\Vagrants\Nodejs\BookApi\test" />
     </key>
   </component>
@@ -370,11 +371,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="526" y="0" width="1394" height="1050" extended-state="0" />
-    <editor active="false" />
+    <frame x="526" y="0" width="1394" height="1050" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44008714" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44008714" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947975" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -420,19 +421,11 @@
           <line>7</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/authors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="663">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1020">
@@ -659,30 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/authors.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81240547" vertical-offset="330" max-vertical-offset="1207">
-          <caret line="97" column="77" selection-start-line="97" selection-start-column="77" selection-end-line="97" selection-end-column="77" />
-          <folding>
-            <element signature="e#853#1173#0" expanded="false" />
-            <element signature="e#1253#1464#0" expanded="false" />
-            <element signature="e#1521#1978#0" expanded="false" />
-            <element signature="e#2053#2608#0" expanded="false" />
-            <element signature="e#3370#3709#0" expanded="false" />
-            <element signature="e#3789#4156#0" expanded="false" />
-            <element signature="e#4276#4598#0" expanded="false" />
-            <element signature="e#4676#5206#0" expanded="false" />
-            <element signature="e#5283#5742#0" expanded="false" />
-            <element signature="e#5805#6127#0" expanded="false" />
-            <element signature="e#6213#6557#0" expanded="false" />
-            <element signature="e#6639#6983#0" expanded="false" />
-            <element signature="e#7079#7574#0" expanded="false" />
-            <element signature="e#7659#7984#0" expanded="false" />
-            <element signature="e#8065#8390#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/Token.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.04121475" vertical-offset="389" max-vertical-offset="850">
@@ -779,14 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/authConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/requestValidator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="629">
@@ -803,10 +764,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5884774" vertical-offset="0" max-vertical-offset="1887">
+          <caret line="74" column="11" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="687" max-vertical-offset="1513">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/collections.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1445">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1479">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -821,24 +806,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/authors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="1377">
-          <caret line="51" column="36" selection-start-line="50" selection-start-column="12" selection-end-line="51" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="687" max-vertical-offset="1377">
+          <caret line="57" column="11" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
+    <entry file="file://$PROJECT_DIR$/test/authors.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="687" max-vertical-offset="1513">
-          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="0.67653275" vertical-offset="1074" max-vertical-offset="1547">
+          <caret line="212" column="11" selection-start-line="212" selection-start-column="11" selection-end-line="212" selection-end-column="11" />
+          <folding>
+            <element signature="e#853#1173#0" expanded="false" />
+            <element signature="e#1253#1464#0" expanded="false" />
+            <element signature="e#2053#2608#0" expanded="false" />
+            <element signature="e#3370#3709#0" expanded="false" />
+            <element signature="e#3789#4156#0" expanded="false" />
+            <element signature="e#4676#5206#0" expanded="false" />
+            <element signature="e#5283#5742#0" expanded="false" />
+            <element signature="e#5805#6127#0" expanded="false" />
+            <element signature="e#6213#6557#0" expanded="false" />
+            <element signature="e#6639#6983#0" expanded="false" />
+            <element signature="e#7079#7574#0" expanded="false" />
+            <element signature="e#7659#7984#0" expanded="false" />
+            <element signature="e#8065#8390#0" expanded="false" />
+            <element signature="e#8457#9029#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.js">
+    <entry file="file://$PROJECT_DIR$/config/authConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83950615" vertical-offset="1003" max-vertical-offset="1887">
-          <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
