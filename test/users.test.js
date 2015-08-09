@@ -9,12 +9,14 @@ var async = require('async');
 
 var correctRegister = {
     email: "test@test.com",
-    password: "qwerty"
+    password: "qwerty",
+    username: 'tester'
 };
 
 var incorrectRegister = {
     mail: "test@test.com",
-    passwod: "qwerty"
+    passwod: "qwerty",
+    tester: 'tester'
 };
 
 
@@ -50,15 +52,15 @@ describe('USERS', function () {
             request(app)
                 .post('/auth/register')
                 .set('Content-Type', 'application/json')
-                .send({ email: "test", password: "qwerety"})
+                .send({ email: "test", username: 'nanana', password: "qwerety"})
                 .expect(400)
                 .end(done);
         });
-        it('should return 409 when registrate existing user', function (done) {
+        it('should return 409 when register existing user', function (done) {
             request(app)
                 .post('/auth/register')
                 .set('Content-Type', 'application/json')
-                .send({ email: "kasia@test.com", password: "qwerty"})
+                .send({ email: "kasia@test.com", username: 'Nananana', password: "qwerty"})
                 .expect(409)
                 .end(done);
         });

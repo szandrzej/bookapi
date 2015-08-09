@@ -97,4 +97,49 @@ module.exports = [
             lastName: "Prus"
         }
     },
+
+    // COLLECTIONS
+
+    {
+        model: 'Collection',
+        data: {
+            id: 1,
+            title: 'Pierwsza kolekcja',
+            creator: 1,
+            users: [1,2]
+        }
+    },
+
+    // LOCATIONS
+
+    {
+        model: 'Location',
+        data: {
+            id: 1,
+            name: 'Domek z kart'
+        }
+    },
+
+    // BOOKS
+
+    {
+        model: 'Book',
+        data: {
+            id: 1,
+            title: 'Władca Pierścieni: Drużyna Pierścienia',
+            author: 3,
+            collection: 1,
+            location: 1
+        }
+    },
+    {
+        model: 'Book',
+        data: {
+            id: 2,
+            title: 'Władca Pierscieni: Dwie Wieże',
+            author: 3,
+            collection: 1,
+            location: 1
+        }
+    },
 ];

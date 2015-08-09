@@ -18,11 +18,11 @@ describe('REQUEST VALIDATOR', function(done){
             }, requiredFields,
             function(err, result){
                 expect(err).to.not.exist;
-                expect(result).to.be.equal(true);
+                expect(result).to.exist;
                 done();
             });
     });
-    it('should return true if object has more than required properties', function(done){
+    it('should return data if object has more than required properties', function(done){
         requestValidator.checkRequiredFields({
                 first: '1',
                 second: '2',
@@ -31,7 +31,7 @@ describe('REQUEST VALIDATOR', function(done){
             }, requiredFields,
             function(err, result){
                 expect(err).to.not.exist;
-                expect(result).to.be.equal(true);
+                expect(result).to.exist;
                 done();
             });
     });
@@ -48,6 +48,16 @@ describe('REQUEST VALIDATOR', function(done){
             });
     });
     it('should return error if object is empty', function(done){
+        requestValidator.checkRequiredFields({}, requiredFields,
+            function(err, result){
+                expect(err).to.exist;
+                expect(err.errors).to.be.array;
+                expect(err.errors.length).to.be.equal(1);
+                expect(result).to.not.exist;
+                done();
+            });
+    });
+    it('should return error if object is undefined', function(done){
         requestValidator.checkRequiredFields({}, requiredFields,
             function(err, result){
                 expect(err).to.exist;

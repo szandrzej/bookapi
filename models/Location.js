@@ -22,7 +22,9 @@ module.exports = function(sequelize, DataTypes) {
         {
             classMethods: {
                 associate: function(models) {
-                    Location.hasMany(models.Book, {as: 'Books'});
+                    Location.hasMany(models.Book, {
+                        foreignKey: 'locationId',
+                        as: 'books'});
                 }
             }
         });

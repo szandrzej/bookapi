@@ -40,7 +40,10 @@ module.exports = function(sequelize, DataTypes) {
             },
             classMethods: {
                 associate: function(models) {
-                    Author.hasMany(models.Book, { as: 'Books'});
+                    Author.hasMany(models.Book, {
+                        foreignKey: 'authorId',
+                        constraints: true,
+                        as: 'books'});
                 }
             }
         });

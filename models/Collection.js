@@ -17,13 +17,19 @@ module.exports = function(sequelize, DataTypes) {
         {
             classMethods: {
                 associate: function(models) {
+                    Collection.hasMany(models.Book, {
+                        foreignKey: 'collectionId',
+                        constraints: true,
+                        as: 'books'
+                    });
                     Collection.belongsToMany(models.User, {
-                        as: 'Users',
+                        as: 'users',
                         through: 'UsersCollections',
                         foreignKey: 'collectionId'
                     });
-                    Collection.hasMany(models.Book, {
-                        as: 'Books'
+                    Collection.belongsTo(models.User, {
+                        foreignKey: 'creatorId',
+                        as: 'creator'
                     });
                 }
             }

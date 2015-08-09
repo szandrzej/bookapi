@@ -28,11 +28,6 @@ module.exports = function(sequelize, DataTypes) {
                     }
                 }
             },
-            salt:
-            {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
             password:
             {
                 type: DataTypes.STRING,
@@ -62,22 +57,30 @@ module.exports = function(sequelize, DataTypes) {
             defaultScope: {
                 attributes: ['id', 'username', 'email', 'role']
             },
+            scopes: {
+                activation: {
+                    attributes: ['id', 'activationCode', 'activated']
+                }
+            },
             hooks: {
                 beforeValidate: function (user) {
-                    var plainPwd = user.password;
-                    var salt = bcrypt.genSaltSync(10);
-                    var hash = bcrypt.hashSync(plainPwd, salt);
+                    if(user.password){
+                        var plainPwd = user.password;
+                        var salt = bcrypt.genSaltSync(10);
+                        var hash = bcrypt.hashSync(plainPwd, salt);
 
-                    user.salt = salt;
-                    user.password = hash;
+                        user.password = hash;
 
-                    if(user.role === undefined){
-                        user.role = 'user';
+                        if(user.role === undefined){
+                            user.role = 'user';
+                        }
                     }
                 },
                 beforeCreate: function(user){
                     user.refreshToken = randomString({length: 120});
-                    user.activationCode = randomString({length: 30});
+                    if(user.activationCode === undefined){
+                        user.activationCode = randomString({length: 30});
+                    }
                 }
             },
             classMethods: {
@@ -87,6 +90,14 @@ module.exports = function(sequelize, DataTypes) {
                         through: 'UsersCollections'
                     });
                     User.hasMany(models.Token, { as: 'ActiveTokens'});
+                    User.hasMany(models.Collection, {
+                        foreignKey: 'creatorId',
+                        as: 'creator'
+                    });
+                    User.hasMany(models.Book, {
+                        foreignKey: 'creatorId',
+                        as: 'creator'
+                    });
                 }
             }
         });

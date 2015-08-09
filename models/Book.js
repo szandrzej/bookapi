@@ -13,10 +13,10 @@ module.exports = function(sequelize, DataTypes) {
                     }
                 }
             },
-            year:
+            publishYear:
             {
                 type: DataTypes.INTEGER(4),
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     min: 1000,
                     max: 2100
@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
             language:
             {
                 type: DataTypes.STRING(3),
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     isIn: ['pl', 'eng', 'ger', 'esp', 'fr']
                 }
@@ -44,9 +44,24 @@ module.exports = function(sequelize, DataTypes) {
         {
             classMethods: {
                 associate: function(models) {
-                    Book.belongsTo(models.Author, { as: 'Author'});
-                    Book.belongsTo(models.Location, { as: 'Location'});
-                    Book.belongsTo(models.Collection), { as: 'Collection'};
+                    Book.belongsTo(models.User, {
+                       foreignKey: 'creatorId',
+                        as: 'creator'
+                    });
+                    Book.belongsTo(models.Author, {
+                        foreignKey: 'authorId',
+                        constraints: true,
+                        as: 'author'
+                    });
+                    Book.belongsTo(models.Location, {
+                        foreignKey: 'locationId',
+                        as: 'location'
+                    });
+                    Book.belongsTo(models.Collection, {
+                        foreignKey: 'collectionId',
+                        constraints: true,
+                        as: 'collection'
+                    });
                 }
             }
         });
