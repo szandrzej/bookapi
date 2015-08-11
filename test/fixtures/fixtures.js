@@ -41,7 +41,7 @@ module.exports = [
         model: 'Token',
         data: {
             id: 1,
-            expirationDate: date.getTime() + 1000*60*60*24*30,
+            expirationDate: new Date((date.getTime() + 1000*60*60*24*30)),
             accessToken: 'tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9',
             UserId: 1
         }
@@ -50,13 +50,13 @@ module.exports = [
         model: 'Token',
         data: {
             id: 2,
-            expirationDate: date.getTime() + 1000*60*60*24*30,
+            expirationDate: new Date((date.getTime() + 1000*60*60*24*30)),
             accessToken: 'tokenofuserym7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX8',
             UserId: 2
         }
     },
 
-    // Authors
+// Authors
     {
         model: 'Author',
         data: {
@@ -98,7 +98,7 @@ module.exports = [
         }
     },
 
-    // COLLECTIONS
+// COLLECTIONS
 
     {
         model: 'Collection',
@@ -110,7 +110,7 @@ module.exports = [
         }
     },
 
-    // LOCATIONS
+// LOCATIONS
 
     {
         model: 'Location',
@@ -120,7 +120,7 @@ module.exports = [
         }
     },
 
-    // BOOKS
+// BOOKS
 
     {
         model: 'Book',

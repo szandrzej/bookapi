@@ -1,27 +1,43 @@
 {
-  "development": {
-    "username": "dbuser",
-    "password": "123",
-    "database": "bookapi_dev",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "expirationTime": 1000000
+  "email": {
+    "service": "Gmail",
+    "login": "user.user@gmail.com",
+    "pass": "pAsSwORd"
   },
-  "test": {
-    "username": "dbuser",
-    "password": "123",
-    "database": "bookapi_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "logging": false,
-    "expirationTime": 7200
-  },
-  "production": {
-    "username": "dbuser",
-    "password": "123",
-    "database": "bookapi_prod",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "expirationTime": 7200
+  "database": {
+    "development": {
+      "username": "root",
+      "password": "devel",
+      "database": "bookapi_dev",
+      "host": "127.0.0.1",
+      "dialect": "mysql",
+      "expirationTime": 1000000,
+      "define": {
+        "charset": "utf8"
+      }
+    },
+    "test": {
+      "username": "root",
+      "password": "devel",
+      "database": "bookapi_test",
+      "host": "127.0.0.1",
+      "dialect": "mysql",
+      "logging": false,
+      "expirationTime": 7200,
+      "define": {
+        "charset": "utf8"
+      }
+    },
+    "production": {
+      "username": "root",
+      "password": "devel",
+      "database": "bookapi_prod",
+      "host": "127.0.0.1",
+      "dialect": "mysql",
+      "expirationTime": 7200,
+      "define": {
+        "charset": "utf8"
+      }
+    }
   }
 }

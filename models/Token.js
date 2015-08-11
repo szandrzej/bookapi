@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
                   if(!entity.accessToken){
                       var date = new Date();
                       entity.accessToken = randomString({length: 60});
-                      entity.expirationDate = date.getTime() + config.expirationTime * 1000;
+                      entity.expirationDate = new Date(date.getTime() + config.expirationTime * 1000);
                   }
               }
             },
