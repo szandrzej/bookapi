@@ -98,28 +98,6 @@ module.exports = [
         }
     },
 
-// COLLECTIONS
-
-    {
-        model: 'Collection',
-        data: {
-            id: 1,
-            title: 'Pierwsza kolekcja',
-            creator: 1,
-            users: [1,2]
-        }
-    },
-
-// LOCATIONS
-
-    {
-        model: 'Location',
-        data: {
-            id: 1,
-            name: 'Domek z kart'
-        }
-    },
-
 // BOOKS
 
     {
@@ -127,9 +105,7 @@ module.exports = [
         data: {
             id: 1,
             title: 'Władca Pierścieni: Drużyna Pierścienia',
-            author: 3,
-            collection: 1,
-            location: 1
+            author: 3
         }
     },
     {
@@ -137,9 +113,38 @@ module.exports = [
         data: {
             id: 2,
             title: 'Władca Pierscieni: Dwie Wieże',
-            author: 3,
-            collection: 1,
-            location: 1
+            author: 3
+        }
+    },
+    {
+        model: 'Book',
+        data: {
+            id: 3,
+            title: 'Władca Pierscieni: Powrót Króla',
+            author: 3
+        }
+    },
+
+    // COLLECTIONS
+
+    {
+        model: 'Collection',
+        data: {
+            id: 1,
+            title: 'Pierwsza kolekcja',
+            creator: 1,
+            Users: [1, 2],
+            Books: [1, 3]
+        }
+    },
+    {
+        model: 'Collection',
+        data: {
+            id: 2,
+            title: 'Druga kolekcja',
+            creator: 2,
+            Users: [2],
+            Books: [1, 2, 3]
         }
     },
 ];

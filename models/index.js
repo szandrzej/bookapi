@@ -4,7 +4,7 @@ var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
 var env       = process.env.NODE_ENV || "development";
-var config    = require(__dirname + '/../config/conf.json')[env];
+var config    = require(__dirname + '/../config/conf.json')[env]["database"];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 var db        = {};
 
@@ -28,3 +28,5 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+//TODO: Invitation schema

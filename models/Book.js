@@ -53,14 +53,8 @@ module.exports = function(sequelize, DataTypes) {
                         constraints: true,
                         as: 'author'
                     });
-                    Book.belongsTo(models.Location, {
-                        foreignKey: 'locationId',
-                        as: 'location'
-                    });
-                    Book.belongsTo(models.Collection, {
-                        foreignKey: 'collectionId',
-                        constraints: true,
-                        as: 'collection'
+                    Book.belongsToMany(models.Collection, {
+                        through: 'BooksCollections',
                     });
                 }
             }

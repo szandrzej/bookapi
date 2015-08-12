@@ -1,5 +1,6 @@
+var env = "development";
 var nodemailer = require('nodemailer');
-var config = require('../config/conf')['email'];
+var config = require('../config/conf')[env]["email"];
 
 module.exports = {
     init: function(app) {

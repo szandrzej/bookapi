@@ -55,7 +55,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         {
             defaultScope: {
-                attributes: ['id', 'username', 'email', 'role']
             },
             scopes: {
                 activation: {
@@ -104,7 +103,6 @@ module.exports = function(sequelize, DataTypes) {
             classMethods: {
                 associate: function(models) {
                     User.belongsToMany(models.Collection, {
-                        as: 'Collections',
                         through: 'UsersCollections'
                     });
                     User.hasMany(models.Token, {

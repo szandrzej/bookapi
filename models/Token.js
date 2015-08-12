@@ -2,7 +2,7 @@
 
 var randomString = require('random-string');
 var env = process.env.NODE_ENV || "development";
-var config = require('../config/conf.json')[env];
+var config = require('../config/conf.json')[env]["security"];
 
 module.exports = function(sequelize, DataTypes) {
     var Token = sequelize.define("Token", {

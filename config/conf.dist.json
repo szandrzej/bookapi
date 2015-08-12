@@ -1,43 +1,62 @@
 {
-  "email": {
-    "service": "Gmail",
-    "login": "user.user@gmail.com",
-    "pass": "pAsSwORd"
-  },
-  "database": {
-    "development": {
+  "development": {
+    "email": {
+      "service": "Gmail",
+      "login": "user.user@gmail.com",
+      "pass": "pAsSwORd"
+    },
+    "database": {
       "username": "root",
       "password": "devel",
       "database": "bookapi_dev",
       "host": "127.0.0.1",
       "dialect": "mysql",
-      "expirationTime": 1000000,
       "define": {
         "charset": "utf8"
       }
     },
-    "test": {
+    "security":{
+      "expirationTime": 100000
+    }
+  },
+  "test": {
+    "email": {
+      "service": "Gmail",
+      "login": "user.user@gmail.com",
+      "pass": "pAsSwORd"
+    },
+    "database": {
       "username": "root",
       "password": "devel",
-      "database": "bookapi_test",
+      "database": "bookapi_dev",
       "host": "127.0.0.1",
       "dialect": "mysql",
-      "logging": false,
-      "expirationTime": 7200,
       "define": {
         "charset": "utf8"
       }
     },
-    "production": {
+    "security":{
+      "expirationTime": 100000
+    }
+  },
+  "production": {
+    "email": {
+      "service": "Gmail",
+      "login": "user.user@gmail.com",
+      "pass": "pAsSwORd"
+    },
+    "database": {
       "username": "root",
       "password": "devel",
-      "database": "bookapi_prod",
+      "database": "bookapi_dev",
       "host": "127.0.0.1",
       "dialect": "mysql",
-      "expirationTime": 7200,
       "define": {
         "charset": "utf8"
       }
+    },
+    "security":{
+      "expirationTime": 100000
     }
   }
 }

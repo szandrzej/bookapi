@@ -10,15 +10,13 @@ var correctNewBook = {
     title: 'Niezgodna',
     publishYear: 2010,
     author: 1,
-    collection: 2,
-    location: 1
+    collection: 2
 };
 
 var incorrectNewBook1 = {
     tile: 'Niezgodna',
     author: 1,
-    collection: 2,
-    location: 1
+    collection: 2
 };
 
 describe('BOOKS', function () {
