@@ -17,6 +17,12 @@
     },
     "security":{
       "expirationTime": 100000
+    },
+    "oauth":{
+      "facebook":{
+        "client_id": 123,
+        "client_secret": 123,
+      }
     }
   },
   "test": {
@@ -37,6 +43,12 @@
     },
     "security":{
       "expirationTime": 100000
+    },
+    "oauth":{
+      "facebook":{
+        "client_id": 123,
+        "client_secret": 123,
+      }
     }
   },
   "production": {
@@ -57,6 +69,12 @@
     },
     "security":{
       "expirationTime": 100000
+    },
+    "oauth":{
+      "facebook":{
+        "client_id": 123,
+        "client_secret": 123,
+      }
     }
   }
 }

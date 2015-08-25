@@ -25,6 +25,7 @@
     "passport-http-bearer": "^1.0.1",
     "passport-local": "~1.0.0",
     "random-string": "^0.1.2",
+    "request-promise": "^0.4.3",
     "scrypt": "^4.0.7",
     "sequelize": "^3.3.2",
     "sequelize-fixtures": "^0.4.7",

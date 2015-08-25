@@ -1,5 +1,8 @@
 var express = require('express');
 var async = require('async');
+var request = require('request-promise');
+
+
 var router = express.Router();
 var Validator = require('../helpers/requestValidator');
 var Error = require('../helpers/errorCreator');
@@ -13,6 +16,7 @@ router.post('/register', registerUser);
 router.get('/activate/:id/:code', activateUser);
 router.post('/login', loginUser);
 router.post('/resend', resendActivationCode);
+router.post('/facebook', authFacebook);
 
 function registerUser(req, res, next){
     async.waterfall([
@@ -203,6 +207,12 @@ function resendActivationCode(req, res, next){
             });
         }
     });
+}
+
+function authFacebook(req, res, next){
+    console.log('Facebook Request!');
+    res.resCode = 200;
+    next();
 }
 
 module.exports = router;
