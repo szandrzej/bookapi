@@ -1,15 +1,18 @@
-var express = require('express');
-var async = require('async');
-var request = require('request-promise');
+var env         = process.env.NODE_ENV || "development";
+var express     = require('express');
+var async       = require('async');
+var request     = require('request-promise');
+
+var config      = require('../config/conf')[env]['oauth'];
 
 
-var router = express.Router();
-var Validator = require('../helpers/requestValidator');
-var Error = require('../helpers/errorCreator');
-var Users = require('../models').User;
-var Tokens = require('../models').Token;
-var SequelizeValidationError = require('sequelize').ValidationError;
-var SequelizeUniqueContraintError = require('sequelize').UniqueConstraintError;
+var router      = express.Router();
+var Validator   = require('../helpers/requestValidator');
+var Error       = require('../helpers/errorCreator');
+var Users       = require('../models').User;
+var Tokens      = require('../models').Token;
+var SequelizeValidationError        = require('sequelize').ValidationError;
+var SequelizeUniqueContraintError   = require('sequelize').UniqueConstraintError;
 
 /* GET users listing. */
 router.post('/register', registerUser);
@@ -210,9 +213,27 @@ function resendActivationCode(req, res, next){
 }
 
 function authFacebook(req, res, next){
-    console.log('Facebook Request!');
-    res.resCode = 200;
-    next();
+    var accessTokenUrl = 'https://graph.facebook.com/v2.3/oauth/access_token';
+    var graphApiUrl = 'https://graph.facebook.com/v2.3/me';
+
+    var params = {
+        code: req.body.code,
+        client_id: req.body.clientId,
+        client_secret: config.facebook.client_secret,
+        redirect_uri: req.body.redirectUri
+    };
+
+    request.get({
+            url: accessTokenUrl,
+            qs: params,
+            json: true
+        }
+    ).then(function(result, error){
+            res.resCode = 200;
+            res.token = result.access_token;
+            res.satellizer = true;
+            next();
+        });
 }
 
 module.exports = router;

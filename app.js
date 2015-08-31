@@ -18,7 +18,7 @@ var app = express();
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(cors({
-        origin: '*',
+        origin: 'http://client.bookapi.dev',
         methods: 'GET,PUT,POST,DELETE, OPTIONS',
         credentials: true
     }
@@ -44,7 +44,11 @@ app.use(function(req, res){
         extras: res.body
     };
     res.status(res.resCode);
-    res.send(finalData);
+    if(res.satellizer){
+        finalData.token = res.token;
+    } else {
+        res.send(finalData);
+    }
 });
 
 // catch 404 and forward to error handler
