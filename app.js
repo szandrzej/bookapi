@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var auth = require('./routes/auth');
 var authorsRoute = require('./routes/authors');
 var collectionsRoute = require('./routes/collections');
 var passport = require('passport');
@@ -33,7 +33,7 @@ authConfig.init(app);
 mailerConfig.init(app);
 
 app.use('/', routes);
-app.use('/auth', users);
+app.use('/auth', auth);
 app.use('/api/authors', authorsRoute);
 app.use('/api/collections', collectionsRoute);
 
@@ -46,9 +46,8 @@ app.use(function(req, res){
     res.status(res.resCode);
     if(res.satellizer){
         finalData.token = res.token;
-    } else {
-        res.send(finalData);
     }
+    res.send(finalData);
 });
 
 // catch 404 and forward to error handler

@@ -5,7 +5,6 @@ var request     = require('request-promise');
 
 var config      = require('../config/conf')[env]['oauth'];
 
-
 var router      = express.Router();
 var Validator   = require('../helpers/requestValidator');
 var Error       = require('../helpers/errorCreator');
@@ -13,8 +12,9 @@ var Users       = require('../models').User;
 var Tokens      = require('../models').Token;
 var SequelizeValidationError        = require('sequelize').ValidationError;
 var SequelizeUniqueContraintError   = require('sequelize').UniqueConstraintError;
+var FB = require('fb');
 
-/* GET users listing. */
+/* GET auth listing. */
 router.post('/register', registerUser);
 router.get('/activate/:id/:code', activateUser);
 router.post('/login', loginUser);
@@ -85,7 +85,6 @@ function activateUser(req, res, next){
                             next();
                         })
                         .catch(function(err){
-                            console.log(err);
                         });
                 }
             }
@@ -114,7 +113,6 @@ function loginUser(req, res, next){
         function(user, result, next){
             user.verifyPassword(result.password, function(err, correct){
                 if(err){
-                    console.log(err);
                     var error = Error.createError(err, 'error.bad_request', 400);
                     next(error);
                     return;
@@ -213,8 +211,7 @@ function resendActivationCode(req, res, next){
 }
 
 function authFacebook(req, res, next){
-    var accessTokenUrl = 'https://graph.facebook.com/v2.3/oauth/access_token';
-    var graphApiUrl = 'https://graph.facebook.com/v2.3/me';
+    var accessTokenUrl = 'https://graph.facebook.com/v2.4/oauth/access_token';
 
     var params = {
         code: req.body.code,
@@ -223,17 +220,67 @@ function authFacebook(req, res, next){
         redirect_uri: req.body.redirectUri
     };
 
-    request.get({
-            url: accessTokenUrl,
-            qs: params,
-            json: true
+    async.waterfall([
+        function(next){
+            request.get({url: accessTokenUrl, qs: params, json: true })
+                .then(function(resultAuth, error){
+                    if(error){
+
+                    } else{
+                        next(null, resultAuth);
+                    }
+                });
+        },
+        function(result, next){
+            FB.setAccessToken(result.access_token);
+            FB.api('me', {fields: ['id', 'name', 'picture', 'email']}, function(result){
+                next(null, result);
+            });
+        },
+        function(profile, next){
+            Users.scope('login').find({where: {email: profile.email}})
+                .then(function(user){
+                    if(user) {
+                        user.updateAttributes({
+                            username: profile.name,
+                            activated: true
+                        }).then(function(user){
+                            next(null, user);
+                        });
+                    } else{
+                        Users.create({
+                            username: profile.name,
+                            email: profile.email,
+                            password: profile.id,
+                            activated: true
+                        }).then(function(user){
+                            next(null, user);
+                        });
+                    }
+                });
+        },
+        function(user, next){
+            Tokens.create({}).then(function(token){
+                token.setUser(user).then(function(token){
+                    var result = {
+                        accessToken: token.accessToken,
+                        refreshToken: user.refreshToken,
+                        user: user.getLimitedData()
+                    };
+
+                    next(null, result);
+                });
+            })
         }
-    ).then(function(result, error){
-            res.resCode = 200;
-            res.token = result.access_token;
-            res.satellizer = true;
-            next();
-        });
+    ], function(err, result){
+        res.body = result;
+        res.resCode = 200;
+        res.token = FB.getAccessToken();
+        res.satellizer = true;
+        next();
+    });
+
+
 }
 
 module.exports = router;

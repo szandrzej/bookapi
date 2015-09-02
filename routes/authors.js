@@ -1,12 +1,13 @@
 'use strict';
 
-var express = require('express');
-var codes = require('./codes');
-var Authors = require('../models').Author;
-var router = express.Router();
-var async = require('async');
-var Validator = require('../helpers/requestValidator');
-var Error = require('../helpers/errorCreator');
+var express     = require('express');
+var router      = express.Router();
+var async       = require('async');
+
+var Authors     = require('../models').Author;
+
+var Validator   = require('../helpers/requestValidator');
+var Error       = require('../helpers/errorCreator');
 
 var authorCreateFields = ['firstName', 'lastName'];
 
@@ -146,7 +147,36 @@ function deleteAuthor(req, res, next){
 }
 
 function getBooksFromAuthor(req, res, next){
-    next();
+    async.waterfall([
+        function (next) {
+            getAuthorId(req.params, next);
+        },
+        function(id, next){
+            Authors.find({ where: {id: id }})
+                .then(function(result){
+                    next(null, result);
+                })
+                .catch(function(err){
+                    var error = Error.createError(err, 'error.author_not_found', 404);
+                    next(error);
+                });
+        },
+        function(author, next){
+            author.getBooks()
+                .then(function(bookArray){
+                   next(null, bookArray);
+                });
+        }
+    ], function(err, result){
+        if(err){
+            next(err);
+        } else{
+            res.body = result.get();
+            res.resCode = 200;
+            next();
+        }
+    });
+    //next();
 }
 
 function getAuthorId(params, next){
