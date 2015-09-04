@@ -38,10 +38,15 @@ app.use('/api/authors', authorsRoute);
 app.use('/api/collections', collectionsRoute);
 
 app.use(function(req, res){
+    if(res.body) {
+        res.body.pagination = {
+            _self: req.path
+        };
+    }
     var finalData = {
         status: res.resCode,
         code: 'success',
-        extras: res.body
+        extras: res.body,
     };
     res.status(res.resCode);
     if(res.satellizer){

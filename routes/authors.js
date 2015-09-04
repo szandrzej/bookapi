@@ -12,14 +12,18 @@ var Error       = require('../helpers/errorCreator');
 var authorCreateFields = ['firstName', 'lastName'];
 
 /* Get all authors */
-router.get('/', getAllAuthors);
-router.post('/', createAuthor);
+router.get('?search=:slug&limit=:limit&last=:lastId', getAllAuthors);
+router.post('', createAuthor);
 router.get('/:id', getOneAuthor);
 router.put('/:id', editAuthor);
 router.delete('/:id', deleteAuthor);
 router.get('/:id/books', getBooksFromAuthor);
 
 function getAllAuthors(req, res, next){
+    var slug = req.params.slug;
+    var limit = req.params.limit ? req.params.limit : 10;
+    var last = req.params.lastId ? req.params.lastId : 0;
+
     Authors.findAll()
         .then(function(result){
             res.body = {
@@ -162,21 +166,37 @@ function getBooksFromAuthor(req, res, next){
                 });
         },
         function(author, next){
-            author.getBooks()
+            author.getBooks({raw: true})
                 .then(function(bookArray){
-                   next(null, bookArray);
+                    next(null, bookArray, author);
+                });
+        },
+        function(books, author, next){
+            async.map(books,
+                function(book, callback){
+                    book._self = '/api/books/' + book.id;
+                    callback(null, book);
+                },
+                function(err, books){
+                    if(err){
+                        next(err);
+                    } else{
+                        next(null, books)
+                    }
                 });
         }
-    ], function(err, result){
+    ], function(err, result, author){
         if(err){
             next(err);
         } else{
-            res.body = result.get();
+            res.body = {
+                books: result,
+                author: author
+            };
             res.resCode = 200;
             next();
         }
     });
-    //next();
 }
 
 function getAuthorId(params, next){

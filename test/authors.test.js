@@ -207,7 +207,7 @@ describe('AUTHORS', function () {
                     var extras = res.body.extras;
                     expect(extras.author).to.exists;
                     expect(extras.books).to.exists;
-                    expect(extras.books).to.have.length(2);
+                    expect(extras.books).to.have.length(3);
                 })
                 .end(done);
         });

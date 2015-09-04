@@ -42,6 +42,18 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         {
+            instanceMethods: {
+                getLimitedData: function(){
+                    return {
+                        id: this.id,
+                        title: this.title,
+                        publishYear: this.publishYear,
+                        language: this.language,
+                        description: this.description,
+                        cover: this.cover,
+                    }
+                }
+            },
             classMethods: {
                 associate: function(models) {
                     Book.belongsTo(models.User, {
