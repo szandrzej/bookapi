@@ -78,7 +78,8 @@ module.exports = [
         data: {
             id: 3,
             firstName: "J.R.R",
-            lastName: "Tolkien"
+            lastName: "Tolkien",
+            nationality: "ENG"
         }
     },
     {
@@ -95,6 +96,60 @@ module.exports = [
             id: 5,
             firstName: "Boleslaw",
             lastName: "Prus"
+        }
+    },
+    {
+        model: 'Author',
+        data: {
+            id: 6,
+            firstName: "Stephen",
+            lastName: "King",
+            nationality: "ENG"
+        }
+    },
+    {
+        model: 'Author',
+        data: {
+            id: 7,
+            firstName: "Agatha",
+            lastName: "Christie",
+            nationality: "ENG"
+        }
+    },
+    {
+        model: 'Author',
+        data: {
+            id: 8,
+            firstName: "J.K.",
+            lastName: "Rowling",
+            nationality: "ENG"
+        }
+    },
+    {
+        model: 'Author',
+        data: {
+            id: 9,
+            firstName: "Leo",
+            lastName: "Tolstoy",
+            nationality: "RUS"
+        }
+    },
+    {
+        model: 'Author',
+        data: {
+            id: 10,
+            firstName: "Alexander",
+            lastName: "Pushkin",
+            nationality: "RUS"
+        }
+    },
+    {
+        model: 'Author',
+        data: {
+            id: 11,
+            firstName: "Ernest",
+            lastName: "Hemingway",
+            nationality: "ENG"
         }
     },
 

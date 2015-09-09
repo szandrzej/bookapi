@@ -39,9 +39,7 @@ app.use('/api/collections', collectionsRoute);
 
 app.use(function(req, res){
     if(res.body) {
-        res.body.pagination = {
-            _self: req.path
-        };
+        res.body.pagination._self = req.path;
     }
     var finalData = {
         status: res.resCode,

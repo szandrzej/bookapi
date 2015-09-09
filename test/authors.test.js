@@ -39,6 +39,15 @@ describe('AUTHORS', function () {
                 .expect(200)
                 .end(done);
         });
+        it('should return 200 with authorization header', function (done) {
+            request(app)
+                .get('/api/authors?search=Henry')
+                .set('Content-Type', 'application/json')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(200)
+                .end(done);
+        });
         it('should return 401 without authorization header', function (done) {
             request(app)
                 .get('/api/authors')
@@ -47,7 +56,7 @@ describe('AUTHORS', function () {
                 .expect(401)
                 .end(done);
         });
-        it('should return 5 authors', function (done) {
+        it('should return 10 authors', function (done) {
             request(app)
                 .get('/api/authors')
                 .set('Content-Type', 'application/json')
@@ -55,7 +64,7 @@ describe('AUTHORS', function () {
                 .send()
                 .expect(function(res){
                     var body = res.body;
-                    expect(body.extras.authors).to.have.length(5);
+                    expect(body.extras.authors).to.have.length(10);
                 })
                 .end(done);
         });
@@ -72,6 +81,18 @@ describe('AUTHORS', function () {
                 })
                 .end(done);
         });
+        it('should has pagination', function (done) {
+            request(app)
+                .get('/api/authors')
+                .set('Content-Type', 'application/json')
+                .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
+                .send()
+                .expect(function(res){
+                    var extras = res.body.extras;
+                    expect(extras.pagination).to.exist;
+                })
+                .end(done);
+        });
         it('should return 201 when correct POST body and should return new author with id and nationality US', function (done) {
             request(app)
                 .post('/api/authors')
@@ -80,7 +101,7 @@ describe('AUTHORS', function () {
                 .send(correctNewAuthor)
                 .expect(201)
                 .expect(function(res){
-                    var author = res.body.extras;
+                    var author = res.body.extras.author;
                     expect(author.id).to.exist;
                     expect(author.nationality).to.equal('US');
                 })
@@ -122,7 +143,7 @@ describe('AUTHORS', function () {
                 .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
                 .expect(function(res){
-                    var author = res.body.extras;
+                    var author = res.body.extras.author;
                     expect(author.firstName).to.equal('J.R.R');
                     expect(author.lastName).to.equal('Tolkien');
                 })
@@ -140,9 +161,9 @@ describe('AUTHORS', function () {
                 })
                 .end(done);
         });
-        it('should return 404 when id = 8', function (done) {
+        it('should return 404 when id = 20', function (done) {
             request(app)
-                .get('/api/authors/8')
+                .get('/api/authors/20')
                 .set('Content-Type', 'application/json')
                 .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send()
@@ -174,7 +195,7 @@ describe('AUTHORS', function () {
                 .set('Authorization', 'Bearer tokenofadminm7R9MnrUotoNRtnOBZ6gyh7s2XadPNRcsYKUlCdQpSYtDCX9')
                 .send({lastName: 'Sapekowski'})
                 .expect(function(res){
-                    var author = res.body.extras;
+                    var author = res.body.extras.author;
                     expect(author.lastName).to.equal('Sapekowski');
                 })
                 .end(done);

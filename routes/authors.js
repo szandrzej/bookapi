@@ -3,6 +3,7 @@
 var express     = require('express');
 var router      = express.Router();
 var async       = require('async');
+var extend      = require('extend');
 
 var Authors     = require('../models').Author;
 
@@ -12,7 +13,7 @@ var Error       = require('../helpers/errorCreator');
 var authorCreateFields = ['firstName', 'lastName'];
 
 /* Get all authors */
-router.get('?search=:slug&limit=:limit&last=:lastId', getAllAuthors);
+router.get('', getAllAuthors);
 router.post('', createAuthor);
 router.get('/:id', getOneAuthor);
 router.put('/:id', editAuthor);
@@ -20,17 +21,73 @@ router.delete('/:id', deleteAuthor);
 router.get('/:id/books', getBooksFromAuthor);
 
 function getAllAuthors(req, res, next){
-    var slug = req.params.slug;
-    var limit = req.params.limit ? req.params.limit : 10;
-    var last = req.params.lastId ? req.params.lastId : 0;
 
-    Authors.findAll()
+    var slug = req.query.search;
+    var limit = req.query.limit || 10;
+    var offset = req.query.offset || 0 ;
+
+    var where = {};
+    if(slug){
+        where = {
+            $or: [
+                {
+                    firstName:{
+                        $like: '%' + slug + '%'
+                    }
+                },
+                {
+                    lastName:{
+                        $like: '%' + slug + '%'
+                    }
+                }
+            ]
+        };
+    }
+
+    if(req.query.nationality){
+        where.nationality = req.query.nationality;
+    }
+
+    var paging = {};
+    if(offset && offset >= limit){
+        var diff = +offset - +limit;
+        paging.previous = '/api/authors?'
+            + 'offset=' + diff
+            + '&limit=' + limit
+            + (slug ? '&search=' + slug : '');
+    } else{
+        var diff = +offset + +limit;
+        paging.previous = null;
+        paging.next = '/api/authors?'
+            + 'offset=' + diff
+            + '&limit=' + limit
+            + (slug ? '&search=' + slug : '');
+    }
+
+    Authors.findAll({
+        where: where,
+        limit: limit,
+        offset: offset
+    })
         .then(function(result){
-            res.body = {
-                authors: result
-            };
-            res.resCode = 200;
-            next();
+            async.map(result,
+                function(author, callback){
+                    author = author.get();
+                    author._self = '/api/authors/' + author.id;
+                    callback(null, author);
+                },
+                function(err, authors){
+                    if(err){
+                        next(err);
+                    } else{
+                        res.body = {
+                            authors: authors,
+                            pagination: paging
+                        };
+                        res.resCode = 200;
+                        next();
+                    }
+                });
         });
 }
 
@@ -45,7 +102,10 @@ function createAuthor(req, res, next){
             Authors.create(data)
                 .then(function(author){
                     res.resCode = 201;
-                    res.body = author.get();
+                    res.body = {
+                        author: author.get(),
+                        pagination: {}
+                    };
                     next();
                 })
                 .catch(function(err){
@@ -67,7 +127,10 @@ function getOneAuthor(req, res, next){
             next(err)
         } else {
             res.resCode = 200;
-            res.body = result.get();
+            res.body = {
+                author: result.get(),
+                pagination: {}
+            };
             next();
         }
     });
@@ -109,7 +172,10 @@ function editAuthor(req, res, next){
         if(err){
             next(err);
         } else{
-            res.body = result.get();
+            res.body = {
+                author: result.get(),
+                pagination: {}
+            };
             res.resCode = 200;
             next();
         }
@@ -191,7 +257,8 @@ function getBooksFromAuthor(req, res, next){
         } else{
             res.body = {
                 books: result,
-                author: author
+                author: author,
+                pagination: {}
             };
             res.resCode = 200;
             next();
