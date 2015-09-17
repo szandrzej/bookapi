@@ -176,7 +176,8 @@ module.exports = [
         data: {
             id: 3,
             title: 'Władca Pierscieni: Powrót Króla',
-            author: 3
+            author: 3,
+            description: 'Dlalalalalalalalala'
         }
     },
 

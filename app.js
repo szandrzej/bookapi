@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
+var books = require('./routes/books');
 var authorsRoute = require('./routes/authors');
 var collectionsRoute = require('./routes/collections');
 var passport = require('passport');
@@ -35,6 +36,7 @@ mailerConfig.init(app);
 app.use('/', routes);
 app.use('/auth', auth);
 app.use('/api/authors', authorsRoute);
+app.use('/api/books', books);
 app.use('/api/collections', collectionsRoute);
 
 app.use(function(req, res){
